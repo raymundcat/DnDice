@@ -1,16 +1,26 @@
 PODS:
+  - MBProgressHUD (1.0.0)
+  - NSObject+Rx (2.0.0):
+    - RxSwift
   - RxCocoa (3.2.0):
     - RxSwift (~> 3.1)
   - RxSwift (3.2.0)
+  - ZHPopupView (0.1.1)
 
 DEPENDENCIES:
+  - MBProgressHUD (~> 1.0.0)
+  - NSObject+Rx
   - RxCocoa (~> 3.0)
   - RxSwift (~> 3.0)
+  - ZHPopupView
 
 SPEC CHECKSUMS:
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  NSObject+Rx: 2a9cd801d9c847e6d2486cbad8d7701b67834e70
   RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
+  ZHPopupView: cb3bedde775803c2c51e3db05cdd07ac6efaaaeb
 
-PODFILE CHECKSUM: ec51a1063c154519b70f8f1f1cf97099b5ed9df1
+PODFILE CHECKSUM: ee9c52cf90de3e773600c4193e5cfcc7a546a4e7
 
 COCOAPODS: 1.2.0

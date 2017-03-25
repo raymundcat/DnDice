@@ -18,7 +18,6 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        isHeroEnabled = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,7 +27,6 @@ class BaseViewController: UIViewController {
     
     func initStyle(){
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationController?.navigationBar.barTintColor = UIColor.heroBlue
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         UIApplication.shared.statusBarStyle = .lightContent
