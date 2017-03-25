@@ -7,11 +7,50 @@
 //
 
 import UIKit
+import RxSwift
+import NSObject_Rx
 
-class GameViewController: BaseViewController {
+class GameViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate{
 
+    let boardCellID = "boardCell"
+    @IBOutlet weak var boardCollectionView: UICollectionView!{
+        didSet{
+            boardCollectionView.register(UINib(nibName: "BoardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: boardCellID)
+            boardCollectionView.dataSource = self
+            boardCollectionView.delegate = self
+        }
+    }
+    var dicesInBoard: [Dice] = [Dice](){
+        didSet{
+            boardCollectionView.reloadData()
+        }
+    }
+    
+    @IBOutlet weak var availableDicesCollectionView: UICollectionView!
+    var availableDices: [Dice] = [Dice](){
+        didSet{
+            availableDicesCollectionView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    //MARK: CollectionView DataSource
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dicesInBoard.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: boardCellID, for: indexPath) as! BoardCollectionViewCell
+        cell.backgroundColor = UIColor.gray
+        cell.dice = dicesInBoard[indexPath.row]
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        dicesInBoard[indexPath.row].roll()
     }
 }

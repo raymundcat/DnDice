@@ -26,8 +26,11 @@ class BaseViewController: UIViewController {
     }
     
     func initStyle(){
-        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.view.backgroundColor = UIColor.clear
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         UIApplication.shared.statusBarStyle = .lightContent
     }
