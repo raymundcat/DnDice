@@ -1,0 +1,806 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4558A042FC448B836BE45160 /* Pods_DnDice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CF564F4A8AD6488FD9C932 /* Pods_DnDice.framework */; };
+		EC9C46021E86B1A7003723A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46011E86B1A7003723A7 /* AppDelegate.swift */; };
+		EC9C46041E86B1A7003723A7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46031E86B1A7003723A7 /* GameViewController.swift */; };
+		EC9C46071E86B1A7003723A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9C46051E86B1A7003723A7 /* Main.storyboard */; };
+		EC9C460A1E86B1A7003723A7 /* DnDice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46081E86B1A7003723A7 /* DnDice.xcdatamodeld */; };
+		EC9C460C1E86B1A7003723A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC9C460B1E86B1A7003723A7 /* Assets.xcassets */; };
+		EC9C460F1E86B1A7003723A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9C460D1E86B1A7003723A7 /* LaunchScreen.storyboard */; };
+		EC9C461A1E86B1A7003723A7 /* DnDiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46191E86B1A7003723A7 /* DnDiceTests.swift */; };
+		EC9C46251E86B1A7003723A7 /* DnDiceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46241E86B1A7003723A7 /* DnDiceUITests.swift */; };
+		EC9C463B1E86BCED003723A7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46371E86BCED003723A7 /* BaseViewController.swift */; };
+		EC9C463C1E86BCED003723A7 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46381E86BCED003723A7 /* BaseTableViewCell.swift */; };
+		EC9C463D1E86BCED003723A7 /* BasePresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46391E86BCED003723A7 /* BasePresenterDelegate.swift */; };
+		EC9C463E1E86BCED003723A7 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C463A1E86BCED003723A7 /* BaseView.swift */; };
+		FC05689C38D0AC9723364AF2 /* Pods_DnDiceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5DE40C3DF5789DB60404AA /* Pods_DnDiceTests.framework */; };
+		FD99CB46E387CE219DBD09C5 /* Pods_DnDiceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51C909EEF7C0A7E34710C619 /* Pods_DnDiceUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC9C46161E86B1A7003723A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC9C45F61E86B1A6003723A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC9C45FD1E86B1A6003723A7;
+			remoteInfo = DnDice;
+		};
+		EC9C46211E86B1A7003723A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC9C45F61E86B1A6003723A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC9C45FD1E86B1A6003723A7;
+			remoteInfo = DnDice;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05DF474680D6F3B3673BF414 /* Pods-DnDice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnDice.release.xcconfig"; path = "Pods/Target Support Files/Pods-DnDice/Pods-DnDice.release.xcconfig"; sourceTree = "<group>"; };
+		27F87843113401F5F53236DA /* Pods-DnDiceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnDiceUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DnDiceUITests/Pods-DnDiceUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2D35E09BCDCF435FB15F3D28 /* Pods-DnDiceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnDiceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DnDiceTests/Pods-DnDiceTests.debug.xcconfig"; sourceTree = "<group>"; };
+		35BD2C71424B019EF79F20D8 /* Pods-DnDiceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnDiceUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DnDiceUITests/Pods-DnDiceUITests.release.xcconfig"; sourceTree = "<group>"; };
+		51C909EEF7C0A7E34710C619 /* Pods_DnDiceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DnDiceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D5DE40C3DF5789DB60404AA /* Pods_DnDiceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DnDiceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		894CD24FD422C1F3627ADE5B /* Pods-DnDiceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnDiceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DnDiceTests/Pods-DnDiceTests.release.xcconfig"; sourceTree = "<group>"; };
+		BD7569AB7ADBFBA5237E3766 /* Pods-DnDice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnDice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DnDice/Pods-DnDice.debug.xcconfig"; sourceTree = "<group>"; };
+		D7CF564F4A8AD6488FD9C932 /* Pods_DnDice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DnDice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC9C45FE1E86B1A7003723A7 /* DnDice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DnDice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC9C46011E86B1A7003723A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EC9C46031E86B1A7003723A7 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		EC9C46061E86B1A7003723A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC9C46091E86B1A7003723A7 /* DnDice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DnDice.xcdatamodel; sourceTree = "<group>"; };
+		EC9C460B1E86B1A7003723A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC9C460E1E86B1A7003723A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EC9C46101E86B1A7003723A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC9C46151E86B1A7003723A7 /* DnDiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DnDiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC9C46191E86B1A7003723A7 /* DnDiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDiceTests.swift; sourceTree = "<group>"; };
+		EC9C461B1E86B1A7003723A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC9C46201E86B1A7003723A7 /* DnDiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DnDiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC9C46241E86B1A7003723A7 /* DnDiceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDiceUITests.swift; sourceTree = "<group>"; };
+		EC9C46261E86B1A7003723A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC9C46371E86BCED003723A7 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		EC9C46381E86BCED003723A7 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		EC9C46391E86BCED003723A7 /* BasePresenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenterDelegate.swift; sourceTree = "<group>"; };
+		EC9C463A1E86BCED003723A7 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC9C45FB1E86B1A6003723A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4558A042FC448B836BE45160 /* Pods_DnDice.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9C46121E86B1A7003723A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC05689C38D0AC9723364AF2 /* Pods_DnDiceTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9C461D1E86B1A7003723A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD99CB46E387CE219DBD09C5 /* Pods_DnDiceUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7CA76AD81E23EC1D9190BE68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7CF564F4A8AD6488FD9C932 /* Pods_DnDice.framework */,
+				6D5DE40C3DF5789DB60404AA /* Pods_DnDiceTests.framework */,
+				51C909EEF7C0A7E34710C619 /* Pods_DnDiceUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B06E96604AE11EEB6C1324F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD7569AB7ADBFBA5237E3766 /* Pods-DnDice.debug.xcconfig */,
+				05DF474680D6F3B3673BF414 /* Pods-DnDice.release.xcconfig */,
+				2D35E09BCDCF435FB15F3D28 /* Pods-DnDiceTests.debug.xcconfig */,
+				894CD24FD422C1F3627ADE5B /* Pods-DnDiceTests.release.xcconfig */,
+				27F87843113401F5F53236DA /* Pods-DnDiceUITests.debug.xcconfig */,
+				35BD2C71424B019EF79F20D8 /* Pods-DnDiceUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EC9C45F51E86B1A6003723A7 = {
+			isa = PBXGroup;
+			children = (
+				EC9C46001E86B1A7003723A7 /* DnDice */,
+				EC9C46181E86B1A7003723A7 /* DnDiceTests */,
+				EC9C46231E86B1A7003723A7 /* DnDiceUITests */,
+				EC9C45FF1E86B1A7003723A7 /* Products */,
+				9B06E96604AE11EEB6C1324F /* Pods */,
+				7CA76AD81E23EC1D9190BE68 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EC9C45FF1E86B1A7003723A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC9C45FE1E86B1A7003723A7 /* DnDice.app */,
+				EC9C46151E86B1A7003723A7 /* DnDiceTests.xctest */,
+				EC9C46201E86B1A7003723A7 /* DnDiceUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC9C46001E86B1A7003723A7 /* DnDice */ = {
+			isa = PBXGroup;
+			children = (
+				EC9C46341E86BB82003723A7 /* Main Screen */,
+				EC9C46351E86BCC8003723A7 /* Over All */,
+				EC9C46331E86BB69003723A7 /* Storyboards */,
+				EC9C46321E86BB55003723A7 /* Supporting Files */,
+			);
+			path = DnDice;
+			sourceTree = "<group>";
+		};
+		EC9C46181E86B1A7003723A7 /* DnDiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC9C46191E86B1A7003723A7 /* DnDiceTests.swift */,
+				EC9C461B1E86B1A7003723A7 /* Info.plist */,
+			);
+			path = DnDiceTests;
+			sourceTree = "<group>";
+		};
+		EC9C46231E86B1A7003723A7 /* DnDiceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EC9C46241E86B1A7003723A7 /* DnDiceUITests.swift */,
+				EC9C46261E86B1A7003723A7 /* Info.plist */,
+			);
+			path = DnDiceUITests;
+			sourceTree = "<group>";
+		};
+		EC9C46321E86BB55003723A7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC9C460B1E86B1A7003723A7 /* Assets.xcassets */,
+				EC9C46011E86B1A7003723A7 /* AppDelegate.swift */,
+				EC9C46101E86B1A7003723A7 /* Info.plist */,
+				EC9C46081E86B1A7003723A7 /* DnDice.xcdatamodeld */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC9C46331E86BB69003723A7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				EC9C46051E86B1A7003723A7 /* Main.storyboard */,
+				EC9C460D1E86B1A7003723A7 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		EC9C46341E86BB82003723A7 /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				EC9C46031E86B1A7003723A7 /* GameViewController.swift */,
+			);
+			name = "Main Screen";
+			sourceTree = "<group>";
+		};
+		EC9C46351E86BCC8003723A7 /* Over All */ = {
+			isa = PBXGroup;
+			children = (
+				EC9C46361E86BCD2003723A7 /* Base Classes */,
+			);
+			name = "Over All";
+			sourceTree = "<group>";
+		};
+		EC9C46361E86BCD2003723A7 /* Base Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EC9C46371E86BCED003723A7 /* BaseViewController.swift */,
+				EC9C46381E86BCED003723A7 /* BaseTableViewCell.swift */,
+				EC9C46391E86BCED003723A7 /* BasePresenterDelegate.swift */,
+				EC9C463A1E86BCED003723A7 /* BaseView.swift */,
+			);
+			name = "Base Classes";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC9C45FD1E86B1A6003723A7 /* DnDice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC9C46291E86B1A7003723A7 /* Build configuration list for PBXNativeTarget "DnDice" */;
+			buildPhases = (
+				3DD5F55A6FFF03B5912A1881 /* [CP] Check Pods Manifest.lock */,
+				EC9C45FA1E86B1A6003723A7 /* Sources */,
+				EC9C45FB1E86B1A6003723A7 /* Frameworks */,
+				EC9C45FC1E86B1A6003723A7 /* Resources */,
+				867C0EA43A89675066BEF130 /* [CP] Embed Pods Frameworks */,
+				19817D60E91F4175EB8A9352 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DnDice;
+			productName = DnDice;
+			productReference = EC9C45FE1E86B1A7003723A7 /* DnDice.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC9C46141E86B1A7003723A7 /* DnDiceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC9C462C1E86B1A7003723A7 /* Build configuration list for PBXNativeTarget "DnDiceTests" */;
+			buildPhases = (
+				60D4013D2470180A9603A9EA /* [CP] Check Pods Manifest.lock */,
+				EC9C46111E86B1A7003723A7 /* Sources */,
+				EC9C46121E86B1A7003723A7 /* Frameworks */,
+				EC9C46131E86B1A7003723A7 /* Resources */,
+				97A403ACFEE72657559F4563 /* [CP] Embed Pods Frameworks */,
+				C5F38FD7F71D7854B2425C9B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC9C46171E86B1A7003723A7 /* PBXTargetDependency */,
+			);
+			name = DnDiceTests;
+			productName = DnDiceTests;
+			productReference = EC9C46151E86B1A7003723A7 /* DnDiceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EC9C461F1E86B1A7003723A7 /* DnDiceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC9C462F1E86B1A7003723A7 /* Build configuration list for PBXNativeTarget "DnDiceUITests" */;
+			buildPhases = (
+				6E80B8E6F8FB036F3F851208 /* [CP] Check Pods Manifest.lock */,
+				EC9C461C1E86B1A7003723A7 /* Sources */,
+				EC9C461D1E86B1A7003723A7 /* Frameworks */,
+				EC9C461E1E86B1A7003723A7 /* Resources */,
+				47C60C823F4F340BB17C7312 /* [CP] Embed Pods Frameworks */,
+				B7D33AB8C4783A486EE53392 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC9C46221E86B1A7003723A7 /* PBXTargetDependency */,
+			);
+			name = DnDiceUITests;
+			productName = DnDiceUITests;
+			productReference = EC9C46201E86B1A7003723A7 /* DnDiceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC9C45F61E86B1A6003723A7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "John Raymund Catahay";
+				TargetAttributes = {
+					EC9C45FD1E86B1A6003723A7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 3XNDNC2DEH;
+						ProvisioningStyle = Automatic;
+					};
+					EC9C46141E86B1A7003723A7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 3XNDNC2DEH;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EC9C45FD1E86B1A6003723A7;
+					};
+					EC9C461F1E86B1A7003723A7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 3XNDNC2DEH;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EC9C45FD1E86B1A6003723A7;
+					};
+				};
+			};
+			buildConfigurationList = EC9C45F91E86B1A6003723A7 /* Build configuration list for PBXProject "DnDice" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC9C45F51E86B1A6003723A7;
+			productRefGroup = EC9C45FF1E86B1A7003723A7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC9C45FD1E86B1A6003723A7 /* DnDice */,
+				EC9C46141E86B1A7003723A7 /* DnDiceTests */,
+				EC9C461F1E86B1A7003723A7 /* DnDiceUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC9C45FC1E86B1A6003723A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC9C460F1E86B1A7003723A7 /* LaunchScreen.storyboard in Resources */,
+				EC9C460C1E86B1A7003723A7 /* Assets.xcassets in Resources */,
+				EC9C46071E86B1A7003723A7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9C46131E86B1A7003723A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9C461E1E86B1A7003723A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19817D60E91F4175EB8A9352 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DnDice/Pods-DnDice-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3DD5F55A6FFF03B5912A1881 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		47C60C823F4F340BB17C7312 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DnDiceUITests/Pods-DnDiceUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60D4013D2470180A9603A9EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6E80B8E6F8FB036F3F851208 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		867C0EA43A89675066BEF130 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DnDice/Pods-DnDice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97A403ACFEE72657559F4563 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DnDiceTests/Pods-DnDiceTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7D33AB8C4783A486EE53392 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DnDiceUITests/Pods-DnDiceUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5F38FD7F71D7854B2425C9B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DnDiceTests/Pods-DnDiceTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC9C45FA1E86B1A6003723A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC9C463D1E86BCED003723A7 /* BasePresenterDelegate.swift in Sources */,
+				EC9C460A1E86B1A7003723A7 /* DnDice.xcdatamodeld in Sources */,
+				EC9C463B1E86BCED003723A7 /* BaseViewController.swift in Sources */,
+				EC9C46041E86B1A7003723A7 /* GameViewController.swift in Sources */,
+				EC9C463E1E86BCED003723A7 /* BaseView.swift in Sources */,
+				EC9C463C1E86BCED003723A7 /* BaseTableViewCell.swift in Sources */,
+				EC9C46021E86B1A7003723A7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9C46111E86B1A7003723A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC9C461A1E86B1A7003723A7 /* DnDiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9C461C1E86B1A7003723A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC9C46251E86B1A7003723A7 /* DnDiceUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC9C46171E86B1A7003723A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC9C45FD1E86B1A6003723A7 /* DnDice */;
+			targetProxy = EC9C46161E86B1A7003723A7 /* PBXContainerItemProxy */;
+		};
+		EC9C46221E86B1A7003723A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC9C45FD1E86B1A6003723A7 /* DnDice */;
+			targetProxy = EC9C46211E86B1A7003723A7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC9C46051E86B1A7003723A7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC9C46061E86B1A7003723A7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EC9C460D1E86B1A7003723A7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC9C460E1E86B1A7003723A7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC9C46271E86B1A7003723A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EC9C46281E86B1A7003723A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC9C462A1E86B1A7003723A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD7569AB7ADBFBA5237E3766 /* Pods-DnDice.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3XNDNC2DEH;
+				INFOPLIST_FILE = DnDice/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raycat.itunes.DnDice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EC9C462B1E86B1A7003723A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05DF474680D6F3B3673BF414 /* Pods-DnDice.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3XNDNC2DEH;
+				INFOPLIST_FILE = DnDice/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raycat.itunes.DnDice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		EC9C462D1E86B1A7003723A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D35E09BCDCF435FB15F3D28 /* Pods-DnDiceTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 3XNDNC2DEH;
+				INFOPLIST_FILE = DnDiceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raycat.itunes.DnDiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DnDice.app/DnDice";
+			};
+			name = Debug;
+		};
+		EC9C462E1E86B1A7003723A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 894CD24FD422C1F3627ADE5B /* Pods-DnDiceTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 3XNDNC2DEH;
+				INFOPLIST_FILE = DnDiceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raycat.itunes.DnDiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DnDice.app/DnDice";
+			};
+			name = Release;
+		};
+		EC9C46301E86B1A7003723A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27F87843113401F5F53236DA /* Pods-DnDiceUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 3XNDNC2DEH;
+				INFOPLIST_FILE = DnDiceUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raycat.itunes.DnDiceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = DnDice;
+			};
+			name = Debug;
+		};
+		EC9C46311E86B1A7003723A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35BD2C71424B019EF79F20D8 /* Pods-DnDiceUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 3XNDNC2DEH;
+				INFOPLIST_FILE = DnDiceUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raycat.itunes.DnDiceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = DnDice;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC9C45F91E86B1A6003723A7 /* Build configuration list for PBXProject "DnDice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC9C46271E86B1A7003723A7 /* Debug */,
+				EC9C46281E86B1A7003723A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC9C46291E86B1A7003723A7 /* Build configuration list for PBXNativeTarget "DnDice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC9C462A1E86B1A7003723A7 /* Debug */,
+				EC9C462B1E86B1A7003723A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC9C462C1E86B1A7003723A7 /* Build configuration list for PBXNativeTarget "DnDiceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC9C462D1E86B1A7003723A7 /* Debug */,
+				EC9C462E1E86B1A7003723A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC9C462F1E86B1A7003723A7 /* Build configuration list for PBXNativeTarget "DnDiceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC9C46301E86B1A7003723A7 /* Debug */,
+				EC9C46311E86B1A7003723A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EC9C46081E86B1A7003723A7 /* DnDice.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EC9C46091E86B1A7003723A7 /* DnDice.xcdatamodel */,
+			);
+			currentVersion = EC9C46091E86B1A7003723A7 /* DnDice.xcdatamodel */;
+			path = DnDice.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EC9C45F61E86B1A6003723A7 /* Project object */;
+}
