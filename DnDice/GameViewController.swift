@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import NSObject_Rx
 
-class GameViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate{
+class GameViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
 
     let boardCellID = "boardCell"
     @IBOutlet weak var boardCollectionView: UICollectionView!{
@@ -35,6 +35,7 @@ class GameViewController: BaseViewController, UICollectionViewDataSource, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dicesInBoard = [Dice(sides: .Six), Dice(sides: .Six)]
     }
     
     //MARK: CollectionView DataSource
@@ -52,5 +53,13 @@ class GameViewController: BaseViewController, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         dicesInBoard[indexPath.row].roll()
+    }
+    
+    let cellInset = 4
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width = Int(collectionView.frame.width / 3) - (cellInset * 2)
+        
+        return CGSize(width: width, height: width)
     }
 }
