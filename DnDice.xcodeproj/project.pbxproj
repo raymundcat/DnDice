@@ -12,6 +12,7 @@
 		EC3245041E87090100665411 /* BoardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3245021E87090100665411 /* BoardCollectionViewCell.swift */; };
 		EC3245051E87090100665411 /* BoardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC3245031E87090100665411 /* BoardCollectionViewCell.xib */; };
 		EC3245071E87091D00665411 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3245061E87091D00665411 /* BaseCollectionViewCell.swift */; };
+		EC3245091E88207C00665411 /* DiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3245081E88207C00665411 /* DiceTests.swift */; };
 		EC9C46021E86B1A7003723A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46011E86B1A7003723A7 /* AppDelegate.swift */; };
 		EC9C46041E86B1A7003723A7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46031E86B1A7003723A7 /* GameViewController.swift */; };
 		EC9C46071E86B1A7003723A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9C46051E86B1A7003723A7 /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 		EC3245021E87090100665411 /* BoardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC3245031E87090100665411 /* BoardCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoardCollectionViewCell.xib; sourceTree = "<group>"; };
 		EC3245061E87091D00665411 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC3245081E88207C00665411 /* DiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceTests.swift; sourceTree = "<group>"; };
 		EC9C45FE1E86B1A7003723A7 /* DnDice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DnDice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9C46011E86B1A7003723A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC9C46031E86B1A7003723A7 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				EC9C46191E86B1A7003723A7 /* DnDiceTests.swift */,
 				EC9C461B1E86B1A7003723A7 /* Info.plist */,
+				EC3245081E88207C00665411 /* DiceTests.swift */,
 			);
 			path = DnDiceTests;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC3245091E88207C00665411 /* DiceTests.swift in Sources */,
 				EC9C461A1E86B1A7003723A7 /* DnDiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

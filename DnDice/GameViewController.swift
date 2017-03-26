@@ -52,7 +52,7 @@ class GameViewController: BaseViewController, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        dicesInBoard[indexPath.row].roll()
+        dicesInBoard[indexPath.row].roll { _ in }
     }
     
     let cellInset = 4
