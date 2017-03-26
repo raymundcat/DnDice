@@ -1,5 +1,5 @@
 language: objective-c  #1
 osx_image: xcode8.2 #2
-#xcode_workspace: DnDice.xcworkspace #3
-#xcode_scheme: DnDice #4
-#xcode_sdk: iphonesimulator10.1 #5
+xcode_workspace: DnDice.xcworkspace #3
+xcode_scheme: DnDice #4
+xcode_sdk: iphonesimulator10.1 #5
