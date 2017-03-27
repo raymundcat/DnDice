@@ -32,7 +32,7 @@ class DiceTests: XCTestCase {
         self.test(dice: dice6, withSide: 6)
         
         let dice10 = Dice(sides: .Ten)
-        self.test(dice: dice10, withSide: 10)
+        self.test(dice: dice10, withSide: 9)
         
         let dice20 = Dice(sides: .Twenty)
         self.test(dice: dice20, withSide: 20)
