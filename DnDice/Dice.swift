@@ -32,6 +32,17 @@ class Dice: NSObject{
     }
 }
 
+class AvailableDices{
+    let dices: [Dice]
+    init() {
+        dices = [Dice(sides: .Four),
+                 Dice(sides: .Five),
+                 Dice(sides: .Six),
+                 Dice(sides: .Ten),
+                 Dice(sides: .Twenty)]
+    }
+}
+
 enum DiceSide: Int{
     case Four = 4
     case Five = 5

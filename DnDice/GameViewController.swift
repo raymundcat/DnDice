@@ -27,11 +27,10 @@ class GameViewController: BaseViewController, UICollectionViewDataSource, UIColl
     }
     
     @IBOutlet weak var availableDicesCollectionView: UICollectionView!
-    var availableDices: [Dice] = [Dice](){
-        didSet{
-            availableDicesCollectionView.reloadData()
-        }
-    }
+    
+    var availableDices: AvailableDices = {
+       return AvailableDices()
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()

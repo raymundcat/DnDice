@@ -20,17 +20,22 @@ class BoardCollectionViewCell: BaseCollectionViewCell {
             dice.state.asObservable().subscribe { [weak self](event) in
                 guard let `self` = self else { return }
                 guard let state = event.element else { return }
-                
-                switch state {
-                case .Rolling:
-                    self.valueLabel.text = "rolling.."
-                    break
-                case .Stable:
-                    self.valueLabel.text = "\(dice.value)"
-                    break
-                }
-                
+                self.diceState = state
             }.addDisposableTo(self.rx_disposeBag)
+        }
+    }
+    
+    var diceState: DiceState = .Stable{
+        didSet{
+            switch diceState {
+            case .Rolling:
+                self.valueLabel.text = "rolling.."
+                break
+            case .Stable:
+                guard let dice = self.dice else{ return }
+                self.valueLabel.text = "\(dice.value)"
+                break
+            }
         }
     }
 }
