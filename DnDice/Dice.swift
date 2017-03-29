@@ -35,11 +35,23 @@ class Dice: NSObject{
 class AvailableDices{
     let dices: [Dice]
     init() {
-        dices = [Dice(sides: .Four),
-                 Dice(sides: .Five),
-                 Dice(sides: .Six),
-                 Dice(sides: .Ten),
-                 Dice(sides: .Twenty)]
+        var dummyDices  = [Dice]()
+        for side in iterateEnum(DiceSide){
+            dummyDices.append(Dice(sides: side))
+        }
+        dices = dummyDices
+    }
+}
+
+func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
+    var i = 0
+    return AnyIterator {
+        let next = withUnsafePointer(to: &i) {
+            $0.withMemoryRebound(to: T.self, capacity: 1) { $0.pointee }
+        }
+        if next.hashValue != i { return nil }
+        i += 1
+        return next
     }
 }
 
