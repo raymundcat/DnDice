@@ -4,8 +4,8 @@ osx_image: xcode8.2 #2
 # xcode_scheme: DnDice #4
 # xcode_sdk: iphonesimulator10.1 #5
 
-# before_install:
-# - xcrun simctl delete DB794781-65A7-4884-8D00-AAC3CBD39A44
+before_install:
+- xcrun simctl delete DB794781-65A7-4884-8D00-AAC3CBD39A44
 
 script:
 # - set -o pipefail && xcodebuild test -workspace Example/DnDice.xcworkspace -scheme DnDice -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
