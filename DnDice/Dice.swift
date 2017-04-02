@@ -12,23 +12,29 @@ import NSObject_Rx
 
 class Dice: NSObject{
     
+    let id: Int
     let sides: DiceSide!
     
-    init(sides: DiceSide) {
+    init(id: Int, sides: DiceSide) {
+        self.id = id
         self.sides = sides
     }
     
     var value: Int = 1
     private (set) var state: Variable<DiceState> = Variable(.Stable)
     
-    func roll(onComplete: @escaping (_ newValue: Int) -> Void){
+    func roll(onComplete: ((_ newValue: Int) -> Void)?){
         self.state.value = .Rolling
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
             guard let `self` = self else { return }
             self.value = randomise(min: 1, max: self.sides.rawValue)
             self.state.value = .Stable
-            onComplete(self.value)
+            onComplete?(self.value)
         }
+    }
+    
+    public static func ==(lhs: Dice, rhs: Dice) -> Bool{
+        return lhs.id == rhs.id
     }
 }
 
@@ -36,8 +42,8 @@ class AvailableDices{
     let dices: [Dice]
     init() {
         var dummyDices  = [Dice]()
-        for side in iterateEnum(DiceSide){
-            dummyDices.append(Dice(sides: side))
+        for side in iterateEnum(DiceSide.self){
+            dummyDices.append(Dice(id: Int(arc4random()), sides: side))
         }
         dices = dummyDices
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BoardCollectionViewCell: BaseCollectionViewCell {
+class DiceCollectionViewCell: BaseCollectionViewCell {
     
     @IBOutlet weak var valueLabel: UILabel!
     
