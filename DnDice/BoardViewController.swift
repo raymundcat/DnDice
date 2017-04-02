@@ -31,12 +31,25 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
     
     var dices: [Dice] = [Dice](){
         didSet{
-            collectionView.reloadData()
+            var newIndexpaths = [IndexPath]()
+            for (index, dice) in self.dices.enumerated(){
+                if !oldValue.contains(dice){
+                    newIndexpaths.append(IndexPath(row: index, section: 0))
+                }
+            }
+            collectionView.performBatchUpdates({
+                self.collectionView.insertItems(at: newIndexpaths)
+            })
         }
     }
     
     func removeDices(){
-        dices.removeAll()
+        collectionView.performBatchUpdates({
+            for (index, _) in self.dices.enumerated(){
+                self.collectionView.deleteItems(at: [IndexPath(row: index, section: 0)])
+            }
+            self.dices.removeAll()
+        })
         refreshControl.endRefreshing()
     }
     
