@@ -1,4 +1,5 @@
 PODS:
+  - IGListKit (2.0.0)
   - MBProgressHUD (1.0.0)
   - NSObject+Rx (2.0.0):
     - RxSwift
@@ -8,6 +9,7 @@ PODS:
   - ZHPopupView (0.1.1)
 
 DEPENDENCIES:
+  - IGListKit (~> 2.0.0)
   - MBProgressHUD (~> 1.0.0)
   - NSObject+Rx
   - RxCocoa (~> 3.0)
@@ -15,12 +17,13 @@ DEPENDENCIES:
   - ZHPopupView
 
 SPEC CHECKSUMS:
+  IGListKit: ee255e4e61865bc3e01ca96b690c5435c2887849
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   NSObject+Rx: 2a9cd801d9c847e6d2486cbad8d7701b67834e70
   RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
   ZHPopupView: cb3bedde775803c2c51e3db05cdd07ac6efaaaeb
 
-PODFILE CHECKSUM: ee9c52cf90de3e773600c4193e5cfcc7a546a4e7
+PODFILE CHECKSUM: 4b5ce0741bf2d930a7d6a09dbf1f2c118a340eba
 
 COCOAPODS: 1.2.0

@@ -1,0 +1,13 @@
+language: objective-c  #1
+osx_image: xcode8.2 #2
+# xcode_workspace: DnDice.xcworkspace #3
+# xcode_scheme: DnDice #4
+# xcode_sdk: iphonesimulator10.1 #5
+
+before_install:
+- xcrun simctl delete AD8E8C76-910E-437D-88C2-4D6F6EBE3355
+
+script:
+# - set -o pipefail && xcodebuild test -workspace Example/DnDice.xcworkspace -scheme DnDice -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
+# - pod lib lint
+- set -o pipefail && xcodebuild clean build -sdk iphonesimulator -workspace DnDice.xcworkspace -scheme DnDice CODE_SIGNING_REQUIRED=NO -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.2' test | xcpretty

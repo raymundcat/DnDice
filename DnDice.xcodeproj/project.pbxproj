@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		4558A042FC448B836BE45160 /* Pods_DnDice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CF564F4A8AD6488FD9C932 /* Pods_DnDice.framework */; };
+		EC3244FE1E86F17F00665411 /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3244FD1E86F17F00665411 /* Dice.swift */; };
+		EC3245041E87090100665411 /* BoardDiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3245021E87090100665411 /* BoardDiceCollectionViewCell.swift */; };
+		EC3245051E87090100665411 /* BoardDiceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC3245031E87090100665411 /* BoardDiceCollectionViewCell.xib */; };
+		EC3245071E87091D00665411 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3245061E87091D00665411 /* BaseCollectionViewCell.swift */; };
+		EC3245091E88207C00665411 /* DiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3245081E88207C00665411 /* DiceTests.swift */; };
+		EC41D9261E913C39007211EF /* AllDicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC41D9251E913C39007211EF /* AllDicesViewController.swift */; };
+		EC8E1CFB1E916BFB003F914A /* StaticDiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E1CF91E916BFB003F914A /* StaticDiceCollectionViewCell.swift */; };
+		EC8E1CFC1E916BFB003F914A /* StaticDiceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8E1CFA1E916BFB003F914A /* StaticDiceCollectionViewCell.xib */; };
 		EC9C46021E86B1A7003723A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46011E86B1A7003723A7 /* AppDelegate.swift */; };
 		EC9C46041E86B1A7003723A7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46031E86B1A7003723A7 /* GameViewController.swift */; };
 		EC9C46071E86B1A7003723A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9C46051E86B1A7003723A7 /* Main.storyboard */; };
@@ -20,6 +28,7 @@
 		EC9C463C1E86BCED003723A7 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46381E86BCED003723A7 /* BaseTableViewCell.swift */; };
 		EC9C463D1E86BCED003723A7 /* BasePresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46391E86BCED003723A7 /* BasePresenterDelegate.swift */; };
 		EC9C463E1E86BCED003723A7 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C463A1E86BCED003723A7 /* BaseView.swift */; };
+		ECB4208B1E8FA59900E01771 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB4208A1E8FA59900E01771 /* BoardViewController.swift */; };
 		FC05689C38D0AC9723364AF2 /* Pods_DnDiceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5DE40C3DF5789DB60404AA /* Pods_DnDiceTests.framework */; };
 		FD99CB46E387CE219DBD09C5 /* Pods_DnDiceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51C909EEF7C0A7E34710C619 /* Pods_DnDiceUITests.framework */; };
 /* End PBXBuildFile section */
@@ -51,6 +60,14 @@
 		894CD24FD422C1F3627ADE5B /* Pods-DnDiceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnDiceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DnDiceTests/Pods-DnDiceTests.release.xcconfig"; sourceTree = "<group>"; };
 		BD7569AB7ADBFBA5237E3766 /* Pods-DnDice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnDice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DnDice/Pods-DnDice.debug.xcconfig"; sourceTree = "<group>"; };
 		D7CF564F4A8AD6488FD9C932 /* Pods_DnDice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DnDice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC3244FD1E86F17F00665411 /* Dice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
+		EC3245021E87090100665411 /* BoardDiceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardDiceCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC3245031E87090100665411 /* BoardDiceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoardDiceCollectionViewCell.xib; sourceTree = "<group>"; };
+		EC3245061E87091D00665411 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC3245081E88207C00665411 /* DiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceTests.swift; sourceTree = "<group>"; };
+		EC41D9251E913C39007211EF /* AllDicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllDicesViewController.swift; sourceTree = "<group>"; };
+		EC8E1CF91E916BFB003F914A /* StaticDiceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticDiceCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC8E1CFA1E916BFB003F914A /* StaticDiceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StaticDiceCollectionViewCell.xib; sourceTree = "<group>"; };
 		EC9C45FE1E86B1A7003723A7 /* DnDice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DnDice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9C46011E86B1A7003723A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC9C46031E86B1A7003723A7 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +86,7 @@
 		EC9C46381E86BCED003723A7 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		EC9C46391E86BCED003723A7 /* BasePresenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenterDelegate.swift; sourceTree = "<group>"; };
 		EC9C463A1E86BCED003723A7 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		ECB4208A1E8FA59900E01771 /* BoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +140,48 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EC3244FC1E86F16C00665411 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EC9C46031E86B1A7003723A7 /* GameViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		EC41D9241E913C20007211EF /* All Dices */ = {
+			isa = PBXGroup;
+			children = (
+				EC8E1CF81E916BD8003F914A /* Views */,
+				EC8E1CF71E916BC9003F914A /* Cells */,
+			);
+			name = "All Dices";
+			sourceTree = "<group>";
+		};
+		EC8E1CF61E916B61003F914A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ECB4208A1E8FA59900E01771 /* BoardViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		EC8E1CF71E916BC9003F914A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EC8E1CF91E916BFB003F914A /* StaticDiceCollectionViewCell.swift */,
+				EC8E1CFA1E916BFB003F914A /* StaticDiceCollectionViewCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		EC8E1CF81E916BD8003F914A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EC41D9251E913C39007211EF /* AllDicesViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		EC9C45F51E86B1A6003723A7 = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +207,8 @@
 		EC9C46001E86B1A7003723A7 /* DnDice */ = {
 			isa = PBXGroup;
 			children = (
+				EC41D9241E913C20007211EF /* All Dices */,
+				ECB420881E8FA1B900E01771 /* Main Board */,
 				EC9C46341E86BB82003723A7 /* Main Screen */,
 				EC9C46351E86BCC8003723A7 /* Over All */,
 				EC9C46331E86BB69003723A7 /* Storyboards */,
@@ -160,6 +222,7 @@
 			children = (
 				EC9C46191E86B1A7003723A7 /* DnDiceTests.swift */,
 				EC9C461B1E86B1A7003723A7 /* Info.plist */,
+				EC3245081E88207C00665411 /* DiceTests.swift */,
 			);
 			path = DnDiceTests;
 			sourceTree = "<group>";
@@ -196,7 +259,7 @@
 		EC9C46341E86BB82003723A7 /* Main Screen */ = {
 			isa = PBXGroup;
 			children = (
-				EC9C46031E86B1A7003723A7 /* GameViewController.swift */,
+				EC3244FC1E86F16C00665411 /* Views */,
 			);
 			name = "Main Screen";
 			sourceTree = "<group>";
@@ -204,6 +267,7 @@
 		EC9C46351E86BCC8003723A7 /* Over All */ = {
 			isa = PBXGroup;
 			children = (
+				EC9C46421E86DD83003723A7 /* Entities */,
 				EC9C463F1E86C31E003723A7 /* Extensions */,
 				EC9C46361E86BCD2003723A7 /* Base Classes */,
 			);
@@ -215,6 +279,7 @@
 			children = (
 				EC9C46371E86BCED003723A7 /* BaseViewController.swift */,
 				EC9C46381E86BCED003723A7 /* BaseTableViewCell.swift */,
+				EC3245061E87091D00665411 /* BaseCollectionViewCell.swift */,
 				EC9C46391E86BCED003723A7 /* BasePresenterDelegate.swift */,
 				EC9C463A1E86BCED003723A7 /* BaseView.swift */,
 			);
@@ -226,6 +291,32 @@
 			children = (
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		EC9C46421E86DD83003723A7 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				EC3244FD1E86F17F00665411 /* Dice.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		ECB420881E8FA1B900E01771 /* Main Board */ = {
+			isa = PBXGroup;
+			children = (
+				EC8E1CF61E916B61003F914A /* Views */,
+				ECCF2A881E9131580011C759 /* Cells */,
+			);
+			name = "Main Board";
+			sourceTree = "<group>";
+		};
+		ECCF2A881E9131580011C759 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EC3245021E87090100665411 /* BoardDiceCollectionViewCell.swift */,
+				EC3245031E87090100665411 /* BoardDiceCollectionViewCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +441,8 @@
 				EC9C460F1E86B1A7003723A7 /* LaunchScreen.storyboard in Resources */,
 				EC9C460C1E86B1A7003723A7 /* Assets.xcassets in Resources */,
 				EC9C46071E86B1A7003723A7 /* Main.storyboard in Resources */,
+				EC3245051E87090100665411 /* BoardDiceCollectionViewCell.xib in Resources */,
+				EC8E1CFC1E916BFB003F914A /* StaticDiceCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,7 +607,13 @@
 			files = (
 				EC9C463D1E86BCED003723A7 /* BasePresenterDelegate.swift in Sources */,
 				EC9C460A1E86B1A7003723A7 /* DnDice.xcdatamodeld in Sources */,
+				EC3245041E87090100665411 /* BoardDiceCollectionViewCell.swift in Sources */,
+				EC3244FE1E86F17F00665411 /* Dice.swift in Sources */,
 				EC9C463B1E86BCED003723A7 /* BaseViewController.swift in Sources */,
+				EC3245071E87091D00665411 /* BaseCollectionViewCell.swift in Sources */,
+				EC8E1CFB1E916BFB003F914A /* StaticDiceCollectionViewCell.swift in Sources */,
+				ECB4208B1E8FA59900E01771 /* BoardViewController.swift in Sources */,
+				EC41D9261E913C39007211EF /* AllDicesViewController.swift in Sources */,
 				EC9C46041E86B1A7003723A7 /* GameViewController.swift in Sources */,
 				EC9C463E1E86BCED003723A7 /* BaseView.swift in Sources */,
 				EC9C463C1E86BCED003723A7 /* BaseTableViewCell.swift in Sources */,
@@ -526,6 +625,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC3245091E88207C00665411 /* DiceTests.swift in Sources */,
 				EC9C461A1E86B1A7003723A7 /* DnDiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
