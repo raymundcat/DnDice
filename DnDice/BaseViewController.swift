@@ -13,11 +13,13 @@ import ZHPopupView
 import RxSwift
 import RxCocoa
 import NSObject_Rx
+import Hero
 
 class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.isHeroEnabled = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

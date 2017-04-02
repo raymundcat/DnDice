@@ -10,8 +10,9 @@ target 'DnDice' do
   pod 'NSObject+Rx'
   pod 'MBProgressHUD', '~> 1.0.0'
   pod 'ZHPopupView'
-  pod 'IGListKit', '~> 2.0.0'
-  
+#  pod 'IGListKit', '~> 2.0.0'
+    pod 'Hero'
+
   # Pods for DnDice
 
   target 'DnDiceTests' do

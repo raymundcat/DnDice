@@ -71,3 +71,15 @@ enum DiceState{
 func randomise(min: Int, max: Int) -> Int{
     return min + Int(arc4random_uniform(UInt32(max - min + 1)))
 }
+
+extension Array where Element == Dice{
+    func totalValues() -> Int {
+        return self.reduce(0, { (result, dice) -> Int in
+            if dice.state.value == .Stable{
+                return result + dice.value
+            }else{
+                return result
+            }
+        })
+    }
+}

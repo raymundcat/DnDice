@@ -12,8 +12,6 @@ import NSObject_Rx
 
 class GameViewController: BaseViewController, AllDicesViewDelegate{
     
-    var dicesInBoard: [Dice] = [Dice]()
-    
     @IBOutlet weak var boardViewContrainer: UIView!
     
     @IBOutlet weak var allDicesViewContainer: UIView!
@@ -52,6 +50,8 @@ class GameViewController: BaseViewController, AllDicesViewDelegate{
     //MARK: All Dices Delegate
     func allDicesDidSelect(dice: Dice) {
         boardViewController.dices.append(dice)
-        dice.roll(onComplete: nil)
+        dice.roll(onComplete: { _ in
+            self.title = "Total: \(self.boardViewController.dices.totalValues())"
+        })
     }
 }

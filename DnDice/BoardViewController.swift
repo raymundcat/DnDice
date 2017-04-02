@@ -26,6 +26,7 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
             refreshControl.addTarget(self, action: #selector(removeDices), for: .valueChanged)
             collectionView.addSubview(refreshControl)
             collectionView.alwaysBounceVertical = true
+            collectionView.heroModifiers = [.cascade]
         }
     }
     
@@ -53,9 +54,15 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
         refreshControl.endRefreshing()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.isHeroEnabled = true
+    }
+    
     @available(iOS 6.0, *)
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! BoardDiceCollectionViewCell
+        cell.heroModifiers = [.scale(0.5)]
         cell.dice = dices[indexPath.row]
         return cell
     }
