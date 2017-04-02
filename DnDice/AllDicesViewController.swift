@@ -15,10 +15,10 @@ protocol AllDicesViewDelegate {
 
 class AllDicesViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
-    let cellID = "cellD"
+    let cellID = "staticCellD"
     @IBOutlet weak var collectionView: UICollectionView!{
         didSet{
-            collectionView.register(UINib(nibName: "DiceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellID)
+            collectionView.register(UINib(nibName: "StaticDiceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellID)
             
             collectionView.delegate = self
             collectionView.dataSource = self
@@ -35,7 +35,7 @@ class AllDicesViewController: BaseViewController, UICollectionViewDataSource, UI
     
     @available(iOS 6.0, *)
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! DiceCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! StaticDiceCollectionViewCell
         cell.dice = dices[indexPath.row]
         return cell
     }
@@ -46,7 +46,7 @@ class AllDicesViewController: BaseViewController, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (collectionView.frame.size.width / 3) - 11
+        let width = (collectionView.frame.size.width / 3) - (5 * 2)
         return CGSize(width: width, height: width)
     }
     
@@ -60,6 +60,6 @@ class AllDicesViewController: BaseViewController, UICollectionViewDataSource, UI
     
     func didSelect(dice: Dice){
         guard let delegate = self.delegate else { return }
-        delegate.allDicesDidSelect(dice: dice)
+        delegate.allDicesDidSelect(dice: Dice(sides: dice.sides))
     }
 }

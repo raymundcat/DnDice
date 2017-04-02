@@ -12,11 +12,9 @@ import NSObject_Rx
 
 class Dice: NSObject{
     
-    let id: Int
     let sides: DiceSide!
     
-    init(id: Int, sides: DiceSide) {
-        self.id = id
+    init(sides: DiceSide) {
         self.sides = sides
     }
     
@@ -32,10 +30,6 @@ class Dice: NSObject{
             onComplete?(self.value)
         }
     }
-    
-    public static func ==(lhs: Dice, rhs: Dice) -> Bool{
-        return lhs.id == rhs.id
-    }
 }
 
 class AvailableDices{
@@ -43,7 +37,7 @@ class AvailableDices{
     init() {
         var dummyDices  = [Dice]()
         for side in iterateEnum(DiceSide.self){
-            dummyDices.append(Dice(id: Int(arc4random()), sides: side))
+            dummyDices.append(Dice(sides: side))
         }
         dices = dummyDices
     }

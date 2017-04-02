@@ -9,13 +9,16 @@
 import Foundation
 import UIKit
 
+protocol BoardViewDelegate {
+    func boardDidSet(newTotal total: Int)
+}
+
 class BoardViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
-    let cellID = "cellD"
+    let cellID = "boardCellID"
     @IBOutlet weak var collectionView: UICollectionView!{
         didSet{
-            collectionView.register(UINib(nibName: "DiceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellID)
-            
+            collectionView.register(UINib(nibName: "BoardDiceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellID)
             collectionView.delegate = self
             collectionView.dataSource = self
         }
@@ -29,12 +32,11 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dices = AvailableDices().dices
     }
     
     @available(iOS 6.0, *)
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! DiceCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! BoardDiceCollectionViewCell
         cell.dice = dices[indexPath.row]
         return cell
     }
@@ -51,9 +53,5 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsetsMake(5, 5, 5, 5)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        dices[indexPath.row].roll(onComplete: nil)
     }
 }

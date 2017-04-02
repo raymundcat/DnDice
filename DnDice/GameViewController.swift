@@ -10,21 +10,27 @@ import UIKit
 import RxSwift
 import NSObject_Rx
 
-class GameViewController: BaseViewController{
+class GameViewController: BaseViewController, AllDicesViewDelegate{
     
     var dicesInBoard: [Dice] = [Dice]()
     
-    @IBOutlet weak var boardViewContrainer: UIView!{
-        didSet{
-            
-        }
-    }
+    @IBOutlet weak var boardViewContrainer: UIView!
     
-    @IBOutlet weak var allDicesViewContainer: UIView!{
-        didSet{
-           
-        }
-    }
+    @IBOutlet weak var allDicesViewContainer: UIView!
+    
+    lazy var allDicesViewController: AllDicesViewController = {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "AllDicesViewController") as! AllDicesViewController
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        return viewController
+    }()
+    
+    lazy var boardViewController: BoardViewController = {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "BoardViewController") as! BoardViewController
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        return viewController
+    }()
     
     var availableDices: AvailableDices = {
        return AvailableDices()
@@ -32,19 +38,20 @@ class GameViewController: BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.addChildViewController(boardViewController)
+        self.boardViewContrainer.addSubview(boardViewController.view)
+        self.boardViewController.view.frame = boardViewContrainer.bounds
+        
+        self.addChildViewController(allDicesViewController)
+        self.allDicesViewContainer.addSubview(allDicesViewController.view)
+        self.allDicesViewController.view.frame = allDicesViewContainer.bounds
+        self.allDicesViewController.delegate = self
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        
-        // Instantiate View Controller
-        let viewController = storyboard.instantiateViewController(withIdentifier: "AllDicesViewController") as! AllDicesViewController
-        self.addChildViewController(viewController)
-        allDicesViewContainer.addSubview(viewController.view)
-        viewController.view.frame = view.bounds
-        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        viewController.didMove(toParentViewController: GameViewController.self())
+    //MARK: All Dices Delegate
+    func allDicesDidSelect(dice: Dice) {
+        boardViewController.dices.append(dice)
+        dice.roll(onComplete: nil)
     }
 }
