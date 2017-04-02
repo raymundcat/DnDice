@@ -15,12 +15,17 @@ protocol BoardViewDelegate {
 
 class BoardViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
-    let cellID = "boardCellID"
+    let refreshControl = UIRefreshControl()
+    private let cellID = "boardCellID"
     @IBOutlet weak var collectionView: UICollectionView!{
         didSet{
             collectionView.register(UINib(nibName: "BoardDiceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellID)
             collectionView.delegate = self
             collectionView.dataSource = self
+            
+            refreshControl.addTarget(self, action: #selector(removeDices), for: .valueChanged)
+            collectionView.addSubview(refreshControl)
+            collectionView.alwaysBounceVertical = true
         }
     }
     
@@ -30,8 +35,9 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func removeDices(){
+        dices.removeAll()
+        refreshControl.endRefreshing()
     }
     
     @available(iOS 6.0, *)
