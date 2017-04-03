@@ -6,6 +6,7 @@ PODS:
   - RxCocoa (3.2.0):
     - RxSwift (~> 3.1)
   - RxSwift (3.2.0)
+  - Spring (1.0.3)
   - ZHPopupView (0.1.1)
 
 DEPENDENCIES:
@@ -14,7 +15,18 @@ DEPENDENCIES:
   - NSObject+Rx
   - RxCocoa (~> 3.0)
   - RxSwift (~> 3.0)
+  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
   - ZHPopupView
+
+EXTERNAL SOURCES:
+  Spring:
+    :branch: swift3
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: 3a9227c6e9157e7b47f5ac1ee5abab2a56b50002
+    :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
   Hero: bee4e762e84185b16a902dd11335c119515bb912
@@ -22,8 +34,9 @@ SPEC CHECKSUMS:
   NSObject+Rx: 2a9cd801d9c847e6d2486cbad8d7701b67834e70
   RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
+  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   ZHPopupView: cb3bedde775803c2c51e3db05cdd07ac6efaaaeb
 
-PODFILE CHECKSUM: 2d2dc8262a8cbf7563f4375f47a7a28d06228dd5
+PODFILE CHECKSUM: f8fcf39c0595399439ba04c90c70ebeaeb96f617
 
 COCOAPODS: 1.2.0

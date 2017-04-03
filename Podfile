@@ -12,6 +12,7 @@ target 'DnDice' do
   pod 'ZHPopupView'
 #  pod 'IGListKit', '~> 2.0.0'
     pod 'Hero'
+pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
 
   # Pods for DnDice
 

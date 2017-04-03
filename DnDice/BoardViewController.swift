@@ -27,6 +27,7 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
             collectionView.addSubview(refreshControl)
             collectionView.alwaysBounceVertical = true
             collectionView.heroModifiers = [.cascade]
+            collectionView.contentInset = UIEdgeInsetsMake(20, sideInsets, 20, sideInsets)
         }
     }
     
@@ -56,10 +57,8 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.isHeroEnabled = true
     }
     
-    @available(iOS 6.0, *)
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! BoardDiceCollectionViewCell
         cell.heroModifiers = [.scale(0.5)]
@@ -67,17 +66,13 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
         return cell
     }
     
-    @available(iOS 6.0, *)
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.dices.count
     }
     
+    let sideInsets: CGFloat = 10
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (collectionView.frame.size.width / 3) - 11
+        let width = ((collectionView.frame.size.width - (sideInsets * 2)) / 3) - 8
         return CGSize(width: width, height: width)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(5, 5, 5, 5)
     }
 }

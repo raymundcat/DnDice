@@ -12,7 +12,7 @@ import NSObject_Rx
 
 class Dice: NSObject{
     
-    let sides: DiceSide!
+    let sides: DiceSide
     
     init(sides: DiceSide) {
         self.sides = sides
@@ -57,9 +57,10 @@ func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
 
 enum DiceSide: Int{
     case Four = 4
-    case Five = 5
     case Six = 6
+    case Eight = 8
     case Ten = 10
+    case Twelve = 12
     case Twenty = 20
 }
 

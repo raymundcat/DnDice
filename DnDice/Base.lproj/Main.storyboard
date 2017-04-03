@@ -23,11 +23,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ts-wO-nHV">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="467"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GHK-rO-Ib6">
-                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="400" width="375" height="267"/>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,7 +36,7 @@
                             <constraint firstAttribute="trailing" secondItem="0ts-wO-nHV" secondAttribute="trailing" id="KhV-Dz-S7H"/>
                             <constraint firstItem="GHK-rO-Ib6" firstAttribute="top" secondItem="0ts-wO-nHV" secondAttribute="bottom" id="KsZ-iv-ilq"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GHK-rO-Ib6" secondAttribute="bottom" id="M7g-JX-wFZ"/>
-                            <constraint firstItem="0ts-wO-nHV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" id="f4m-bZ-ecp"/>
+                            <constraint firstItem="0ts-wO-nHV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" id="f4m-bZ-ecp"/>
                             <constraint firstItem="GHK-rO-Ib6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gsM-Y4-eG3"/>
                             <constraint firstAttribute="trailing" secondItem="GHK-rO-Ib6" secondAttribute="trailing" id="oni-lc-WkF"/>
                             <constraint firstItem="0ts-wO-nHV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qV3-6m-Q1U"/>
