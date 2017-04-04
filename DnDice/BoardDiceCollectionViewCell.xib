@@ -27,9 +27,9 @@
                             <constraint firstAttribute="width" secondItem="Try-Am-zw5" secondAttribute="height" multiplier="1:1" id="S2l-Sf-Rqw"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MU0-4E-ywv">
-                        <rect key="frame" x="51" y="58.5" width="83" height="38.5"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MU0-4E-ywv" customClass="BorderedSpringLabel" customModule="DnDice" customModuleProvider="target">
+                        <rect key="frame" x="40.5" y="53.5" width="103.5" height="48"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>

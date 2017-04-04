@@ -16,6 +16,7 @@
 		EC41D9261E913C39007211EF /* AllDicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC41D9251E913C39007211EF /* AllDicesViewController.swift */; };
 		EC8E1CFB1E916BFB003F914A /* StaticDiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E1CF91E916BFB003F914A /* StaticDiceCollectionViewCell.swift */; };
 		EC8E1CFC1E916BFB003F914A /* StaticDiceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8E1CFA1E916BFB003F914A /* StaticDiceCollectionViewCell.xib */; };
+		EC93E7811E942A0A007A642F /* BorderedSpringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC93E7801E942A0A007A642F /* BorderedSpringLabel.swift */; };
 		EC9C46021E86B1A7003723A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46011E86B1A7003723A7 /* AppDelegate.swift */; };
 		EC9C46041E86B1A7003723A7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46031E86B1A7003723A7 /* GameViewController.swift */; };
 		EC9C46071E86B1A7003723A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9C46051E86B1A7003723A7 /* Main.storyboard */; };
@@ -68,6 +69,7 @@
 		EC41D9251E913C39007211EF /* AllDicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllDicesViewController.swift; sourceTree = "<group>"; };
 		EC8E1CF91E916BFB003F914A /* StaticDiceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticDiceCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC8E1CFA1E916BFB003F914A /* StaticDiceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StaticDiceCollectionViewCell.xib; sourceTree = "<group>"; };
+		EC93E7801E942A0A007A642F /* BorderedSpringLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedSpringLabel.swift; sourceTree = "<group>"; };
 		EC9C45FE1E86B1A7003723A7 /* DnDice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DnDice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9C46011E86B1A7003723A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC9C46031E86B1A7003723A7 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				EC3245061E87091D00665411 /* BaseCollectionViewCell.swift */,
 				EC9C46391E86BCED003723A7 /* BasePresenterDelegate.swift */,
 				EC9C463A1E86BCED003723A7 /* BaseView.swift */,
+				EC93E7801E942A0A007A642F /* BorderedSpringLabel.swift */,
 			);
 			name = "Base Classes";
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				EC3245071E87091D00665411 /* BaseCollectionViewCell.swift in Sources */,
 				EC8E1CFB1E916BFB003F914A /* StaticDiceCollectionViewCell.swift in Sources */,
 				ECB4208B1E8FA59900E01771 /* BoardViewController.swift in Sources */,
+				EC93E7811E942A0A007A642F /* BorderedSpringLabel.swift in Sources */,
 				EC41D9261E913C39007211EF /* AllDicesViewController.swift in Sources */,
 				EC9C46041E86B1A7003723A7 /* GameViewController.swift in Sources */,
 				EC9C463E1E86BCED003723A7 /* BaseView.swift in Sources */,

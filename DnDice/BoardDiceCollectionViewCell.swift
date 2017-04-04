@@ -11,7 +11,7 @@ import Spring
 
 class BoardDiceCollectionViewCell: BaseCollectionViewCell {
     
-    @IBOutlet weak var valueLabel: SpringLabel!
+    @IBOutlet weak var valueLabel: BorderedSpringLabel!
     @IBOutlet weak var imageView: SpringImageView!
     
     var dice: Dice?{
