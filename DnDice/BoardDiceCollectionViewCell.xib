@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,24 +20,34 @@
                 <rect key="frame" x="0.0" y="0.0" width="184" height="155"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Try-Am-zw5" customClass="SpringImageView" customModule="Spring">
+                        <rect key="frame" x="27.5" y="12.5" width="129" height="129"/>
+                        <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Try-Am-zw5" secondAttribute="height" multiplier="1:1" id="S2l-Sf-Rqw"/>
+                        </constraints>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MU0-4E-ywv">
-                        <rect key="frame" x="71" y="67" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="51" y="58.5" width="83" height="38.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
-            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="Try-Am-zw5" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="EOG-1C-bry"/>
                 <constraint firstItem="MU0-4E-ywv" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="JzA-Uv-N7M"/>
                 <constraint firstItem="MU0-4E-ywv" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="bQb-Ro-r4W"/>
+                <constraint firstItem="Try-Am-zw5" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="i0Z-83-9aJ"/>
+                <constraint firstItem="Try-Am-zw5" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.7" id="lvr-uV-HHw"/>
             </constraints>
             <size key="customSize" width="184" height="155"/>
             <connections>
+                <outlet property="imageView" destination="Try-Am-zw5" id="EvL-ki-15Z"/>
                 <outlet property="valueLabel" destination="MU0-4E-ywv" id="QG8-Cj-aK7"/>
             </connections>
-            <point key="canvasLocation" x="21" y="68"/>
+            <point key="canvasLocation" x="21" y="67.5"/>
         </collectionViewCell>
     </objects>
 </document>

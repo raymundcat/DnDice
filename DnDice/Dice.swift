@@ -23,7 +23,7 @@ class Dice: NSObject{
     
     func roll(onComplete: ((_ newValue: Int) -> Void)?){
         self.state.value = .Rolling
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             guard let `self` = self else { return }
             self.value = randomise(min: 1, max: self.sides.rawValue)
             self.state.value = .Stable

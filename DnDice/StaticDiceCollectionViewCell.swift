@@ -7,11 +7,11 @@
 //
 
 import UIKit
-
+import Spring
 class StaticDiceCollectionViewCell: BaseCollectionViewCell {
 
-    @IBOutlet weak var valueLabel: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var valueLabel: SpringLabel!
+    @IBOutlet weak var imageView: SpringImageView!
     
     var dice: Dice?{
         didSet{
@@ -39,8 +39,20 @@ class StaticDiceCollectionViewCell: BaseCollectionViewCell {
                 diceImage = #imageLiteral(resourceName: "d20")
                 break
             }
-            
             self.imageView.image = diceImage.withRenderingMode(.alwaysTemplate)
+        }
+    }
+    
+    func wobble(completion: (() -> ())?) {
+        self.imageView.animation = "pop"
+        self.imageView.curve = "easeIn"
+        self.imageView.duration = 0.5
+        self.imageView.animate()
+        self.imageView.animation = "swing"
+        self.imageView.curve = "easeIn"
+        self.imageView.duration = 0.5
+        self.imageView.animateToNext {
+            completion?()
         }
     }
 }

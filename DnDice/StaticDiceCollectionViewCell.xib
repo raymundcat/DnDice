@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,44 +20,34 @@
                 <rect key="frame" x="0.0" y="0.0" width="192" height="154"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Js-Km-o6E">
-                        <rect key="frame" x="0.0" y="0.0" width="192" height="154"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KJA-lE-M3y">
-                                <rect key="frame" x="27.5" y="20" width="137" height="105"/>
-                                <color key="tintColor" red="1" green="0.83935400500000001" blue="0.3913445854" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KJA-lE-M3y" customClass="SpringImageView" customModule="Spring">
+                        <rect key="frame" x="39" y="0.0" width="115" height="115"/>
+                        <color key="tintColor" red="1" green="0.83935400500000001" blue="0.3913445854" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="KJA-lE-M3y" firstAttribute="top" secondItem="4Js-Km-o6E" secondAttribute="top" constant="20" id="5fh-y7-egE"/>
-                            <constraint firstItem="KJA-lE-M3y" firstAttribute="height" secondItem="4Js-Km-o6E" secondAttribute="height" multiplier="0.6" constant="12.799999999999997" id="DJY-o8-4Tj"/>
-                            <constraint firstItem="KJA-lE-M3y" firstAttribute="centerX" secondItem="4Js-Km-o6E" secondAttribute="centerX" id="RMM-gm-aE3"/>
-                            <constraint firstItem="KJA-lE-M3y" firstAttribute="width" secondItem="4Js-Km-o6E" secondAttribute="width" multiplier="0.6" constant="22" id="ffF-3W-qdb"/>
+                            <constraint firstAttribute="width" secondItem="KJA-lE-M3y" secondAttribute="height" multiplier="1:1" id="DX3-Ny-YOy"/>
                         </constraints>
-                    </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTy-pr-4GA">
-                        <rect key="frame" x="73.5" y="130" width="45" height="20"/>
-                        <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="17"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTy-pr-4GA" customClass="SpringLabel" customModule="Spring">
+                        <rect key="frame" x="77" y="117" width="38" height="17"/>
+                        <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="14"/>
                         <color key="textColor" red="1" green="0.83935400500000001" blue="0.3913445854" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="4Js-Km-o6E" secondAttribute="bottom" id="GPc-lF-rSc"/>
-                <constraint firstItem="4Js-Km-o6E" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ljm-xr-zhA"/>
-                <constraint firstAttribute="trailing" secondItem="4Js-Km-o6E" secondAttribute="trailing" id="Mw3-Ig-llL"/>
-                <constraint firstItem="KJA-lE-M3y" firstAttribute="bottom" secondItem="gTy-pr-4GA" secondAttribute="top" constant="-5" id="bW4-eJ-jtR"/>
-                <constraint firstItem="gTy-pr-4GA" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="hIm-Um-sre"/>
-                <constraint firstItem="4Js-Km-o6E" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="rgU-DO-9Tr"/>
+                <constraint firstItem="gTy-pr-4GA" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="A3m-g7-I0J"/>
+                <constraint firstItem="KJA-lE-M3y" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="CPJ-ab-2pU"/>
+                <constraint firstItem="gTy-pr-4GA" firstAttribute="top" secondItem="KJA-lE-M3y" secondAttribute="bottom" constant="2" id="Cjd-MR-Bbw"/>
+                <constraint firstItem="KJA-lE-M3y" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="uq0-0k-Yme"/>
+                <constraint firstItem="KJA-lE-M3y" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.6" id="w60-om-oFw"/>
             </constraints>
             <size key="customSize" width="192" height="154"/>
             <connections>
                 <outlet property="imageView" destination="KJA-lE-M3y" id="BOm-IF-mzm"/>
                 <outlet property="valueLabel" destination="gTy-pr-4GA" id="v8s-l3-agB"/>
             </connections>
-            <point key="canvasLocation" x="-46" y="104"/>
+            <point key="canvasLocation" x="-180" y="86"/>
         </collectionViewCell>
     </objects>
 </document>

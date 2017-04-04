@@ -24,6 +24,7 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
             collectionView.dataSource = self
             
             refreshControl.addTarget(self, action: #selector(removeDices), for: .valueChanged)
+            refreshControl.tintColor = .white
             collectionView.addSubview(refreshControl)
             collectionView.alwaysBounceVertical = true
             collectionView.heroModifiers = [.cascade]
@@ -39,20 +40,34 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
                     newIndexpaths.append(IndexPath(row: index, section: 0))
                 }
             }
-            collectionView.performBatchUpdates({
+            
+            collectionView.performBatchUpdates({ 
                 self.collectionView.insertItems(at: newIndexpaths)
-            })
+            }) { (completed) in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    if let lastIndexPath = newIndexpaths.last{
+                        self.collectionView.scrollToItem(at: lastIndexPath, at: .centeredVertically, animated: true)
+                    }
+                }
+            }
         }
     }
     
     func removeDices(){
-        collectionView.performBatchUpdates({
-            for (index, _) in self.dices.enumerated(){
-                self.collectionView.deleteItems(at: [IndexPath(row: index, section: 0)])
+        for cell in self.collectionView.visibleCells{
+            if let cell = cell as? BoardDiceCollectionViewCell{
+                cell.fall()
             }
-            self.dices.removeAll()
-        })
-        refreshControl.endRefreshing()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { 
+            self.collectionView.performBatchUpdates({
+                for (index, _) in self.dices.enumerated(){
+                    self.collectionView.deleteItems(at: [IndexPath(row: index, section: 0)])
+                }
+                self.dices.removeAll()
+            })
+            self.refreshControl.endRefreshing()
+        }
     }
     
     override func viewDidLoad() {
@@ -61,7 +76,6 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! BoardDiceCollectionViewCell
-        cell.heroModifiers = [.scale(0.5)]
         cell.dice = dices[indexPath.row]
         return cell
     }
