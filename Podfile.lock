@@ -1,4 +1,7 @@
 PODS:
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
   - Hero (0.3.3)
   - MBProgressHUD (1.0.0)
   - NSObject+Rx (2.0.0):
@@ -10,6 +13,7 @@ PODS:
   - ZHPopupView (0.1.1)
 
 DEPENDENCIES:
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - Hero
   - MBProgressHUD (~> 1.0.0)
   - NSObject+Rx
@@ -19,16 +23,22 @@ DEPENDENCIES:
   - ZHPopupView
 
 EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
   Spring:
     :branch: swift3
     :git: https://github.com/MengTo/Spring.git
 
 CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: acc480fbe023c6e5fe40f68593f4a70a8c4c7ad5
+    :git: https://github.com/ViccAlexander/Chameleon.git
   Spring:
     :commit: 3a9227c6e9157e7b47f5ac1ee5abab2a56b50002
     :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Hero: bee4e762e84185b16a902dd11335c119515bb912
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   NSObject+Rx: 2a9cd801d9c847e6d2486cbad8d7701b67834e70
@@ -37,6 +47,6 @@ SPEC CHECKSUMS:
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   ZHPopupView: cb3bedde775803c2c51e3db05cdd07ac6efaaaeb
 
-PODFILE CHECKSUM: f8fcf39c0595399439ba04c90c70ebeaeb96f617
+PODFILE CHECKSUM: 8868c9645373fc016cf1f7b7e0a34c49ee8c545e
 
 COCOAPODS: 1.2.0

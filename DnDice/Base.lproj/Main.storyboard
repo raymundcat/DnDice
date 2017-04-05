@@ -58,7 +58,7 @@
         <!--Board View Controller-->
         <scene sceneID="dmt-gx-b5b">
             <objects>
-                <viewController storyboardIdentifier="BoardViewController" automaticallyAdjustsScrollViewInsets="NO" id="qKh-GE-7Sn" customClass="BoardViewController" customModule="DnDice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BoardViewController" id="qKh-GE-7Sn" customClass="BoardViewController" customModule="DnDice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zAN-Ee-Hk3"/>
                         <viewControllerLayoutGuide type="bottom" id="pN4-Cx-2XD"/>
@@ -69,6 +69,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2hd-It-iWy">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.56019625750000002" green="0.25506937959999998" blue="0.305159815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4C7-Yk-IzX">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -87,7 +88,6 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="0.56078431370000004" green="0.25490196079999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2hd-It-iWy" firstAttribute="top" secondItem="ClA-Oh-9K0" secondAttribute="top" id="ODq-4f-FSF"/>
                             <constraint firstItem="pN4-Cx-2XD" firstAttribute="top" secondItem="2hd-It-iWy" secondAttribute="bottom" id="ZB5-dW-mXo"/>

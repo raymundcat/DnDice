@@ -44,14 +44,7 @@ class StaticDiceCollectionViewCell: BaseCollectionViewCell {
     }
     
     func wobble(completion: (() -> ())?) {
-        self.imageView.animation = "pop"
-        self.imageView.curve = "easeIn"
-        self.imageView.duration = 0.5
-        self.imageView.animate()
-        self.imageView.animation = "swing"
-        self.imageView.curve = "easeIn"
-        self.imageView.duration = 0.5
-        self.imageView.animateToNext {
+        self.imageView.wobble { 
             completion?()
         }
     }

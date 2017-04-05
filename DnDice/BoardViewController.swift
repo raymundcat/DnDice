@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import ChameleonFramework
 
 protocol BoardViewDelegate {
     func boardDidSet(newTotal total: Int)
@@ -55,18 +56,22 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
     
     func removeDices(){
         for cell in self.collectionView.visibleCells{
-            if let cell = cell as? BoardDiceCollectionViewCell{
-                cell.fall()
-            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + Double(randomise(min: 1, max: 10)) * 0.05, execute: {
+                if let cell = cell as? BoardDiceCollectionViewCell{
+                    cell.fall()
+                }
+            })
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { 
-            self.collectionView.performBatchUpdates({
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
+            self.collectionView.performBatchUpdates({ 
                 for (index, _) in self.dices.enumerated(){
                     self.collectionView.deleteItems(at: [IndexPath(row: index, section: 0)])
                 }
                 self.dices.removeAll()
+            }, completion: { (completed) in
+                self.refreshControl.endRefreshing()
             })
-            self.refreshControl.endRefreshing()
+            
         }
     }
     
@@ -74,9 +79,11 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
     
     func randomlyShakeDices(){
         for cell in self.collectionView.visibleCells{
-            if let cell = cell as? BoardDiceCollectionViewCell, randomise(min: 1, max: 10) == 1{
-                cell.mildShake()
-            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + Double(randomise(min: 1, max: 10)) * 0.1, execute: {
+                if let cell = cell as? BoardDiceCollectionViewCell, randomise(min: 1, max: 5) == 1{
+                    cell.pulse()
+                }
+            })
         }
     }
     
@@ -86,6 +93,9 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
             self.randomlyShakeDices()
         })
         randomShakeTimer.fire()
+        self.collectionView.backgroundColor = .clear
+        self.collectionView.backgroundView?.backgroundColor = .clear
+        self.view.backgroundColor = UIColor.init(gradientStyle: .topToBottom, withFrame: self.collectionView.bounds, andColors: [UIColor.flatMaroon.lighten(byPercentage: 0.2)!, .flatMaroonDark])
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -101,6 +111,11 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.dices.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? BoardDiceCollectionViewCell else { return }
+        cell.pulse()
     }
     
     let sideInsets: CGFloat = 10
