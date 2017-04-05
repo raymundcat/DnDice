@@ -21,70 +21,71 @@ class BoardDiceCollectionViewCell: BaseCollectionViewCell {
     var dice: Dice?{
         didSet{
             guard let dice = self.dice else{ return }
-            
-            valueLabel.text = "\(dice.value)"
+            self.diceSide = dice.sides
             dice.state.asObservable().subscribe { [weak self](event) in
                 guard let `self` = self else { return }
                 guard let state = event.element else { return }
                 self.diceState = state
-                
-                var diceImage: UIImage!
-                switch dice.sides {
-                case .Four:
-                    diceImage = #imageLiteral(resourceName: "d4")
-                    break
-                case .Six:
-                    diceImage = #imageLiteral(resourceName: "d6")
-                    break
-                case .Eight:
-                    diceImage = #imageLiteral(resourceName: "d8")
-                    break
-                case .Ten:
-                    diceImage = #imageLiteral(resourceName: "d10")
-                    break
-                case .Twelve:
-                    diceImage = #imageLiteral(resourceName: "d12")
-                    break
-                case .Twenty:
-                    diceImage = #imageLiteral(resourceName: "d20")
-                    break
-                }
-                self.imageView.image = diceImage.withRenderingMode(.alwaysTemplate)
             }.addDisposableTo(self.rx_disposeBag)
+        }
+    }
+    
+    var diceSide: DiceSide?{
+        didSet{
+            guard let diceSide = diceSide else { return }
+            var diceImage: UIImage!
+            switch diceSide {
+            case .Four:
+                diceImage = #imageLiteral(resourceName: "d4")
+                break
+            case .Six:
+                diceImage = #imageLiteral(resourceName: "d6")
+                break
+            case .Eight:
+                diceImage = #imageLiteral(resourceName: "d8")
+                break
+            case .Ten:
+                diceImage = #imageLiteral(resourceName: "d10")
+                break
+            case .Twelve:
+                diceImage = #imageLiteral(resourceName: "d12")
+                break
+            case .Twenty:
+                diceImage = #imageLiteral(resourceName: "d20")
+                break
+            }
+            self.imageView.image = diceImage.withRenderingMode(.alwaysTemplate)
         }
     }
     
     var diceState: DiceState = .Stable{
         didSet{
+            guard let dice = self.dice else{ return }
+            self.valueLabel.text = "\(dice.value)"
+            
             switch diceState {
             case .Rolling:
-                self.valueLabel.text = ""
-                self.shake()
-                self.randomiseValueLabel()
+                if oldValue != .Rolling{
+                    self.shake()
+                }
                 break
             case .Stable:
-                guard let dice = self.dice else{ return }
-                self.valueLabel.text = "\(dice.value)"
-                self.valueLabel.mildShake()
+                self.pop()
                 break
             }
-        }
-    }
-    
-    func randomiseValueLabel(){
-        for i in 0...9 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + Double(i) * 0.1, execute: {
-                self.valueLabel.text = "\(randomise(min: 1, max: self.dice?.sides.rawValue ?? 1))"
-            })
         }
     }
     
     func pulse(){
         self.imageView.mildShake()
         if self.dice?.value == self.dice?.sides.rawValue{
-            self.imageView.excitedPop()
-            self.valueLabel.pop()
+            self.pop()
         }
+    }
+    
+    func pop(){
+        self.imageView.excitedPop()
+        self.valueLabel.pop()
     }
     
     func shake(){
@@ -142,6 +143,7 @@ extension Springable{
         self.animate()
         self.animation = "wobble"
         self.duration = 0.5
+        self.force = 0.6
         self.animateToNext {
             completion?()
         }

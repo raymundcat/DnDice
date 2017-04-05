@@ -22,12 +22,18 @@ class Dice: NSObject{
     private (set) var state: Variable<DiceState> = Variable(.Stable)
     
     func roll(onComplete: ((_ newValue: Int) -> Void)?){
-        self.state.value = .Rolling
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-            guard let `self` = self else { return }
-            self.value = randomise(min: 1, max: self.sides.rawValue)
-            self.state.value = .Stable
-            onComplete?(self.value)
+        for i in 0...10 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + Double(i) * 0.1, execute: { [weak self] in
+                guard let `self` = self else { return }
+                self.value = randomise(min: 1, max: self.sides.rawValue)
+                
+                if i != 10{
+                    self.state.value = .Rolling
+                }else{
+                    self.state.value = .Stable
+                    onComplete?(self.value)
+                }
+            })
         }
     }
 }
