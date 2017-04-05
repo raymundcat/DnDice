@@ -70,8 +70,27 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var randomShakeTimer = Timer()
+    
+    func randomlyShakeDices(){
+        for cell in self.collectionView.visibleCells{
+            if let cell = cell as? BoardDiceCollectionViewCell, randomise(min: 1, max: 10) == 1{
+                cell.mildShake()
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        randomShakeTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (imer) in
+            self.randomlyShakeDices()
+        })
+        randomShakeTimer.fire()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        randomShakeTimer.invalidate()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

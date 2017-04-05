@@ -11,7 +11,7 @@ import Spring
 
 class BorderedSpringLabel: SpringLabel {
 
-    var outlineWidth: CGFloat = 4
+    var outlineWidth: CGFloat = 6
     var outlineColor: UIColor = UIColor.darkGray
     
     override func drawText(in rect: CGRect) {

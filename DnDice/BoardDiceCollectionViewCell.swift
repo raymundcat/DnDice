@@ -65,6 +65,12 @@ class BoardDiceCollectionViewCell: BaseCollectionViewCell {
         }
     }
     
+    func mildShake(){
+        self.imageView.animation = "pop"
+        self.imageView.duration = 0.5
+        self.imageView.animate()
+    }
+    
     func doubleShake(){
         shake {
             self.shake(completion: nil)

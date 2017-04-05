@@ -270,7 +270,6 @@
 			isa = PBXGroup;
 			children = (
 				EC9C46421E86DD83003723A7 /* Entities */,
-				EC9C463F1E86C31E003723A7 /* Extensions */,
 				EC9C46361E86BCD2003723A7 /* Base Classes */,
 			);
 			name = "Over All";
@@ -287,13 +286,6 @@
 				EC93E7801E942A0A007A642F /* BorderedSpringLabel.swift */,
 			);
 			name = "Base Classes";
-			sourceTree = "<group>";
-		};
-		EC9C463F1E86C31E003723A7 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Extensions;
 			sourceTree = "<group>";
 		};
 		EC9C46421E86DD83003723A7 /* Entities */ = {
