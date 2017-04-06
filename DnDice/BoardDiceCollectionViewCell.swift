@@ -8,6 +8,7 @@
 
 import UIKit
 import Spring
+import AVFoundation
 
 class BoardDiceCollectionViewCell: BaseCollectionViewCell {
     
@@ -66,13 +67,31 @@ class BoardDiceCollectionViewCell: BaseCollectionViewCell {
             switch diceState {
             case .Rolling:
                 if oldValue != .Rolling{
+                    self.playSound()
                     self.shake()
                 }
                 break
             case .Stable:
-                self.pop()
+                self.imageView.pop()
+                self.valueLabel.pop()
                 break
             }
+        }
+    }
+    
+    var player: AVAudioPlayer?
+    
+    func playSound() {
+        let url = Bundle.main.url(forResource: "roulette", withExtension: "mp3")!
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            guard let player = player else { return }
+            
+            player.prepareToPlay()
+            player.play()
+        } catch let error {
+            print(error.localizedDescription)
         }
     }
     
@@ -97,74 +116,6 @@ class BoardDiceCollectionViewCell: BaseCollectionViewCell {
         self.valueLabel.text = ""
         self.imageView.fall { 
             self.imageView.image = UIImage()
-        }
-    }
-}
-
-extension Springable{
-    
-    func excitedPop(){
-        self.animation = "pop"
-        self.duration = 2
-        self.force = 2
-        self.curve = "easeOut"
-        self.rotate = 3
-        self.animate()
-    }
-    
-    func pop(){
-        self.animation = "pop"
-        self.duration = 1.5
-        self.force = 2
-        self.curve = "easeOut"
-        self.animate()
-    }
-    
-    func fall(completion: (() -> ())?){
-        self.animation = "fall"
-        self.curve = "easeOut"
-        self.duration = 1.5
-        self.animateToNext {
-            self.mildShake()
-            completion?()
-        }
-    }
-    
-    func mildShake(){
-        self.animation = "pop"
-        self.duration = 1.5
-        self.force = 0.5
-        self.animate()
-    }
-    
-    func shake(completion: (() -> ())?){
-        self.animation = "swing"
-        self.duration = 0.5
-        self.animate()
-        self.animation = "wobble"
-        self.duration = 0.5
-        self.force = 0.6
-        self.animateToNext {
-            completion?()
-        }
-    }
-    
-    func extraShake(){
-        self.shake { 
-            self.shake(completion: nil)
-        }
-    }
-    
-    func wobble(completion: (() -> ())?) {
-        self.animation = "pop"
-        self.curve = "easeIn"
-        self.duration = 0.5
-        self.animate()
-        self.animation = "swing"
-        self.curve = "easeIn"
-        self.duration = 0.5
-        self.animateToNext {
-            completion?()
         }
     }
 }

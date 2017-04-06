@@ -71,7 +71,6 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
             }, completion: { (completed) in
                 self.refreshControl.endRefreshing()
             })
-            
         }
     }
     

@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		4558A042FC448B836BE45160 /* Pods_DnDice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CF564F4A8AD6488FD9C932 /* Pods_DnDice.framework */; };
+		EC1487B81E96AF4A001B3050 /* Springable+CustomAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1487B71E96AF4A001B3050 /* Springable+CustomAnimations.swift */; };
 		EC3244FE1E86F17F00665411 /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3244FD1E86F17F00665411 /* Dice.swift */; };
 		EC3245041E87090100665411 /* BoardDiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3245021E87090100665411 /* BoardDiceCollectionViewCell.swift */; };
 		EC3245051E87090100665411 /* BoardDiceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC3245031E87090100665411 /* BoardDiceCollectionViewCell.xib */; };
 		EC3245071E87091D00665411 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3245061E87091D00665411 /* BaseCollectionViewCell.swift */; };
 		EC3245091E88207C00665411 /* DiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3245081E88207C00665411 /* DiceTests.swift */; };
 		EC41D9261E913C39007211EF /* AllDicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC41D9251E913C39007211EF /* AllDicesViewController.swift */; };
+		EC8E02961E96AABE00A98E9F /* roulette.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EC8E02951E96AABE00A98E9F /* roulette.mp3 */; };
 		EC8E1CFB1E916BFB003F914A /* StaticDiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E1CF91E916BFB003F914A /* StaticDiceCollectionViewCell.swift */; };
 		EC8E1CFC1E916BFB003F914A /* StaticDiceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8E1CFA1E916BFB003F914A /* StaticDiceCollectionViewCell.xib */; };
 		EC93E7811E942A0A007A642F /* BorderedSpringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC93E7801E942A0A007A642F /* BorderedSpringLabel.swift */; };
@@ -61,12 +63,14 @@
 		894CD24FD422C1F3627ADE5B /* Pods-DnDiceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnDiceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DnDiceTests/Pods-DnDiceTests.release.xcconfig"; sourceTree = "<group>"; };
 		BD7569AB7ADBFBA5237E3766 /* Pods-DnDice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnDice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DnDice/Pods-DnDice.debug.xcconfig"; sourceTree = "<group>"; };
 		D7CF564F4A8AD6488FD9C932 /* Pods_DnDice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DnDice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC1487B71E96AF4A001B3050 /* Springable+CustomAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Springable+CustomAnimations.swift"; sourceTree = "<group>"; };
 		EC3244FD1E86F17F00665411 /* Dice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
 		EC3245021E87090100665411 /* BoardDiceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardDiceCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC3245031E87090100665411 /* BoardDiceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoardDiceCollectionViewCell.xib; sourceTree = "<group>"; };
 		EC3245061E87091D00665411 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC3245081E88207C00665411 /* DiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceTests.swift; sourceTree = "<group>"; };
 		EC41D9251E913C39007211EF /* AllDicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllDicesViewController.swift; sourceTree = "<group>"; };
+		EC8E02951E96AABE00A98E9F /* roulette.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = roulette.mp3; sourceTree = "<group>"; };
 		EC8E1CF91E916BFB003F914A /* StaticDiceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticDiceCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC8E1CFA1E916BFB003F914A /* StaticDiceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StaticDiceCollectionViewCell.xib; sourceTree = "<group>"; };
 		EC93E7801E942A0A007A642F /* BorderedSpringLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedSpringLabel.swift; sourceTree = "<group>"; };
@@ -142,6 +146,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EC1487B91E96AF52001B3050 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EC1487B71E96AF4A001B3050 /* Springable+CustomAnimations.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		EC3244FC1E86F16C00665411 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +169,14 @@
 				EC8E1CF71E916BC9003F914A /* Cells */,
 			);
 			name = "All Dices";
+			sourceTree = "<group>";
+		};
+		EC8E02941E96AAAA00A98E9F /* Sound Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC8E02951E96AABE00A98E9F /* roulette.mp3 */,
+			);
+			name = "Sound Files";
 			sourceTree = "<group>";
 		};
 		EC8E1CF61E916B61003F914A /* Views */ = {
@@ -241,6 +261,7 @@
 		EC9C46321E86BB55003723A7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EC8E02941E96AAAA00A98E9F /* Sound Files */,
 				EC9C460B1E86B1A7003723A7 /* Assets.xcassets */,
 				EC9C46011E86B1A7003723A7 /* AppDelegate.swift */,
 				EC9C46101E86B1A7003723A7 /* Info.plist */,
@@ -269,6 +290,7 @@
 		EC9C46351E86BCC8003723A7 /* Over All */ = {
 			isa = PBXGroup;
 			children = (
+				EC1487B91E96AF52001B3050 /* Extensions */,
 				EC9C46421E86DD83003723A7 /* Entities */,
 				EC9C46361E86BCD2003723A7 /* Base Classes */,
 			);
@@ -437,6 +459,7 @@
 				EC9C460C1E86B1A7003723A7 /* Assets.xcassets in Resources */,
 				EC9C46071E86B1A7003723A7 /* Main.storyboard in Resources */,
 				EC3245051E87090100665411 /* BoardDiceCollectionViewCell.xib in Resources */,
+				EC8E02961E96AABE00A98E9F /* roulette.mp3 in Resources */,
 				EC8E1CFC1E916BFB003F914A /* StaticDiceCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -611,6 +634,7 @@
 				EC93E7811E942A0A007A642F /* BorderedSpringLabel.swift in Sources */,
 				EC41D9261E913C39007211EF /* AllDicesViewController.swift in Sources */,
 				EC9C46041E86B1A7003723A7 /* GameViewController.swift in Sources */,
+				EC1487B81E96AF4A001B3050 /* Springable+CustomAnimations.swift in Sources */,
 				EC9C463E1E86BCED003723A7 /* BaseView.swift in Sources */,
 				EC9C463C1E86BCED003723A7 /* BaseTableViewCell.swift in Sources */,
 				EC9C46021E86B1A7003723A7 /* AppDelegate.swift in Sources */,
