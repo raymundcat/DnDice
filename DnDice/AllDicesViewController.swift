@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Spring
 
 protocol AllDicesViewDelegate {
     func allDicesDidSelect(dice: Dice)
@@ -22,6 +23,8 @@ class AllDicesViewController: BaseViewController, UICollectionViewDataSource, UI
             
             collectionView.delegate = self
             collectionView.dataSource = self
+            collectionView.heroModifiers = [.cascade]
+            collectionView.contentInset = UIEdgeInsetsMake(sideInsets, sideInsets * 2, sideInsets, sideInsets * 2)
         }
     }
     
@@ -45,17 +48,17 @@ class AllDicesViewController: BaseViewController, UICollectionViewDataSource, UI
         return self.dices.count
     }
     
+    let sideInsets: CGFloat = 20
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (collectionView.frame.size.width / 3) - (5 * 2)
+        let width = (collectionView.frame.size.height / 2) - (sideInsets)
         return CGSize(width: width, height: width)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(5, 5, 5, 5)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.didSelect(dice: self.dices[indexPath.row])
+        let cell = collectionView.cellForItem(at: indexPath) as! StaticDiceCollectionViewCell
+        cell.wobble { 
+            self.didSelect(dice: self.dices[indexPath.row])
+        }
     }
     
     func didSelect(dice: Dice){

@@ -12,7 +12,7 @@ import NSObject_Rx
 
 class Dice: NSObject{
     
-    let sides: DiceSide!
+    let sides: DiceSide
     
     init(sides: DiceSide) {
         self.sides = sides
@@ -22,12 +22,18 @@ class Dice: NSObject{
     private (set) var state: Variable<DiceState> = Variable(.Stable)
     
     func roll(onComplete: ((_ newValue: Int) -> Void)?){
-        self.state.value = .Rolling
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-            guard let `self` = self else { return }
-            self.value = randomise(min: 1, max: self.sides.rawValue)
-            self.state.value = .Stable
-            onComplete?(self.value)
+        for i in 0...10 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + Double(i) * 0.1, execute: { [weak self] in
+                guard let `self` = self else { return }
+                self.value = randomise(min: 1, max: self.sides.rawValue)
+                
+                if i != 10{
+                    self.state.value = .Rolling
+                }else{
+                    self.state.value = .Stable
+                    onComplete?(self.value)
+                }
+            })
         }
     }
 }
@@ -57,9 +63,10 @@ func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
 
 enum DiceSide: Int{
     case Four = 4
-    case Five = 5
     case Six = 6
+    case Eight = 8
     case Ten = 10
+    case Twelve = 12
     case Twenty = 20
 }
 
@@ -70,4 +77,16 @@ enum DiceState{
 
 func randomise(min: Int, max: Int) -> Int{
     return min + Int(arc4random_uniform(UInt32(max - min + 1)))
+}
+
+extension Array where Element: Dice{
+    func totalValues() -> Int {
+        return self.reduce(0, { (result, dice) -> Int in
+            if dice.state.value == .Stable{
+                return result + dice.value
+            }else{
+                return result
+            }
+        })
+    }
 }

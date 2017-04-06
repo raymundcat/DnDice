@@ -25,14 +25,17 @@ class DiceTests: XCTestCase {
         let dice4 = Dice(sides: .Four)
         self.test(dice: dice4, withSide: 4)
         
-        let dice5 = Dice(sides: .Five)
-        self.test(dice: dice5, withSide: 5)
-        
         let dice6 = Dice(sides: .Six)
         self.test(dice: dice6, withSide: 6)
         
+        let dice8 = Dice(sides: .Eight)
+        self.test(dice: dice8, withSide: 8)
+        
         let dice10 = Dice(sides: .Ten)
         self.test(dice: dice10, withSide: 10)
+        
+        let dice12 = Dice(sides: .Twelve)
+        self.test(dice: dice12, withSide: 12)
         
         let dice20 = Dice(sides: .Twenty)
         self.test(dice: dice20, withSide: 20)

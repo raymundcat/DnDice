@@ -22,5 +22,8 @@ class BaseCollectionViewCell: UICollectionViewCell {
     
     func initialize(){
         // Initialization code
+        self.clipsToBounds = false
+        self.contentView.clipsToBounds = false
+        self.contentView.superview?.clipsToBounds = false
     }
 }
