@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4558A042FC448B836BE45160 /* Pods_DnDice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CF564F4A8AD6488FD9C932 /* Pods_DnDice.framework */; };
+		EC0D5B431E96BFF3002472CD /* DiceSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0D5B421E96BFF3002472CD /* DiceSounds.swift */; };
 		EC1487B81E96AF4A001B3050 /* Springable+CustomAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1487B71E96AF4A001B3050 /* Springable+CustomAnimations.swift */; };
+		EC1487BC1E96B9B9001B3050 /* DiceImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1487BB1E96B9B9001B3050 /* DiceImages.swift */; };
 		EC3244FE1E86F17F00665411 /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3244FD1E86F17F00665411 /* Dice.swift */; };
 		EC3245041E87090100665411 /* BoardDiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3245021E87090100665411 /* BoardDiceCollectionViewCell.swift */; };
 		EC3245051E87090100665411 /* BoardDiceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC3245031E87090100665411 /* BoardDiceCollectionViewCell.xib */; };
@@ -63,7 +65,9 @@
 		894CD24FD422C1F3627ADE5B /* Pods-DnDiceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnDiceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DnDiceTests/Pods-DnDiceTests.release.xcconfig"; sourceTree = "<group>"; };
 		BD7569AB7ADBFBA5237E3766 /* Pods-DnDice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnDice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DnDice/Pods-DnDice.debug.xcconfig"; sourceTree = "<group>"; };
 		D7CF564F4A8AD6488FD9C932 /* Pods_DnDice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DnDice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC0D5B421E96BFF3002472CD /* DiceSounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceSounds.swift; sourceTree = "<group>"; };
 		EC1487B71E96AF4A001B3050 /* Springable+CustomAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Springable+CustomAnimations.swift"; sourceTree = "<group>"; };
+		EC1487BB1E96B9B9001B3050 /* DiceImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceImages.swift; sourceTree = "<group>"; };
 		EC3244FD1E86F17F00665411 /* Dice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
 		EC3245021E87090100665411 /* BoardDiceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardDiceCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC3245031E87090100665411 /* BoardDiceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoardDiceCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -152,6 +156,15 @@
 				EC1487B71E96AF4A001B3050 /* Springable+CustomAnimations.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		EC1487BA1E96B99B001B3050 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EC1487BB1E96B9B9001B3050 /* DiceImages.swift */,
+				EC0D5B421E96BFF3002472CD /* DiceSounds.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		EC3244FC1E86F16C00665411 /* Views */ = {
@@ -290,6 +303,7 @@
 		EC9C46351E86BCC8003723A7 /* Over All */ = {
 			isa = PBXGroup;
 			children = (
+				EC1487BA1E96B99B001B3050 /* Models */,
 				EC1487B91E96AF52001B3050 /* Extensions */,
 				EC9C46421E86DD83003723A7 /* Entities */,
 				EC9C46361E86BCD2003723A7 /* Base Classes */,
@@ -629,6 +643,7 @@
 				EC3244FE1E86F17F00665411 /* Dice.swift in Sources */,
 				EC9C463B1E86BCED003723A7 /* BaseViewController.swift in Sources */,
 				EC3245071E87091D00665411 /* BaseCollectionViewCell.swift in Sources */,
+				EC1487BC1E96B9B9001B3050 /* DiceImages.swift in Sources */,
 				EC8E1CFB1E916BFB003F914A /* StaticDiceCollectionViewCell.swift in Sources */,
 				ECB4208B1E8FA59900E01771 /* BoardViewController.swift in Sources */,
 				EC93E7811E942A0A007A642F /* BorderedSpringLabel.swift in Sources */,
@@ -637,6 +652,7 @@
 				EC1487B81E96AF4A001B3050 /* Springable+CustomAnimations.swift in Sources */,
 				EC9C463E1E86BCED003723A7 /* BaseView.swift in Sources */,
 				EC9C463C1E86BCED003723A7 /* BaseTableViewCell.swift in Sources */,
+				EC0D5B431E96BFF3002472CD /* DiceSounds.swift in Sources */,
 				EC9C46021E86B1A7003723A7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

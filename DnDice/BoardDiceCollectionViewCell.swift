@@ -34,28 +34,7 @@ class BoardDiceCollectionViewCell: BaseCollectionViewCell {
     var diceSide: DiceSide?{
         didSet{
             guard let diceSide = diceSide else { return }
-            var diceImage: UIImage!
-            switch diceSide {
-            case .Four:
-                diceImage = #imageLiteral(resourceName: "d4")
-                break
-            case .Six:
-                diceImage = #imageLiteral(resourceName: "d6")
-                break
-            case .Eight:
-                diceImage = #imageLiteral(resourceName: "d8")
-                break
-            case .Ten:
-                diceImage = #imageLiteral(resourceName: "d10")
-                break
-            case .Twelve:
-                diceImage = #imageLiteral(resourceName: "d12")
-                break
-            case .Twenty:
-                diceImage = #imageLiteral(resourceName: "d20")
-                break
-            }
-            self.imageView.image = diceImage.withRenderingMode(.alwaysTemplate)
+            self.imageView.image = DiceImages.getImage(forDiceSide: diceSide).withRenderingMode(.alwaysTemplate)
         }
     }
     
@@ -67,33 +46,20 @@ class BoardDiceCollectionViewCell: BaseCollectionViewCell {
             switch diceState {
             case .Rolling:
                 if oldValue != .Rolling{
-                    self.playSound()
+                    self.playRollSound()
                     self.shake()
                 }
                 break
             case .Stable:
                 self.imageView.pop()
                 self.valueLabel.pop()
+                self.pause()
                 break
             }
         }
     }
     
-    var player: AVAudioPlayer?
-    
-    func playSound() {
-        let url = Bundle.main.url(forResource: "roulette", withExtension: "mp3")!
-        
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            guard let player = player else { return }
-            
-            player.prepareToPlay()
-            player.play()
-        } catch let error {
-            print(error.localizedDescription)
-        }
-    }
+    internal var player: AVAudioPlayer?
     
     func pulse(){
         self.imageView.mildShake()
@@ -114,8 +80,36 @@ class BoardDiceCollectionViewCell: BaseCollectionViewCell {
     
     func fall(){
         self.valueLabel.text = ""
-        self.imageView.fall { 
+        self.imageView.fall {
             self.imageView.image = UIImage()
         }
+    }
+}
+
+extension BoardDiceCollectionViewCell: BoardSoundable{
+    
+    func play(url: URL) {
+        pause()
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            guard let player = player else { return }
+            
+            player.prepareToPlay()
+            player.play()
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func pause() {
+        player?.pause()
+    }
+    
+    func playRollSound() {
+        play(url: DiceSoundPaths.getPath(forSound: .Rolling))
+    }
+    
+    func playFinishedSound() {
+        play(url: DiceSoundPaths.getPath(forSound: .Finished))
     }
 }
