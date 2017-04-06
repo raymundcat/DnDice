@@ -17,6 +17,7 @@ class BoardDiceCollectionViewCell: BaseCollectionViewCell {
             valueLabel.outlineColor = .flatMaroon
         }
     }
+    
     @IBOutlet weak var imageView: SpringImageView!
     
     var dice: Dice?{
@@ -53,7 +54,7 @@ class BoardDiceCollectionViewCell: BaseCollectionViewCell {
             case .Stable:
                 self.imageView.pop()
                 self.valueLabel.pop()
-                self.pause()
+                self.playFinishedSound()
                 break
             }
         }
@@ -79,6 +80,7 @@ class BoardDiceCollectionViewCell: BaseCollectionViewCell {
     }
     
     func fall(){
+        self.playPop()
         self.valueLabel.text = ""
         self.imageView.fall {
             self.imageView.image = UIImage()
@@ -86,7 +88,7 @@ class BoardDiceCollectionViewCell: BaseCollectionViewCell {
     }
 }
 
-extension BoardDiceCollectionViewCell: BoardSoundable{
+extension BoardDiceCollectionViewCell: BoardSoundable, StaticSoundable{
     
     func play(url: URL) {
         pause()
@@ -111,5 +113,9 @@ extension BoardDiceCollectionViewCell: BoardSoundable{
     
     func playFinishedSound() {
         play(url: DiceSoundPaths.getPath(forSound: .Finished))
+    }
+    
+    func playPop() {
+        play(url: DiceSoundPaths.getPath(forSound: .Pop))
     }
 }

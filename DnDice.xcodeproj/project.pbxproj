@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4558A042FC448B836BE45160 /* Pods_DnDice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CF564F4A8AD6488FD9C932 /* Pods_DnDice.framework */; };
 		EC0D5B431E96BFF3002472CD /* DiceSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0D5B421E96BFF3002472CD /* DiceSounds.swift */; };
+		EC0D5B451E96CBDF002472CD /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EC0D5B441E96CBDF002472CD /* bell.mp3 */; };
+		EC0D5B471E96CBEC002472CD /* ticker.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EC0D5B461E96CBEC002472CD /* ticker.mp3 */; };
+		EC0D5B491E96CC8B002472CD /* pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EC0D5B481E96CC8B002472CD /* pop.mp3 */; };
 		EC1487B81E96AF4A001B3050 /* Springable+CustomAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1487B71E96AF4A001B3050 /* Springable+CustomAnimations.swift */; };
 		EC1487BC1E96B9B9001B3050 /* DiceImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1487BB1E96B9B9001B3050 /* DiceImages.swift */; };
 		EC3244FE1E86F17F00665411 /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3244FD1E86F17F00665411 /* Dice.swift */; };
@@ -66,6 +69,9 @@
 		BD7569AB7ADBFBA5237E3766 /* Pods-DnDice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnDice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DnDice/Pods-DnDice.debug.xcconfig"; sourceTree = "<group>"; };
 		D7CF564F4A8AD6488FD9C932 /* Pods_DnDice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DnDice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC0D5B421E96BFF3002472CD /* DiceSounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceSounds.swift; sourceTree = "<group>"; };
+		EC0D5B441E96CBDF002472CD /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell.mp3; sourceTree = "<group>"; };
+		EC0D5B461E96CBEC002472CD /* ticker.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ticker.mp3; sourceTree = "<group>"; };
+		EC0D5B481E96CC8B002472CD /* pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pop.mp3; sourceTree = "<group>"; };
 		EC1487B71E96AF4A001B3050 /* Springable+CustomAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Springable+CustomAnimations.swift"; sourceTree = "<group>"; };
 		EC1487BB1E96B9B9001B3050 /* DiceImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceImages.swift; sourceTree = "<group>"; };
 		EC3244FD1E86F17F00665411 /* Dice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
@@ -187,6 +193,9 @@
 		EC8E02941E96AAAA00A98E9F /* Sound Files */ = {
 			isa = PBXGroup;
 			children = (
+				EC0D5B481E96CC8B002472CD /* pop.mp3 */,
+				EC0D5B461E96CBEC002472CD /* ticker.mp3 */,
+				EC0D5B441E96CBDF002472CD /* bell.mp3 */,
 				EC8E02951E96AABE00A98E9F /* roulette.mp3 */,
 			);
 			name = "Sound Files";
@@ -469,12 +478,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC0D5B491E96CC8B002472CD /* pop.mp3 in Resources */,
 				EC9C460F1E86B1A7003723A7 /* LaunchScreen.storyboard in Resources */,
 				EC9C460C1E86B1A7003723A7 /* Assets.xcassets in Resources */,
 				EC9C46071E86B1A7003723A7 /* Main.storyboard in Resources */,
 				EC3245051E87090100665411 /* BoardDiceCollectionViewCell.xib in Resources */,
+				EC0D5B471E96CBEC002472CD /* ticker.mp3 in Resources */,
 				EC8E02961E96AABE00A98E9F /* roulette.mp3 in Resources */,
 				EC8E1CFC1E916BFB003F914A /* StaticDiceCollectionViewCell.xib in Resources */,
+				EC0D5B451E96CBDF002472CD /* bell.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

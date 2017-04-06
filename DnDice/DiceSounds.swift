@@ -11,6 +11,7 @@ import Foundation
 enum DiceSound{
     case Rolling
     case Finished
+    case Pop
 }
 
 enum SoundExtension: String{
@@ -21,9 +22,11 @@ class DiceSoundPaths{
     static func getPath(forSound sound: DiceSound) -> URL{
         switch sound {
         case .Rolling:
-            return SoundFileHelper.getMP3Path(withName: "roulette", ext: .MP3)!
+            return SoundFileHelper.getMP3Path(withName: "ticker", ext: .MP3)!
         case .Finished:
-            return SoundFileHelper.getMP3Path(withName: "roulette", ext: .MP3)!
+            return SoundFileHelper.getMP3Path(withName: "bell", ext: .MP3)!
+        case .Pop:
+            return SoundFileHelper.getMP3Path(withName: "pop", ext: .MP3)!
         }
     }
 }
@@ -42,4 +45,8 @@ protocol Soundable {
 protocol BoardSoundable: Soundable {
     func playRollSound()
     func playFinishedSound()
+}
+
+protocol StaticSoundable: Soundable {
+    func playPop()
 }

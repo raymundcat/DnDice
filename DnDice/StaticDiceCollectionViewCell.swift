@@ -8,6 +8,7 @@
 
 import UIKit
 import Spring
+import AVFoundation
 
 class StaticDiceCollectionViewCell: BaseCollectionViewCell {
 
@@ -30,8 +31,34 @@ class StaticDiceCollectionViewCell: BaseCollectionViewCell {
     }
     
     func wobble(completion: (() -> ())?) {
+        self.playPop()
         self.imageView.wobble { 
             completion?()
         }
+    }
+    
+    internal var player: AVAudioPlayer?
+}
+
+extension StaticDiceCollectionViewCell: StaticSoundable{
+    func play(url: URL) {
+        pause()
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            guard let player = player else { return }
+            
+            player.prepareToPlay()
+            player.play()
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func pause() {
+        player?.pause()
+    }
+    
+    func playPop() {
+        play(url: DiceSoundPaths.getPath(forSound: .Pop))
     }
 }
