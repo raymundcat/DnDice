@@ -14,7 +14,8 @@ class BoardDiceCollectionViewCell: BaseCollectionViewCell {
     
     @IBOutlet weak var valueLabel: BorderedSpringLabel!{
         didSet{
-            valueLabel.outlineColor = .flatMaroon
+            valueLabel.outlineColor = UIColor.flatMaroon.lighten(byPercentage: 0.2)!
+            valueLabel.outlineWidth = 7
         }
     }
     
@@ -52,9 +53,11 @@ class BoardDiceCollectionViewCell: BaseCollectionViewCell {
                 }
                 break
             case .Stable:
-                self.imageView.pop()
-                self.valueLabel.pop()
-                self.playFinishedSound()
+                if oldValue != .Stable{
+                    self.imageView.pop()
+                    self.valueLabel.pop()
+                    self.playFinishedSound()
+                }
                 break
             }
         }

@@ -10,10 +10,29 @@ import UIKit
 import Spring
 import AVFoundation
 
+protocol StaticDiceCellDelegate {
+    func staticDiceDidSelect(withDice dice: Dice)
+}
+
 class StaticDiceCollectionViewCell: BaseCollectionViewCell {
 
     @IBOutlet weak var valueLabel: SpringLabel!
     @IBOutlet weak var imageView: SpringImageView!
+    
+    var delegate: StaticDiceCellDelegate?
+    
+    override func initialize() {
+        super.initialize()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapCell(geture:)))
+        self.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func didTapCell(geture: UITapGestureRecognizer){
+        self.wobble {
+            guard let dice = self.dice else { return }
+            self.delegate?.staticDiceDidSelect(withDice: dice)
+        }
+    }
     
     var dice: Dice?{
         didSet{
@@ -32,7 +51,7 @@ class StaticDiceCollectionViewCell: BaseCollectionViewCell {
     
     func wobble(completion: (() -> ())?) {
         self.playPop()
-        self.imageView.wobble { 
+        self.imageView.wobble {
             completion?()
         }
     }
