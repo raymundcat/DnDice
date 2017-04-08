@@ -40,6 +40,7 @@ class AllDicesViewController: BaseViewController, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! StaticDiceCollectionViewCell
         cell.dice = dices[indexPath.row]
+        cell.delegate = self
         return cell
     }
     
@@ -54,15 +55,21 @@ class AllDicesViewController: BaseViewController, UICollectionViewDataSource, UI
         return CGSize(width: width, height: width)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! StaticDiceCollectionViewCell
-        cell.wobble { 
-            self.didSelect(dice: self.dices[indexPath.row])
-        }
-    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let cell = collectionView.cellForItem(at: indexPath) as! StaticDiceCollectionViewCell
+//        cell.wobble { 
+//            self.didSelect(dice: self.dices[indexPath.row])
+//        }
+//    }
     
     func didSelect(dice: Dice){
         guard let delegate = self.delegate else { return }
         delegate.allDicesDidSelect(dice: Dice(sides: dice.sides))
+    }
+}
+
+extension AllDicesViewController: StaticDiceCellDelegate{
+    func staticDiceDidSelect(withDice dice: Dice) {
+        self.didSelect(dice: dice)
     }
 }
