@@ -34,6 +34,8 @@ class GameViewController: BaseViewController, AllDicesViewDelegate{
        return AvailableDices()
     }()
     
+    var titleView: BoardTitleView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,13 +47,16 @@ class GameViewController: BaseViewController, AllDicesViewDelegate{
         self.allDicesViewContainer.addSubview(allDicesViewController.view)
         self.allDicesViewController.view.frame = allDicesViewContainer.bounds
         self.allDicesViewController.delegate = self
+        
+        self.titleView = BoardTitleView(frame: (self.navigationController?.navigationBar.bounds)!)
+        self.navigationItem.titleView = self.titleView
     }
     
     //MARK: All Dices Delegate
     func allDicesDidSelect(dice: Dice) {
         boardViewController.dices.append(dice)
         dice.roll(onComplete: { _ in
-            self.title = "Total: \(self.boardViewController.dices.totalValues())"
+            self.titleView.setTitle(title: "Total: \(self.boardViewController.dices.totalValues())")
         })
     }
 }

@@ -31,7 +31,7 @@ extension Springable{
     func fall(completion: (() -> ())?){
         self.animation = "fall"
         self.curve = "easeIn"
-        self.duration = 1.0
+        self.duration = 0.5
         self.animateNext { 
             completion?()
         }
@@ -50,7 +50,7 @@ extension Springable{
         self.animate()
         self.animation = "wobble"
         self.duration = 0.5
-        self.force = 0.6
+        self.force = 0.8
         self.animateToNext {
             completion?()
         }
