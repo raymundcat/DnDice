@@ -15,7 +15,7 @@ extension Springable{
         self.animation = "pop"
         self.duration = 2
         self.force = 2
-        self.curve = "easeOut"
+        self.curve = "easeInOut"
         self.rotate = 3
         self.animate()
     }
@@ -24,16 +24,15 @@ extension Springable{
         self.animation = "pop"
         self.duration = 1.5
         self.force = 2
-        self.curve = "easeOut"
+        self.curve = "easeInOut"
         self.animate()
     }
     
     func fall(completion: (() -> ())?){
         self.animation = "fall"
-        self.curve = "easeOut"
-        self.duration = 1.5
-        self.animateToNext {
-            self.mildShake()
+        self.curve = "easeIn"
+        self.duration = 1.0
+        self.animateNext { 
             completion?()
         }
     }

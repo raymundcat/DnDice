@@ -82,11 +82,12 @@ class BoardDiceCollectionViewCell: BaseCollectionViewCell {
         self.valueLabel.extraShake()
     }
     
-    func fall(){
+    func fall(completion: (() -> ())?){
         self.playPop()
         self.valueLabel.text = ""
         self.imageView.fall {
             self.imageView.image = UIImage()
+            completion?()
         }
     }
 }

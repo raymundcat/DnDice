@@ -55,15 +55,8 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
     }
     
     func removeDices(){
-        for cell in self.collectionView.visibleCells{
-            DispatchQueue.main.asyncAfter(deadline: .now() + Double(randomise(min: 1, max: 10)) * 0.05, execute: {
-                if let cell = cell as? BoardDiceCollectionViewCell{
-                    cell.fall()
-                }
-            })
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
-            self.collectionView.performBatchUpdates({ 
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            self.collectionView.performBatchUpdates({
                 for (index, _) in self.dices.enumerated(){
                     self.collectionView.deleteItems(at: [IndexPath(row: index, section: 0)])
                 }
