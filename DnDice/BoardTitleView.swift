@@ -14,20 +14,72 @@ class BoardTitleView: BaseView {
     @IBOutlet weak private var imageView: UIImageView!
     @IBOutlet weak private var titleLabel: UILabel!
     
+    private var timer = Timer()
+    
     override func initialize() {
         super.initialize()
         xibSetup(nibName: "BoardTitleView")
-        titleLabel.rx.observe(String.self, "text").asObservable().subscribe { (event) in
-            guard let text = event.element! else { return }
-            self.didChangeText(text: text)
-        }.addDisposableTo(rx_disposeBag)
+        self.resetTimer()
     }
     
-    private func didChangeText(text: String){
-        print("lmao")
+    private func resetTimer(){
+        timer.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(timerFired(timer:)), userInfo: nil, repeats: true)
+        timer.fire()
     }
     
-    func setTitle(title: String){
-        titleLabel.text = title
+    internal func timerFired(timer: Timer){
+        guard let message = self.message else {
+            self.message = DiceMessage.TotalMessage(prefix: "total:", total: total)
+            return
+        }
+        
+        switch message {
+        case .Greetings:
+            self.message = DiceMessage.TotalMessage(prefix: "total:", total: self.total)
+            break
+        case .TotalMessage(let prefix, let total):
+            if total != self.total{
+                self.message = DiceMessage.TotalMessage(prefix: prefix, total: self.total)
+            }else{
+                if greetings.count > 0 {
+                    self.message = DiceMessage.Greetings(message: self.greetings.getRandom())
+                }
+            }
+            break
+        }
     }
+    
+    private var message: DiceMessage?{
+        didSet{
+            guard let message = self.message else { return }
+            switch message {
+            case .Greetings(let message):
+                self.titleLabel.text = "\(message)"
+                break
+            case .TotalMessage(let prefix, let total):
+                self.titleLabel.text = "\(prefix) \(total)"
+                break
+            }
+        }
+    }
+    
+    var total: Int = 0 {
+        didSet{
+            resetTimer()
+        }
+    }
+    
+    var greetings = [""]
+}
+
+extension Array{
+    func getRandom() -> Element{
+        return self[randomise(min: 0, max: self.count - 1)]
+    }
+}
+
+enum DiceMessage {
+    case TotalMessage(prefix: String, total: Int)
+    case Greetings(message: String)
 }

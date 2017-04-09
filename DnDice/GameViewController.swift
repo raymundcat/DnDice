@@ -56,7 +56,9 @@ class GameViewController: BaseViewController, AllDicesViewDelegate{
     func allDicesDidSelect(dice: Dice) {
         boardViewController.dices.append(dice)
         dice.roll(onComplete: { _ in
-            self.titleView.setTitle(title: "Total: \(self.boardViewController.dices.totalValues())")
+//            self.titleView.setTitle(title: "Total: \(self.boardViewController.dices.totalValues())")
+            self.titleView.total = self.boardViewController.dices.totalValues()
+            self.titleView.greetings = DiceTitleBuilder.createMessages(fromDices: self.boardViewController.dices)
         })
     }
 }
