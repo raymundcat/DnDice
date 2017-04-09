@@ -33,11 +33,11 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
         }
     }
     
-    var boardIsBusy: Bool = false
+    var boardIsBusyAdding: Bool = false
     
     var dices: [Dice] = [Dice](){
         didSet{
-            self.boardIsBusy = true
+            self.boardIsBusyAdding = true
             var newIndexpaths = [IndexPath]()
             for (index, dice) in self.dices.enumerated(){
                 if !oldValue.contains(dice){
@@ -51,18 +51,18 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     if let lastIndexPath = newIndexpaths.last{
                         self.collectionView.scrollToItem(at: lastIndexPath, at: .centeredVertically, animated: true)
-                        self.boardIsBusy = false
+                        self.boardIsBusyAdding = false
                     }
                 }
             }
         }
     }
     
+    var boardIsBusyDeleting: Bool = false
+    
     func removeDices(){
-        
-        guard !self.boardIsBusy else { return }
-        
-        self.boardIsBusy = true
+        guard !self.boardIsBusyAdding else { return }
+        self.boardIsBusyDeleting = true
         let group = DispatchGroup()
         for (index, cell) in self.collectionView.visibleCells.enumerated(){
             group.enter()
@@ -84,7 +84,7 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
                     self.dices.removeAll()
                 }, completion: { completed in
                     self.refreshControl.endRefreshing()
-                    self.boardIsBusy = false
+                    self.boardIsBusyDeleting = false
                 })
             }
         }

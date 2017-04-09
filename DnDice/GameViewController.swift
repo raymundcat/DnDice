@@ -71,7 +71,7 @@ class GameViewController: BaseViewController, AllDicesViewDelegate{
     
     //MARK: All Dices Delegate
     func allDicesDidSelect(dice: Dice) {
-        guard !boardViewController.boardIsBusy else { return }
+        guard !boardViewController.boardIsBusyDeleting else { return }
         boardViewController.dices.append(dice)
         dice.roll(onComplete: { _ in
             self.titleView.total = self.boardViewController.dices.totalValues()
