@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -49,6 +50,7 @@
                     <connections>
                         <outlet property="allDicesViewContainer" destination="GHK-rO-Ib6" id="9wR-O0-ROp"/>
                         <outlet property="boardViewContrainer" destination="0ts-wO-nHV" id="R6o-yM-U4d"/>
+                        <segue destination="YkH-xS-omN" kind="show" identifier="SegueToInfo" id="Vvv-Y0-Nzn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -86,6 +88,9 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="icon"/>
+                                </userDefinedRuntimeAttributes>
                             </collectionView>
                         </subviews>
                         <constraints>
@@ -104,7 +109,99 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="suz-dx-s61" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2336.8000000000002" y="-1354.2728635682161"/>
+            <point key="canvasLocation" x="2351" y="-1354"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="3Pl-S7-fDv">
+            <objects>
+                <viewController id="YkH-xS-omN" customClass="InfoViewController" customModule="DnDice" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="B3T-GR-mdl"/>
+                        <viewControllerLayoutGuide type="bottom" id="psW-Tc-BR0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wxb-XV-D2q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ow-F2-5LU">
+                                <rect key="frame" x="146" y="244" width="84.5" height="48"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="40"/>
+                                <color key="textColor" red="0.56019625750000002" green="0.25506937959999998" blue="0.305159815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULU-1o-o8W">
+                                <rect key="frame" x="56.5" y="312" width="262.5" height="24"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <color key="textColor" red="0.56019625750000002" green="0.25506937959999998" blue="0.305159815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1j-EV-Tdq">
+                                <rect key="frame" x="129.5" y="332" width="116" height="36"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <state key="normal" title="@raymundcat">
+                                    <color key="titleColor" red="0.56019625750000002" green="0.25506937959999998" blue="0.305159815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressTwitter:" destination="YkH-xS-omN" eventType="touchUpInside" id="nJ0-yo-KYQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7N-aU-Cld">
+                                <rect key="frame" x="173" y="408" width="30" height="36"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="0.56019625750000002" green="0.25506937959999998" blue="0.305159815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressX:" destination="YkH-xS-omN" eventType="touchUpInside" id="opS-2c-ecK"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="d20" translatesAutoresizingMaskIntoConstraints="NO" id="6dX-87-Vvu" customClass="SpringImageView" customModule="Spring">
+                                <rect key="frame" x="141" y="120" width="94" height="94"/>
+                                <color key="tintColor" red="0.56019625750000002" green="0.25506937959999998" blue="0.305159815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6dX-87-Vvu" secondAttribute="height" multiplier="1:1" id="0yb-H6-gbV"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="icon"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="n1j-EV-Tdq" firstAttribute="top" secondItem="ULU-1o-o8W" secondAttribute="bottom" constant="-4" id="3de-Se-oZa"/>
+                            <constraint firstItem="ULU-1o-o8W" firstAttribute="top" secondItem="3ow-F2-5LU" secondAttribute="bottom" constant="20" id="Ac8-HJ-cL7"/>
+                            <constraint firstItem="6dX-87-Vvu" firstAttribute="centerX" secondItem="wxb-XV-D2q" secondAttribute="centerX" id="BRE-Sy-LHM"/>
+                            <constraint firstItem="n1j-EV-Tdq" firstAttribute="centerX" secondItem="wxb-XV-D2q" secondAttribute="centerX" id="Bul-IP-17k"/>
+                            <constraint firstItem="ULU-1o-o8W" firstAttribute="width" secondItem="wxb-XV-D2q" secondAttribute="width" multiplier="0.7" id="PkS-A9-8q0"/>
+                            <constraint firstItem="3ow-F2-5LU" firstAttribute="top" secondItem="6dX-87-Vvu" secondAttribute="bottom" constant="30" id="WLA-rV-nrw"/>
+                            <constraint firstItem="3ow-F2-5LU" firstAttribute="centerX" secondItem="wxb-XV-D2q" secondAttribute="centerX" id="efc-yP-PqE"/>
+                            <constraint firstItem="U7N-aU-Cld" firstAttribute="centerX" secondItem="wxb-XV-D2q" secondAttribute="centerX" id="lON-Hh-eCb"/>
+                            <constraint firstItem="U7N-aU-Cld" firstAttribute="top" secondItem="n1j-EV-Tdq" secondAttribute="bottom" constant="40" id="lXX-ec-5vz"/>
+                            <constraint firstItem="ULU-1o-o8W" firstAttribute="centerX" secondItem="wxb-XV-D2q" secondAttribute="centerX" id="qlf-nH-9zm"/>
+                            <constraint firstItem="6dX-87-Vvu" firstAttribute="width" secondItem="wxb-XV-D2q" secondAttribute="width" multiplier="0.25" id="qvw-vK-iOY"/>
+                            <constraint firstItem="6dX-87-Vvu" firstAttribute="centerY" secondItem="wxb-XV-D2q" secondAttribute="centerY" multiplier="0.5" id="uGl-uv-Dtz"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="whiteBG"/>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="0iE-5Y-ZsE" appends="YES" id="ZcK-9w-jhS"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="logoImageView" destination="6dX-87-Vvu" id="Ilu-wT-gOz"/>
+                        <outlet property="messageLabel" destination="ULU-1o-o8W" id="Ybn-94-GRj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="haM-Sk-wpg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="0iE-5Y-ZsE">
+                    <connections>
+                        <action selector="didSwipeDown:" destination="YkH-xS-omN" id="BKZ-Qq-mgx"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3326" y="-995"/>
         </scene>
         <!--All Dices View Controller-->
         <scene sceneID="BWb-Wg-1oq">
@@ -154,6 +251,9 @@
                             <constraint firstItem="BuN-ak-0mm" firstAttribute="top" secondItem="C75-jV-Y6t" secondAttribute="bottom" constant="-5" id="es0-fT-GvZ"/>
                             <constraint firstItem="C75-jV-Y6t" firstAttribute="top" secondItem="tjQ-ZM-hh3" secondAttribute="bottom" constant="16" id="mB3-rN-v9V"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="whiteBG"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
@@ -164,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="azp-1Y-d76" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2336.8000000000002" y="-637.33133433283365"/>
+            <point key="canvasLocation" x="2351" y="-637"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OTP-84-qBO">
@@ -188,4 +288,7 @@
             <point key="canvasLocation" x="456.80000000000001" y="-995.35232383808102"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="d20" width="200" height="200"/>
+    </resources>
 </document>

@@ -62,7 +62,7 @@ class BoardTitleView: BaseView {
                 self.titleLabel.text = "\(message)"
                 break
             case .TotalMessage(let prefix, let total):
-                self.titleLabel.text = "\(prefix) \(total)"
+                self.titleLabel.text = total == 0 ? "" : "\(prefix) \(total)"
                 break
             }
         }

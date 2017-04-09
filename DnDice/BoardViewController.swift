@@ -33,8 +33,11 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
         }
     }
     
+    var boardIsBusy: Bool = false
+    
     var dices: [Dice] = [Dice](){
         didSet{
+            self.boardIsBusy = true
             var newIndexpaths = [IndexPath]()
             for (index, dice) in self.dices.enumerated(){
                 if !oldValue.contains(dice){
@@ -48,6 +51,7 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     if let lastIndexPath = newIndexpaths.last{
                         self.collectionView.scrollToItem(at: lastIndexPath, at: .centeredVertically, animated: true)
+                        self.boardIsBusy = false
                     }
                 }
             }
@@ -55,6 +59,10 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
     }
     
     func removeDices(){
+        
+        guard !self.boardIsBusy else { return }
+        
+        self.boardIsBusy = true
         let group = DispatchGroup()
         for (index, cell) in self.collectionView.visibleCells.enumerated(){
             group.enter()
@@ -68,13 +76,15 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
         }
         
         group.notify(queue: DispatchQueue.main) {
-            self.refreshControl.endRefreshing()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.collectionView.performBatchUpdates({
                     for (index, _) in self.dices.enumerated(){
                         self.collectionView.deleteItems(at: [IndexPath(row: index, section: 0)])
                     }
                     self.dices.removeAll()
+                }, completion: { completed in
+                    self.refreshControl.endRefreshing()
+                    self.boardIsBusy = false
                 })
             }
         }

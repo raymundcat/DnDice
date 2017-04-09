@@ -23,6 +23,7 @@
 		EC6A6BDC1E996D6B00C0A7CB /* BoardTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A6BDB1E996D6B00C0A7CB /* BoardTitleView.swift */; };
 		EC6A6BDE1E996D9600C0A7CB /* BoardTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6A6BDD1E996D9600C0A7CB /* BoardTitleView.xib */; };
 		EC6A6BE11E99755200C0A7CB /* DiceTitleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A6BE01E99755200C0A7CB /* DiceTitleBuilder.swift */; };
+		EC6A6BE41E9A808600C0A7CB /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A6BE31E9A808600C0A7CB /* InfoViewController.swift */; };
 		EC8E02961E96AABE00A98E9F /* roulette.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EC8E02951E96AABE00A98E9F /* roulette.mp3 */; };
 		EC8E1CFB1E916BFB003F914A /* StaticDiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E1CF91E916BFB003F914A /* StaticDiceCollectionViewCell.swift */; };
 		EC8E1CFC1E916BFB003F914A /* StaticDiceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8E1CFA1E916BFB003F914A /* StaticDiceCollectionViewCell.xib */; };
@@ -86,6 +87,7 @@
 		EC6A6BDB1E996D6B00C0A7CB /* BoardTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardTitleView.swift; sourceTree = "<group>"; };
 		EC6A6BDD1E996D9600C0A7CB /* BoardTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoardTitleView.xib; sourceTree = "<group>"; };
 		EC6A6BE01E99755200C0A7CB /* DiceTitleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceTitleBuilder.swift; sourceTree = "<group>"; };
+		EC6A6BE31E9A808600C0A7CB /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		EC8E02951E96AABE00A98E9F /* roulette.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = roulette.mp3; sourceTree = "<group>"; };
 		EC8E1CF91E916BFB003F914A /* StaticDiceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticDiceCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC8E1CFA1E916BFB003F914A /* StaticDiceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StaticDiceCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -206,6 +208,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		EC6A6BE21E9A806800C0A7CB /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				EC6A6BE31E9A808600C0A7CB /* InfoViewController.swift */,
+			);
+			name = Info;
+			sourceTree = "<group>";
+		};
 		EC8E02941E96AAAA00A98E9F /* Sound Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +277,7 @@
 		EC9C46001E86B1A7003723A7 /* DnDice */ = {
 			isa = PBXGroup;
 			children = (
+				EC6A6BE21E9A806800C0A7CB /* Info */,
 				EC41D9241E913C20007211EF /* All Dices */,
 				ECB420881E8FA1B900E01771 /* Main Board */,
 				EC9C46341E86BB82003723A7 /* Main Screen */,
@@ -681,6 +692,7 @@
 				EC41D9261E913C39007211EF /* AllDicesViewController.swift in Sources */,
 				EC9C46041E86B1A7003723A7 /* GameViewController.swift in Sources */,
 				EC1487B81E96AF4A001B3050 /* Springable+CustomAnimations.swift in Sources */,
+				EC6A6BE41E9A808600C0A7CB /* InfoViewController.swift in Sources */,
 				EC9C463E1E86BCED003723A7 /* BaseView.swift in Sources */,
 				EC9C463C1E86BCED003723A7 /* BaseTableViewCell.swift in Sources */,
 				EC0D5B431E96BFF3002472CD /* DiceSounds.swift in Sources */,
