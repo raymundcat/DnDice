@@ -118,8 +118,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BuN-ak-0mm">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BuN-ak-0mm">
+                                <rect key="frame" x="0.0" y="45.5" width="375" height="621.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ydr-1p-AE0">
                                     <size key="itemSize" width="50" height="50"/>
@@ -138,13 +138,21 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="choose a dice to roll" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C75-jV-Y6t">
+                                <rect key="frame" x="130.5" y="36" width="114.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.56019625750000002" green="0.25506937959999998" blue="0.305159815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="BuN-ak-0mm" secondAttribute="trailing" id="6Zd-EN-HKC"/>
                             <constraint firstItem="BuN-ak-0mm" firstAttribute="leading" secondItem="JKN-GM-DJL" secondAttribute="leading" id="I1i-9c-7cX"/>
-                            <constraint firstItem="BuN-ak-0mm" firstAttribute="top" secondItem="JKN-GM-DJL" secondAttribute="top" id="ZA7-rH-k6j"/>
+                            <constraint firstItem="C75-jV-Y6t" firstAttribute="centerX" secondItem="JKN-GM-DJL" secondAttribute="centerX" id="dF0-Eh-TxM"/>
                             <constraint firstItem="jk6-Za-Oa7" firstAttribute="top" secondItem="BuN-ak-0mm" secondAttribute="bottom" id="eVB-HW-6YG"/>
+                            <constraint firstItem="BuN-ak-0mm" firstAttribute="top" secondItem="C75-jV-Y6t" secondAttribute="bottom" constant="-5" id="es0-fT-GvZ"/>
+                            <constraint firstItem="C75-jV-Y6t" firstAttribute="top" secondItem="tjQ-ZM-hh3" secondAttribute="bottom" constant="16" id="mB3-rN-v9V"/>
                         </constraints>
                     </view>
                     <userDefinedRuntimeAttributes>
