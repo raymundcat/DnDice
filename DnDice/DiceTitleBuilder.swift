@@ -59,11 +59,11 @@ class DiceTitleBuilder {
         
         let ratio: Double = Double(totalGot) / Double(totalExpected)
         if ratio > 0.8{
-            messages.append("awesome total roll!")
+            messages.append("awesome roll!")
         }else if ratio > 0.5{
-            messages.append("good total roll!")
+            messages.append("good roll!")
         }else if ratio > 0.3{
-            messages.append("okay-ish total roll i guess")
+            messages.append("okay-ish roll i guess")
         }else{
             messages.append("hmm, maybe let's try again")
         }

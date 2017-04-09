@@ -7,12 +7,12 @@
 //
 
 import UIKit
-import RxCocoa
+import Spring
 
 class BoardTitleView: BaseView {
     
     @IBOutlet weak private var imageView: UIImageView!
-    @IBOutlet weak private var titleLabel: UILabel!
+    @IBOutlet weak private var titleLabel: SpringLabel!
     
     private var timer = Timer()
     
@@ -24,7 +24,7 @@ class BoardTitleView: BaseView {
     
     private func resetTimer(){
         timer.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(timerFired(timer:)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(timerFired(timer:)), userInfo: nil, repeats: true)
         timer.fire()
     }
     
@@ -53,6 +53,10 @@ class BoardTitleView: BaseView {
     private var message: DiceMessage?{
         didSet{
             guard let message = self.message else { return }
+            guard let oldValue = oldValue else { return }
+            if oldValue != message{
+                self.titleLabel.mildShake()
+            }
             switch message {
             case .Greetings(let message):
                 self.titleLabel.text = "\(message)"
@@ -79,7 +83,18 @@ extension Array{
     }
 }
 
-enum DiceMessage {
+enum DiceMessage: Equatable{
     case TotalMessage(prefix: String, total: Int)
     case Greetings(message: String)
+}
+
+func ==(lhs: DiceMessage, rhs: DiceMessage) -> Bool{
+    switch (lhs, rhs){
+    case ( .Greetings, .Greetings):
+        return true
+    case ( .TotalMessage, .TotalMessage):
+        return true
+    default:
+        return false
+    }
 }
