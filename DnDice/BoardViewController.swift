@@ -16,7 +16,7 @@ protocol BoardViewDelegate {
 
 class BoardViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
-    let refreshControl = UIRefreshControl()
+    private let refreshControl = UIRefreshControl()
     private let cellID = "boardCellID"
     @IBOutlet weak var collectionView: UICollectionView!{
         didSet{
@@ -29,11 +29,11 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
             collectionView.addSubview(refreshControl)
             collectionView.alwaysBounceVertical = true
             collectionView.heroModifiers = [.cascade]
-            collectionView.contentInset = UIEdgeInsetsMake(20, sideInsets, 20, sideInsets)
+            collectionView.contentInset = UIEdgeInsetsMake(60, sideInsets, 20, sideInsets)
         }
     }
     
-    var boardIsBusyAdding: Bool = false
+    private (set) var boardIsBusyAdding: Bool = false
     
     var dices: [Dice] = [Dice](){
         didSet{
@@ -58,7 +58,7 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
         }
     }
     
-    var boardIsBusyDeleting: Bool = false
+    private (set) var boardIsBusyDeleting: Bool = false
     
     func removeDices(){
         guard !self.boardIsBusyAdding else { return }
@@ -90,7 +90,7 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
         }
     }
     
-    var randomShakeTimer = Timer()
+    private var randomShakeTimer = Timer()
     
     func randomlyShakeDices(){
         for cell in self.collectionView.visibleCells{
@@ -110,7 +110,6 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
         randomShakeTimer.fire()
         self.collectionView.backgroundColor = .clear
         self.collectionView.backgroundView?.backgroundColor = .clear
-        self.view.backgroundColor = UIColor.init(gradientStyle: .topToBottom, withFrame: self.collectionView.bounds, andColors: [UIColor.flatMaroon.lighten(byPercentage: 0.2)!, .flatMaroonDark])
     }
     
     override func viewWillDisappear(_ animated: Bool) {

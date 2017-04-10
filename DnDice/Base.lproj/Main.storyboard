@@ -69,9 +69,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pp-Yh-YGN" userLabel="BackgroundView" customClass="LiveBackgroundView" customModule="DnDice" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.5" green="0.22275367360000001" blue="0.38372778569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2hd-It-iWy">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.56019625750000002" green="0.25506937959999998" blue="0.305159815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="40" maxX="0.0" maxY="0.0"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4C7-Yk-IzX">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -94,10 +98,14 @@
                             </collectionView>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0pp-Yh-YGN" secondAttribute="trailing" id="NRd-4z-qnn"/>
                             <constraint firstItem="2hd-It-iWy" firstAttribute="top" secondItem="ClA-Oh-9K0" secondAttribute="top" id="ODq-4f-FSF"/>
                             <constraint firstItem="pN4-Cx-2XD" firstAttribute="top" secondItem="2hd-It-iWy" secondAttribute="bottom" id="ZB5-dW-mXo"/>
+                            <constraint firstItem="0pp-Yh-YGN" firstAttribute="top" secondItem="ClA-Oh-9K0" secondAttribute="top" id="bE6-Dk-tVC"/>
+                            <constraint firstItem="pN4-Cx-2XD" firstAttribute="top" secondItem="0pp-Yh-YGN" secondAttribute="bottom" id="dRX-9b-zaI"/>
                             <constraint firstAttribute="trailing" secondItem="2hd-It-iWy" secondAttribute="trailing" id="dqm-P2-9rt"/>
                             <constraint firstItem="2hd-It-iWy" firstAttribute="leading" secondItem="ClA-Oh-9K0" secondAttribute="leading" id="hEL-rT-aKJ"/>
+                            <constraint firstItem="0pp-Yh-YGN" firstAttribute="leading" secondItem="ClA-Oh-9K0" secondAttribute="leading" id="lVL-Rn-fHt"/>
                         </constraints>
                     </view>
                     <userDefinedRuntimeAttributes>
@@ -109,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="suz-dx-s61" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2351" y="-1354"/>
+            <point key="canvasLocation" x="2349.5999999999999" y="-1354.2728635682161"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="3Pl-S7-fDv">

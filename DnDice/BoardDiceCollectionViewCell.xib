@@ -22,14 +22,14 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Try-Am-zw5" customClass="SpringImageView" customModule="Spring">
                         <rect key="frame" x="27.5" y="12.5" width="129" height="129"/>
-                        <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Try-Am-zw5" secondAttribute="height" multiplier="1:1" id="S2l-Sf-Rqw"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MU0-4E-ywv" customClass="BorderedSpringLabel" customModule="DnDice" customModuleProvider="target">
-                        <rect key="frame" x="40.5" y="55.5" width="104.5" height="45"/>
-                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="40"/>
+                        <rect key="frame" x="32" y="54.5" width="120.5" height="47"/>
+                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="40"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>

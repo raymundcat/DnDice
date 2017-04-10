@@ -14,7 +14,14 @@ class GameViewController: BaseViewController, AllDicesViewDelegate{
     
     @IBOutlet weak var boardViewContrainer: UIView!
     
-    @IBOutlet weak var allDicesViewContainer: UIView!
+    @IBOutlet weak var allDicesViewContainer: UIView!{
+        didSet{
+            allDicesViewContainer.layer.shadowColor = UIColor.black.cgColor
+            allDicesViewContainer.layer.shadowOpacity = 0.3
+            allDicesViewContainer.layer.shadowOffset = CGSize.zero
+            allDicesViewContainer.layer.shadowRadius = 10
+        }
+    }
     
     lazy var allDicesViewController: AllDicesViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)

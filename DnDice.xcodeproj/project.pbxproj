@@ -41,6 +41,8 @@
 		EC9C463D1E86BCED003723A7 /* BasePresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46391E86BCED003723A7 /* BasePresenterDelegate.swift */; };
 		EC9C463E1E86BCED003723A7 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C463A1E86BCED003723A7 /* BaseView.swift */; };
 		ECB4208B1E8FA59900E01771 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB4208A1E8FA59900E01771 /* BoardViewController.swift */; };
+		ECFA13981E9BFE2D00DBF69E /* LiveBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFA13971E9BFE2D00DBF69E /* LiveBackgroundView.swift */; };
+		ECFA139C1E9C017900DBF69E /* LiveBackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECFA139B1E9C017900DBF69E /* LiveBackgroundView.xib */; };
 		FC05689C38D0AC9723364AF2 /* Pods_DnDiceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5DE40C3DF5789DB60404AA /* Pods_DnDiceTests.framework */; };
 		FD99CB46E387CE219DBD09C5 /* Pods_DnDiceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51C909EEF7C0A7E34710C619 /* Pods_DnDiceUITests.framework */; };
 /* End PBXBuildFile section */
@@ -111,6 +113,8 @@
 		EC9C46391E86BCED003723A7 /* BasePresenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenterDelegate.swift; sourceTree = "<group>"; };
 		EC9C463A1E86BCED003723A7 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		ECB4208A1E8FA59900E01771 /* BoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
+		ECFA13971E9BFE2D00DBF69E /* LiveBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveBackgroundView.swift; sourceTree = "<group>"; };
+		ECFA139B1E9C017900DBF69E /* LiveBackgroundView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveBackgroundView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +235,8 @@
 			isa = PBXGroup;
 			children = (
 				ECB4208A1E8FA59900E01771 /* BoardViewController.swift */,
+				ECFA13971E9BFE2D00DBF69E /* LiveBackgroundView.swift */,
+				ECFA139B1E9C017900DBF69E /* LiveBackgroundView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -510,6 +516,7 @@
 				EC9C460F1E86B1A7003723A7 /* LaunchScreen.storyboard in Resources */,
 				EC6A6BDE1E996D9600C0A7CB /* BoardTitleView.xib in Resources */,
 				EC9C460C1E86B1A7003723A7 /* Assets.xcassets in Resources */,
+				ECFA139C1E9C017900DBF69E /* LiveBackgroundView.xib in Resources */,
 				EC9C46071E86B1A7003723A7 /* Main.storyboard in Resources */,
 				EC3245051E87090100665411 /* BoardDiceCollectionViewCell.xib in Resources */,
 				EC0D5B471E96CBEC002472CD /* ticker.mp3 in Resources */,
@@ -688,6 +695,7 @@
 				EC1487BC1E96B9B9001B3050 /* DiceImages.swift in Sources */,
 				EC8E1CFB1E916BFB003F914A /* StaticDiceCollectionViewCell.swift in Sources */,
 				ECB4208B1E8FA59900E01771 /* BoardViewController.swift in Sources */,
+				ECFA13981E9BFE2D00DBF69E /* LiveBackgroundView.swift in Sources */,
 				EC93E7811E942A0A007A642F /* BorderedSpringLabel.swift in Sources */,
 				EC41D9261E913C39007211EF /* AllDicesViewController.swift in Sources */,
 				EC9C46041E86B1A7003723A7 /* GameViewController.swift in Sources */,
@@ -853,6 +861,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3XNDNC2DEH;
 				INFOPLIST_FILE = DnDice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.raycat.itunes.DnDice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -868,6 +877,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3XNDNC2DEH;
 				INFOPLIST_FILE = DnDice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.raycat.itunes.DnDice;
 				PRODUCT_NAME = "$(TARGET_NAME)";

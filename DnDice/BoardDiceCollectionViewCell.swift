@@ -14,12 +14,24 @@ class BoardDiceCollectionViewCell: BaseCollectionViewCell {
     
     @IBOutlet weak var valueLabel: BorderedSpringLabel!{
         didSet{
-            valueLabel.outlineColor = UIColor.flatMaroon.lighten(byPercentage: 0.2)!
-            valueLabel.outlineWidth = 7
+            valueLabel.outlineColor = UIColor.flatPlum
+            valueLabel.outlineWidth = 0.5
+            
+            valueLabel.layer.shadowColor = UIColor.flatMagenta.cgColor
+            valueLabel.layer.shadowOpacity = 1
+            valueLabel.layer.shadowOffset = CGSize.zero
+            valueLabel.layer.shadowRadius = 3
         }
     }
     
-    @IBOutlet weak var imageView: SpringImageView!
+    @IBOutlet weak var imageView: SpringImageView!{
+        didSet{
+            imageView.layer.shadowColor = UIColor.flatMagentaDark.cgColor
+            imageView.layer.shadowOpacity = 0.3
+            imageView.layer.shadowOffset = CGSize.zero
+            imageView.layer.shadowRadius = 10
+        }
+    }
     
     var dice: Dice?{
         didSet{
