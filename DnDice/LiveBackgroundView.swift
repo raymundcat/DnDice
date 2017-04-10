@@ -15,7 +15,14 @@ class LiveBackgroundView: BaseView {
     override func initialize() {
         super.initialize()
         xibSetup(nibName: "LiveBackgroundView")
-        Timer.scheduledTimer(timeInterval: 15, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true).fire()
+        restartAnimations()
+    }
+    
+    private var timer = Timer()
+    func restartAnimations(){
+        timer.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 15, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)
+        timer.fire()
     }
     
     @objc private func timerFired(){

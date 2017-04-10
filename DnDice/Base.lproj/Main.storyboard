@@ -113,6 +113,7 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="collectionView" destination="2hd-It-iWy" id="iHv-6h-2SN"/>
+                        <outlet property="liveBackground" destination="0pp-Yh-YGN" id="luj-Gw-YYJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="suz-dx-s61" userLabel="First Responder" sceneMemberID="firstResponder"/>

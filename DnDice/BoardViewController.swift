@@ -16,6 +16,8 @@ protocol BoardViewDelegate {
 
 class BoardViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
+    @IBOutlet weak var liveBackground: LiveBackgroundView!
+    
     private let refreshControl = UIRefreshControl()
     private let cellID = "boardCellID"
     @IBOutlet weak var collectionView: UICollectionView!{
@@ -62,6 +64,7 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
     
     func removeDices(){
         guard !self.boardIsBusyAdding else { return }
+        self.liveBackground.restartAnimations()
         self.boardIsBusyDeleting = true
         let group = DispatchGroup()
         for (index, cell) in self.collectionView.visibleCells.enumerated(){
