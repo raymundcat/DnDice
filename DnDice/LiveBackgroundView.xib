@@ -24,9 +24,6 @@
                     <rect key="frame" x="0.0" y="0.0" width="353" height="458"/>
                     <color key="backgroundColor" red="0.31419187780000002" green="0.1678138673" blue="0.3144919276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0O-xI-T5n">
-                    <rect key="frame" x="0.0" y="0.0" width="353" height="458"/>
-                </view>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUO-Hv-mb9">
                     <rect key="frame" x="0.0" y="0.0" width="353" height="458"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="MBS-tQ-CTG">
@@ -40,11 +37,7 @@
             <constraints>
                 <constraint firstItem="f8a-9f-Jwg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="37b-WQ-ZWU"/>
                 <constraint firstAttribute="trailing" secondItem="hUO-Hv-mb9" secondAttribute="trailing" id="4BJ-vU-8IC"/>
-                <constraint firstItem="s0O-xI-T5n" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4Zo-4m-qzE"/>
-                <constraint firstAttribute="bottom" secondItem="s0O-xI-T5n" secondAttribute="bottom" id="6n7-Y8-V6x"/>
-                <constraint firstItem="s0O-xI-T5n" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="E4N-Jr-FeX"/>
                 <constraint firstAttribute="trailing" secondItem="f8a-9f-Jwg" secondAttribute="trailing" id="Kmc-7g-ElT"/>
-                <constraint firstAttribute="trailing" secondItem="s0O-xI-T5n" secondAttribute="trailing" id="L5b-Pl-Vd8"/>
                 <constraint firstAttribute="bottom" secondItem="hUO-Hv-mb9" secondAttribute="bottom" id="P9Y-PQ-KEj"/>
                 <constraint firstItem="f8a-9f-Jwg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Zeo-aQ-KfD"/>
                 <constraint firstItem="hUO-Hv-mb9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cCE-2w-IYE"/>

@@ -15,7 +15,6 @@ class LiveBackgroundView: BaseView {
     override func initialize() {
         super.initialize()
         xibSetup(nibName: "LiveBackgroundView")
-        restartAnimations()
     }
     
     private var timer = Timer()
@@ -25,25 +24,32 @@ class LiveBackgroundView: BaseView {
         timer.fire()
     }
     
+    private var isAnimating: Bool = false
     @objc private func timerFired(){
-        let newColor = UIColor.init(gradientStyle: .topToBottom, withFrame: CGRect(x: 0, y: 0, width: self.bgView.frame.width, height: self.bgView.frame.height * 1.3), andColors: self.gradients.getRandom())
-        UIView.animate(withDuration: 1.5, animations: {
+        guard !isAnimating else { return }
+        
+        let newColor = UIColor.init(gradientStyle: .topToBottom, withFrame: bgView.bounds, andColors: self.gradients.getRandom())
+        
+        self.isAnimating = true
+        UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseIn, animations: {
             self.topBG.backgroundColor = self.colors.getRandom()
-        }, completion: { completed in
+        }) { (completed) in
             self.bgView.backgroundColor = newColor
-            UIView.animate(withDuration: 2.5, animations: {
+            UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseIn, animations: {
                 self.topBG.backgroundColor = UIColor.clear
-            }, completion: nil)
-        })
+            }){ (completed) in
+                self.isAnimating = false
+            }
+        }
     }
     
     @IBOutlet weak var bgView: UIView!{
         didSet{
-            bgView.backgroundColor = UIColor.init(gradientStyle: .topToBottom, withFrame: CGRect(x: 0, y: 0, width: bgView.frame.width, height: bgView.frame.height * 1.3), andColors: self.gradients[0])
+            bgView.backgroundColor = colors.getRandom()
         }
     }
     
     let colors = [UIColor.flatOrange, UIColor.flatMagenta]
     
-    let gradients = [[UIColor.flatOrange, UIColor.flatMagenta],[UIColor.flatOrange, UIColor.flatOrange, UIColor.flatMagenta],[UIColor.flatOrange, UIColor.flatMagenta, UIColor.flatMagentaDark]]
+    let gradients = [[UIColor.flatOrange, UIColor.flatMagenta],[UIColor.flatOrange, UIColor.flatOrange, UIColor.flatMagenta],[UIColor.flatOrange, UIColor.flatMagenta, UIColor.flatMagenta]]
 }

@@ -53,6 +53,7 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     if let lastIndexPath = newIndexpaths.last{
                         self.collectionView.scrollToItem(at: lastIndexPath, at: .centeredVertically, animated: true)
+                        self.liveBackground.restartAnimations()
                         self.boardIsBusyAdding = false
                     }
                 }
@@ -113,6 +114,11 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
         randomShakeTimer.fire()
         self.collectionView.backgroundColor = .clear
         self.collectionView.backgroundView?.backgroundColor = .clear
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.liveBackground.restartAnimations()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

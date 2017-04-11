@@ -14,22 +14,19 @@ class BoardDiceCollectionViewCell: BaseCollectionViewCell {
     
     @IBOutlet weak var valueLabel: BorderedSpringLabel!{
         didSet{
-            valueLabel.outlineColor = UIColor.flatPlum
-            valueLabel.outlineWidth = 0.5
+            valueLabel.outlineColor = UIColor.white
+            valueLabel.outlineWidth = 2
             
-            valueLabel.layer.shadowColor = UIColor.flatMagenta.cgColor
-            valueLabel.layer.shadowOpacity = 1
-            valueLabel.layer.shadowOffset = CGSize.zero
-            valueLabel.layer.shadowRadius = 3
+            valueLabel.textColor = UIColor.flatMagenta
         }
     }
     
     @IBOutlet weak var imageView: SpringImageView!{
         didSet{
-            imageView.layer.shadowColor = UIColor.flatMagentaDark.cgColor
-            imageView.layer.shadowOpacity = 0.3
+            imageView.layer.shadowColor = UIColor.flatMagenta.cgColor
+            imageView.layer.shadowOpacity = 0.75
             imageView.layer.shadowOffset = CGSize.zero
-            imageView.layer.shadowRadius = 10
+            imageView.layer.shadowRadius = 5
         }
     }
     

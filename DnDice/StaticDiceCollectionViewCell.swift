@@ -16,8 +16,17 @@ protocol StaticDiceCellDelegate {
 
 class StaticDiceCollectionViewCell: BaseCollectionViewCell {
 
-    @IBOutlet weak var valueLabel: SpringLabel!
-    @IBOutlet weak var imageView: SpringImageView!
+    @IBOutlet weak var valueLabel: SpringLabel!{
+        didSet{
+            valueLabel.textColor = UIColor.init(colorLiteralRed: 1, green: 150/255, blue: 90/255, alpha: 1.0)
+        }
+    }
+    
+    @IBOutlet weak var imageView: SpringImageView!{
+        didSet{
+            imageView.tintColor = UIColor.init(colorLiteralRed: 1, green: 150/255, blue: 90/255, alpha: 1.0)
+        }
+    }
     
     var delegate: StaticDiceCellDelegate?
     
