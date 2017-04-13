@@ -19,6 +19,7 @@ class InfoViewController: BaseViewController {
     
     @IBOutlet weak var logoImageView: UIImageView!{
         didSet{
+            logoImageView.tintColor = .sunset()
             logoImageView.image = #imageLiteral(resourceName: "d20").withRenderingMode(.alwaysTemplate)
         }
     }
@@ -37,4 +38,6 @@ class InfoViewController: BaseViewController {
     
 }
 
-let authorMessage = "I hope that you are finding this app useful and enjoying. \n\n\n Feel free to say hi"
+let screenName = "raymundcat"
+
+let authorMessage = "i hope that you are finding this app useful and enjoying.\n\n\nfeeling generous with a review?"

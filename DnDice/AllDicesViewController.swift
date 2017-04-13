@@ -55,13 +55,6 @@ class AllDicesViewController: BaseViewController, UICollectionViewDataSource, UI
         return CGSize(width: width, height: width)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let cell = collectionView.cellForItem(at: indexPath) as! StaticDiceCollectionViewCell
-//        cell.wobble { 
-//            self.didSelect(dice: self.dices[indexPath.row])
-//        }
-//    }
-    
     func didSelect(dice: Dice){
         guard let delegate = self.delegate else { return }
         delegate.allDicesDidSelect(dice: Dice(sides: dice.sides))

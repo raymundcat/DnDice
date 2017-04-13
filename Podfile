@@ -19,6 +19,9 @@ target 'DnDice' do
   target 'DnDiceTests' do
     inherit! :search_paths
     # Pods for testing
+    
+    pod 'RxBlocking', '~> 3.0'
+    pod 'RxTest',     '~> 3.0'
   end
 
   target 'DnDiceUITests' do

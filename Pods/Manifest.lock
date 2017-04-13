@@ -5,17 +5,23 @@ PODS:
   - Hero (0.3.3)
   - NSObject+Rx (2.0.0):
     - RxSwift
+  - RxBlocking (3.2.0):
+    - RxSwift (~> 3.1)
   - RxCocoa (3.2.0):
     - RxSwift (~> 3.1)
   - RxSwift (3.2.0)
+  - RxTest (3.2.0):
+    - RxSwift (~> 3.0)
   - Spring (1.0.3)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - Hero
   - NSObject+Rx
+  - RxBlocking (~> 3.0)
   - RxCocoa (~> 3.0)
   - RxSwift (~> 3.0)
+  - RxTest (~> 3.0)
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
 
 EXTERNAL SOURCES:
@@ -37,10 +43,12 @@ SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Hero: bee4e762e84185b16a902dd11335c119515bb912
   NSObject+Rx: 2a9cd801d9c847e6d2486cbad8d7701b67834e70
+  RxBlocking: ec8ed471ba77b4fb98a2d60f1f8419b0b46eaa23
   RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
+  RxTest: 85fdd6f753e8e62635a58d37bbdd3ce7d5abbef3
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
 
-PODFILE CHECKSUM: 9b6d12fe2830f437869c2afb9ea43e1f97d1c437
+PODFILE CHECKSUM: 2898614a4f5b6740733548b3ad4d2060e30f9fa4
 
 COCOAPODS: 1.2.0

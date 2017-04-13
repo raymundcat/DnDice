@@ -14,17 +14,23 @@ protocol StaticDiceCellDelegate {
     func staticDiceDidSelect(withDice dice: Dice)
 }
 
+extension UIColor{
+    static func sunset() -> UIColor{
+        return UIColor.init(colorLiteralRed: 1, green: 150/255, blue: 90/255, alpha: 1.0)
+    }
+}
+
 class StaticDiceCollectionViewCell: BaseCollectionViewCell {
 
     @IBOutlet weak var valueLabel: SpringLabel!{
         didSet{
-            valueLabel.textColor = UIColor.init(colorLiteralRed: 1, green: 150/255, blue: 90/255, alpha: 1.0)
+            valueLabel.textColor = .sunset()
         }
     }
     
     @IBOutlet weak var imageView: SpringImageView!{
         didSet{
-            imageView.tintColor = UIColor.init(colorLiteralRed: 1, green: 150/255, blue: 90/255, alpha: 1.0)
+            imageView.tintColor = .sunset()
         }
     }
     

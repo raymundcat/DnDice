@@ -11,8 +11,8 @@ import Spring
 
 class BoardTitleView: BaseView {
     
-    @IBOutlet weak private var imageView: UIImageView!
-    @IBOutlet weak private var titleLabel: SpringLabel!
+    @IBOutlet weak private(set) var imageView: UIImageView!
+    @IBOutlet weak private(set) var titleLabel: SpringLabel!
     
     private var timer = Timer()
     

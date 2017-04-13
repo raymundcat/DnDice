@@ -135,20 +135,20 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ow-F2-5LU">
                                 <rect key="frame" x="146" y="244" width="84.5" height="48"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="40"/>
-                                <color key="textColor" red="0.56019625750000002" green="0.25506937959999998" blue="0.305159815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULU-1o-o8W">
                                 <rect key="frame" x="56.5" y="312" width="262.5" height="24"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="20"/>
-                                <color key="textColor" red="0.56019625750000002" green="0.25506937959999998" blue="0.305159815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1j-EV-Tdq">
-                                <rect key="frame" x="129.5" y="332" width="116" height="36"/>
+                                <rect key="frame" x="75" y="332" width="225" height="36"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="20"/>
-                                <state key="normal" title="@raymundcat">
-                                    <color key="titleColor" red="0.56019625750000002" green="0.25506937959999998" blue="0.305159815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="everything is appreciated :)">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="didPressTwitter:" destination="YkH-xS-omN" eventType="touchUpInside" id="nJ0-yo-KYQ"/>
@@ -158,7 +158,7 @@
                                 <rect key="frame" x="173" y="408" width="30" height="36"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                 <state key="normal" title="X">
-                                    <color key="titleColor" red="0.56019625750000002" green="0.25506937959999998" blue="0.305159815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="didPressX:" destination="YkH-xS-omN" eventType="touchUpInside" id="opS-2c-ecK"/>
@@ -278,7 +278,7 @@
         <!--Navigation Controller-->
         <scene sceneID="OTP-84-qBO">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eJ8-PL-Nsp" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RootNavigationControllerID" automaticallyAdjustsScrollViewInsets="NO" id="eJ8-PL-Nsp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="y6F-6N-fsj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
