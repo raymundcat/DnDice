@@ -224,6 +224,13 @@
 			name = Info;
 			sourceTree = "<group>";
 		};
+		EC6CBA4C1E9FF09F00E7520A /* Main Dice Board Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Main Dice Board Tests";
+			sourceTree = "<group>";
+		};
 		EC8E02941E96AAAA00A98E9F /* Sound Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,7 +308,8 @@
 		EC9C46181E86B1A7003723A7 /* DnDiceTests */ = {
 			isa = PBXGroup;
 			children = (
-				ECFA139E1E9F8DCB00DBF69E /* ViewControllers */,
+				EC6CBA4C1E9FF09F00E7520A /* Main Dice Board Tests */,
+				ECFA139E1E9F8DCB00DBF69E /* Main Screen Tests */,
 				ECFA139D1E9F882A00DBF69E /* Entities */,
 				EC9C46191E86B1A7003723A7 /* DnDiceTests.swift */,
 				EC9C461B1E86B1A7003723A7 /* Info.plist */,
@@ -407,12 +415,12 @@
 			name = Entities;
 			sourceTree = "<group>";
 		};
-		ECFA139E1E9F8DCB00DBF69E /* ViewControllers */ = {
+		ECFA139E1E9F8DCB00DBF69E /* Main Screen Tests */ = {
 			isa = PBXGroup;
 			children = (
 				ECFA139F1E9F8DF300DBF69E /* MainScreenTests.swift */,
 			);
-			name = ViewControllers;
+			name = "Main Screen Tests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -498,7 +506,7 @@
 					EC9C46141E86B1A7003723A7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 3XNDNC2DEH;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						TestTargetID = EC9C45FD1E86B1A6003723A7;
 					};
 					EC9C461F1E86B1A7003723A7 = {
@@ -927,6 +935,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.raycat.itunes.DnDiceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DnDice.app/DnDice";
 			};
@@ -938,11 +947,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 3XNDNC2DEH;
 				INFOPLIST_FILE = DnDiceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.raycat.itunes.DnDiceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DnDice.app/DnDice";
 			};

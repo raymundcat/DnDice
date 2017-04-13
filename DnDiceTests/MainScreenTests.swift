@@ -52,15 +52,17 @@ class MainScreenTests: XCTestCase {
                 shownTexts.append(text)
                 }.addDisposableTo(self.disposeBag)
             
-            gameScreen.throwInBoard(newDice: Dice(sides: .Twenty))
+            for _ in 0...20{
+                gameScreen.throwInBoard(newDice: Dice(sides: .Twenty))
+            }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
                 resultExpectation.fulfill()
             }
         }
         
-        self.waitForExpectations(timeout: 15) { (error) in
-            guard error != nil else { return }
+        self.waitForExpectations(timeout: 60) { (error) in
+            guard error == nil else { return }
             let result = shownTexts.contains(where: { (text) -> Bool in
                 return text.contains("\(gameScreen.boardViewController.dices.totalValues())")
             })
