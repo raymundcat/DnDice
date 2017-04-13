@@ -7,37 +7,25 @@
 //
 
 import XCTest
-//import Rxte
+import RxSwift
+import RxTest
+import UIKit
+
 @testable import DnDice
 
 class MainScreenTests: XCTestCase {
     
+    var disposeBag: DisposeBag!
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        disposeBag = DisposeBag()
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-    }
-    
-    func testRootNavExists(){
-        XCTAssertNotNil(getRootNavController)
-    }
-    
-    func getRootNavController() -> UINavigationController? {
-        //create view controller
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        return storyBoard.instantiateViewController(withIdentifier: RootNavigationControllerID)  as? UINavigationController
-    }
-    
-    func testGetMainScreenExists(){
-        XCTAssertNotNil(getGameViewController(fromRootNav:getRootNavController()!))
-    }
-    
-    func getGameViewController(fromRootNav rootNav: UINavigationController) -> GameViewController? {
-        return getRootNavController()?.viewControllers[0] as? GameViewController
     }
     
     func testGameScreenShowingProperTotal(){
@@ -56,23 +44,27 @@ class MainScreenTests: XCTestCase {
         
         let resultExpectation = expectation(description: "")
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//            gameScreen.titleView.titleLabel.rx.observe(String.self, "text").subscribe { (event) in
-//                guard let element = event.element else { return }
-//                guard let text = element else { return }
-//                shownTexts.append(text)
-//                }.addDisposableTo(self.rx_disposeBag)
-//            gameScreen.allDicesDidSelect(dice: Dice(sides: .Four))
-//            gameScreen.titleView.titleLabel.text
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                let result = shownTexts.contains(where: { (text) -> Bool in
-                    return text.contains("\(gameScreen.boardViewController.dices.totalValues())")
-                })
-                
-                XCTAssertTrue(result)
+            
+            let label: UILabel = gameScreen.titleView.titleLabel!
+            label.rx.observe(String.self, "text").subscribe { (event) in
+                guard let element = event.element else { return }
+                guard let text = element else { return }
+                shownTexts.append(text)
+                }.addDisposableTo(self.disposeBag)
+            
+            gameScreen.throwInBoard(newDice: Dice(sides: .Twenty))
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
                 resultExpectation.fulfill()
             }
         }
         
-        self.wait(for: [resultExpectation], timeout: 10)
+        self.waitForExpectations(timeout: 15) { (error) in
+            guard error != nil else { return }
+            let result = shownTexts.contains(where: { (text) -> Bool in
+                return text.contains("\(gameScreen.boardViewController.dices.totalValues())")
+            })
+            XCTAssertTrue(result)
+        }
     }
 }

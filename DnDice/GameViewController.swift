@@ -76,13 +76,17 @@ class GameViewController: BaseViewController, AllDicesViewDelegate{
         self.performSegue(withIdentifier: "SegueToInfo", sender: self)
     }
     
-    //MARK: All Dices Delegate
-    func allDicesDidSelect(dice: Dice) {
+    func throwInBoard(newDice: Dice){
         guard !boardViewController.boardIsBusyDeleting else { return }
-        boardViewController.dices.append(dice)
-        dice.roll(onComplete: { _ in
+        boardViewController.dices.append(newDice)
+        newDice.roll(onComplete: { _ in
             self.titleView.total = self.boardViewController.dices.totalValues()
             self.titleView.greetings = DiceTitleBuilder.createMessages(fromDices: self.boardViewController.dices)
         })
+    }
+    
+    //MARK: All Dices Delegate
+    func allDicesDidSelect(dice: Dice) {
+        throwInBoard(newDice: dice)
     }
 }
