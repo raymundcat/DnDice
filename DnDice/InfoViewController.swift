@@ -28,8 +28,12 @@ class InfoViewController: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func didPressTwitter(_ sender: Any) {
-        
+    @IBAction func didPressReview(_ sender: Any) {
+        rateApp(appId: appID) { (completed) in
+            if completed {
+                self.showAlert(title: "Thanks for the feedback!", message: "")
+            }
+        }
     }
     
     @IBAction func didPressX(_ sender: Any) {
@@ -38,6 +42,18 @@ class InfoViewController: BaseViewController {
     
 }
 
-let screenName = "raymundcat"
+func rateApp(appId: String, completion: @escaping ((_ success: Bool)->())) {
+    guard let url = URL(string : "itms-apps://itunes.apple.com/app/" + appId) else {
+        completion(false)
+        return
+    }
+    guard #available(iOS 10, *) else {
+        completion(UIApplication.shared.openURL(url))
+        return
+    }
+    UIApplication.shared.open(url, options: [:], completionHandler: completion)
+}
 
-let authorMessage = "i hope that you are finding this app useful and enjoying.\n\n\nfeeling generous with a review?"
+let authorMessage = "i hope that you are finding this app useful and enjoying."
+let appID = "id1225043908"
+

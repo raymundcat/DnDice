@@ -24,6 +24,7 @@
 		EC6A6BDE1E996D9600C0A7CB /* BoardTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6A6BDD1E996D9600C0A7CB /* BoardTitleView.xib */; };
 		EC6A6BE11E99755200C0A7CB /* DiceTitleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A6BE01E99755200C0A7CB /* DiceTitleBuilder.swift */; };
 		EC6A6BE41E9A808600C0A7CB /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A6BE31E9A808600C0A7CB /* InfoViewController.swift */; };
+		EC6CBA4E1EA001D200E7520A /* MainBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6CBA4D1EA001D200E7520A /* MainBoardTests.swift */; };
 		EC8E02961E96AABE00A98E9F /* roulette.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EC8E02951E96AABE00A98E9F /* roulette.mp3 */; };
 		EC8E1CFB1E916BFB003F914A /* StaticDiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E1CF91E916BFB003F914A /* StaticDiceCollectionViewCell.swift */; };
 		EC8E1CFC1E916BFB003F914A /* StaticDiceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8E1CFA1E916BFB003F914A /* StaticDiceCollectionViewCell.xib */; };
@@ -92,6 +93,7 @@
 		EC6A6BDD1E996D9600C0A7CB /* BoardTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoardTitleView.xib; sourceTree = "<group>"; };
 		EC6A6BE01E99755200C0A7CB /* DiceTitleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceTitleBuilder.swift; sourceTree = "<group>"; };
 		EC6A6BE31E9A808600C0A7CB /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		EC6CBA4D1EA001D200E7520A /* MainBoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBoardTests.swift; sourceTree = "<group>"; };
 		EC8E02951E96AABE00A98E9F /* roulette.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = roulette.mp3; sourceTree = "<group>"; };
 		EC8E1CF91E916BFB003F914A /* StaticDiceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticDiceCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC8E1CFA1E916BFB003F914A /* StaticDiceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StaticDiceCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 		EC6CBA4C1E9FF09F00E7520A /* Main Dice Board Tests */ = {
 			isa = PBXGroup;
 			children = (
+				EC6CBA4D1EA001D200E7520A /* MainBoardTests.swift */,
 			);
 			name = "Main Dice Board Tests";
 			sourceTree = "<group>";
@@ -501,7 +504,7 @@
 					EC9C45FD1E86B1A6003723A7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 3XNDNC2DEH;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					EC9C46141E86B1A7003723A7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -747,6 +750,7 @@
 				ECFA13A01E9F8DF300DBF69E /* MainScreenTests.swift in Sources */,
 				EC3245091E88207C00665411 /* DiceTests.swift in Sources */,
 				EC9C461A1E86B1A7003723A7 /* DnDiceTests.swift in Sources */,
+				EC6CBA4E1EA001D200E7520A /* MainBoardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -891,15 +895,15 @@
 			baseConfigurationReference = BD7569AB7ADBFBA5237E3766 /* Pods-DnDice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 3XNDNC2DEH;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DnDice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.raycat.itunes.DnDice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "860c401b-8fe1-4df8-836f-b50555128c82";
-				PROVISIONING_PROFILE_SPECIFIER = "XC iOS: com.raycat.itunes.DnDice";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -910,15 +914,15 @@
 			baseConfigurationReference = 05DF474680D6F3B3673BF414 /* Pods-DnDice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 3XNDNC2DEH;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DnDice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.raycat.itunes.DnDice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "860c401b-8fe1-4df8-836f-b50555128c82";
-				PROVISIONING_PROFILE_SPECIFIER = "XC iOS: com.raycat.itunes.DnDice";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -36,6 +36,14 @@ class Dice: NSObject{
             })
         }
     }
+    
+    static func getRandomDice() -> Dice{
+        var dummyDices  = [Dice]()
+        for side in iterateEnum(DiceSide.self){
+            dummyDices.append(Dice(sides: side))
+        }
+        return dummyDices.getRandom()
+    }
 }
 
 class AvailableDices{
