@@ -11,8 +11,8 @@ import Spring
 
 class BoardTitleView: BaseView {
     
-    @IBOutlet weak private var imageView: UIImageView!
-    @IBOutlet weak private var titleLabel: SpringLabel!
+    @IBOutlet weak private(set) var imageView: UIImageView!
+    @IBOutlet weak private(set) var titleLabel: SpringLabel!
     
     private var timer = Timer()
     
@@ -62,7 +62,7 @@ class BoardTitleView: BaseView {
                 self.titleLabel.text = "\(message)"
                 break
             case .TotalMessage(let prefix, let total):
-                self.titleLabel.text = "\(prefix) \(total)"
+                self.titleLabel.text = total == 0 ? "" : "\(prefix) \(total)"
                 break
             }
         }

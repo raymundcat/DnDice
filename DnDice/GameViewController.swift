@@ -14,7 +14,14 @@ class GameViewController: BaseViewController, AllDicesViewDelegate{
     
     @IBOutlet weak var boardViewContrainer: UIView!
     
-    @IBOutlet weak var allDicesViewContainer: UIView!
+    @IBOutlet weak var allDicesViewContainer: UIView!{
+        didSet{
+            allDicesViewContainer.layer.shadowColor = UIColor.black.cgColor
+            allDicesViewContainer.layer.shadowOpacity = 0.3
+            allDicesViewContainer.layer.shadowOffset = CGSize.zero
+            allDicesViewContainer.layer.shadowRadius = 10
+        }
+    }
     
     lazy var allDicesViewController: AllDicesViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -50,15 +57,36 @@ class GameViewController: BaseViewController, AllDicesViewDelegate{
         
         self.titleView = BoardTitleView(frame: (self.navigationController?.navigationBar.bounds)!)
         self.navigationItem.titleView = self.titleView
+        
+        let infoButton = UIButton(type: .custom)
+        infoButton.setImage(DiceImages.getImage(forDiceSide: .Twenty).withRenderingMode(.alwaysTemplate), for: .normal)
+        infoButton.frame = CGRect(x: 0, y: 0, width: 30, height: 25)
+        infoButton.imageView?.contentMode = .scaleAspectFit
+        infoButton.tintColor = UIColor.white
+        infoButton.adjustsImageWhenHighlighted = false
+        infoButton.addTarget(self, action: #selector(didPressInfoButton), for: .touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: infoButton)
+        
+        let dummyButton = UIButton(type: .custom)
+        dummyButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: dummyButton)
+    }
+    
+    internal func didPressInfoButton(){
+        self.performSegue(withIdentifier: "SegueToInfo", sender: self)
+    }
+    
+    func throwInBoard(newDice: Dice){
+        guard !boardViewController.boardIsBusyDeleting else { return }
+        boardViewController.dices.append(newDice)
+        newDice.roll(onComplete: { _ in
+            self.titleView.total = self.boardViewController.dices.totalValues()
+            self.titleView.greetings = DiceTitleBuilder.createMessages(fromDices: self.boardViewController.dices)
+        })
     }
     
     //MARK: All Dices Delegate
     func allDicesDidSelect(dice: Dice) {
-        boardViewController.dices.append(dice)
-        dice.roll(onComplete: { _ in
-//            self.titleView.setTitle(title: "Total: \(self.boardViewController.dices.totalValues())")
-            self.titleView.total = self.boardViewController.dices.totalValues()
-            self.titleView.greetings = DiceTitleBuilder.createMessages(fromDices: self.boardViewController.dices)
-        })
+        throwInBoard(newDice: dice)
     }
 }

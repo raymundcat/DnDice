@@ -8,8 +8,8 @@
 
 import Foundation
 import UIKit
-import MBProgressHUD
-import ZHPopupView
+//import MBProgressHUD
+//import ZHPopupView
 import RxSwift
 import RxCocoa
 import NSObject_Rx
@@ -38,36 +38,36 @@ class BaseViewController: UIViewController {
     }
     
     func showAlert(title: String, message: String, onComplete: (() -> Void)? = nil){
-        let alertView = ZHPopupView.popupNomralAlertView(in: self.view, backgroundStyle: ZHPopupViewBackgroundType_Blur, title: title, content: message, buttonTitles: ["Okay"], confirmBtnTextColor: UIColor.black, otherBtnTextColor: UIColor.black) { (index) in
-            onComplete?()
-        }
-        DispatchQueue.main.async { 
-            alertView?.present()
-        }
+//        let alertView = ZHPopupView.popupNomralAlertView(in: self.view, backgroundStyle: ZHPopupViewBackgroundType_Blur, title: title, content: message, buttonTitles: ["Okay"], confirmBtnTextColor: UIColor.black, otherBtnTextColor: UIColor.black) { (index) in
+//            onComplete?()
+//        }
+//        DispatchQueue.main.async { 
+//            alertView?.present()
+//        }
     }
     
     func showProgress() {
         hideProgress()
-        DispatchQueue.main.async {
-            let progress = MBProgressHUD.showAdded(to: self.view, animated: true)
-            progress.mode = .indeterminate
-        }
+//        DispatchQueue.main.async {
+//            let progress = MBProgressHUD.showAdded(to: self.view, animated: true)
+//            progress.mode = .indeterminate
+//        }
     }
     
     func showProgress(title: String?, message: String?) {
         hideProgress()
-        DispatchQueue.main.async {
-            let progress = MBProgressHUD.showAdded(to: self.view, animated: true)
-            progress.mode = .indeterminate
-            progress.label.text = title
-            progress.detailsLabel.text = message
-        }
+//        DispatchQueue.main.async {
+//            let progress = MBProgressHUD.showAdded(to: self.view, animated: true)
+//            progress.mode = .indeterminate
+//            progress.label.text = title
+//            progress.detailsLabel.text = message
+//        }
     }
     
     func hideProgress() {
-        DispatchQueue.main.async {
-            MBProgressHUD.hide(for: self.view, animated: true)
-        }
+//        DispatchQueue.main.async {
+//            MBProgressHUD.hide(for: self.view, animated: true)
+//        }
     }
 }
 

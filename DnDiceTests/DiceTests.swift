@@ -42,7 +42,7 @@ class DiceTests: XCTestCase {
     }
     
     func test(dice: Dice, withSide sideMax: Int){
-        for _ in 0..<100 {
+        for _ in 0..<sideMax*10 {
             let diceExpectation = expectation(description: "fulfilled")
             dice.roll(onComplete: { (newValue) in
                 XCTAssert(newValue <= sideMax)
@@ -51,7 +51,7 @@ class DiceTests: XCTestCase {
         }
         self.waitForExpectations(timeout: 10) { (error) in
             if error != nil{
-                print("failed to wait for expectations \(error)")
+                print("failed to wait for expectations \(String(describing: error))")
             }else{
                 print("expectations done")
             }

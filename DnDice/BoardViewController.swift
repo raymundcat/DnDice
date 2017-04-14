@@ -16,7 +16,9 @@ protocol BoardViewDelegate {
 
 class BoardViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
-    let refreshControl = UIRefreshControl()
+    @IBOutlet weak var liveBackground: LiveBackgroundView!
+    
+    private let refreshControl = UIRefreshControl()
     private let cellID = "boardCellID"
     @IBOutlet weak var collectionView: UICollectionView!{
         didSet{
@@ -29,12 +31,15 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
             collectionView.addSubview(refreshControl)
             collectionView.alwaysBounceVertical = true
             collectionView.heroModifiers = [.cascade]
-            collectionView.contentInset = UIEdgeInsetsMake(20, sideInsets, 20, sideInsets)
+            collectionView.contentInset = UIEdgeInsetsMake(60, sideInsets, 20, sideInsets)
         }
     }
     
+    private (set) var boardIsBusyAdding: Bool = false
+    
     var dices: [Dice] = [Dice](){
         didSet{
+            self.boardIsBusyAdding = true
             var newIndexpaths = [IndexPath]()
             for (index, dice) in self.dices.enumerated(){
                 if !oldValue.contains(dice){
@@ -48,13 +53,20 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     if let lastIndexPath = newIndexpaths.last{
                         self.collectionView.scrollToItem(at: lastIndexPath, at: .centeredVertically, animated: true)
+                        self.liveBackground.restartAnimations()
+                        self.boardIsBusyAdding = false
                     }
                 }
             }
         }
     }
     
+    private (set) var boardIsBusyDeleting: Bool = false
+    
     func removeDices(){
+        guard !self.boardIsBusyAdding else { return }
+        self.liveBackground.restartAnimations()
+        self.boardIsBusyDeleting = true
         let group = DispatchGroup()
         for (index, cell) in self.collectionView.visibleCells.enumerated(){
             group.enter()
@@ -68,19 +80,21 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
         }
         
         group.notify(queue: DispatchQueue.main) {
-            self.refreshControl.endRefreshing()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.collectionView.performBatchUpdates({
                     for (index, _) in self.dices.enumerated(){
                         self.collectionView.deleteItems(at: [IndexPath(row: index, section: 0)])
                     }
                     self.dices.removeAll()
+                }, completion: { completed in
+                    self.refreshControl.endRefreshing()
+                    self.boardIsBusyDeleting = false
                 })
             }
         }
     }
     
-    var randomShakeTimer = Timer()
+    private var randomShakeTimer = Timer()
     
     func randomlyShakeDices(){
         for cell in self.collectionView.visibleCells{
@@ -100,7 +114,11 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
         randomShakeTimer.fire()
         self.collectionView.backgroundColor = .clear
         self.collectionView.backgroundView?.backgroundColor = .clear
-        self.view.backgroundColor = UIColor.init(gradientStyle: .topToBottom, withFrame: self.collectionView.bounds, andColors: [UIColor.flatMaroon.lighten(byPercentage: 0.2)!, .flatMaroonDark])
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.liveBackground.restartAnimations()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
