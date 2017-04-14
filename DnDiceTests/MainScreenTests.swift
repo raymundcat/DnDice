@@ -61,6 +61,7 @@ class MainScreenTests: XCTestCase {
                 self.gameViewController.throwInBoard(newDice: Dice.getRandomDice())
             }
             
+            //some animations are supposed to happen so let's wait
             DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
                 resultExpectation.fulfill()
             }

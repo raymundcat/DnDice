@@ -78,7 +78,7 @@ class GameViewController: BaseViewController, AllDicesViewDelegate{
     
     func throwInBoard(newDice: Dice){
         guard !boardViewController.boardIsBusyDeleting else { return }
-        boardViewController.dices.append(newDice)
+        boardViewController.add(dice: newDice)
         newDice.roll(onComplete: { _ in
             self.titleView.total = self.boardViewController.dices.totalValues()
             self.titleView.greetings = DiceTitleBuilder.createMessages(fromDices: self.boardViewController.dices)

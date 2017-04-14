@@ -56,6 +56,27 @@ class MainBoardTests: XCTestCase {
         XCTAssertNotNil(gameViewController.view)
         XCTAssertNotNil(boardViewController.view)
         
-        
+        var rolledDices = [Dice]()
+        let resultExpectation = expectation(description: "")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            
+            for _ in 0...20{
+                let dice = Dice.getRandomDice()
+                boardViewController.add(dice: dice)
+                rolledDices.append(dice)
+            }
+            
+            //some animations are supposed to happen so let's wait
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                resultExpectation.fulfill()
+            }
+        }
+        self.waitForExpectations(timeout: 10) { (error) in
+            guard error == nil else { return }
+            
+            for rolledDice in rolledDices{
+                XCTAssertTrue(boardViewController.dices.contains(rolledDice))
+            }
+        }
     }
 }

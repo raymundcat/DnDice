@@ -16,7 +16,7 @@ protocol BoardViewDelegate {
 
 class BoardViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
-    @IBOutlet weak var liveBackground: LiveBackgroundView!
+    @IBOutlet weak private var liveBackground: LiveBackgroundView!
     
     private let refreshControl = UIRefreshControl()
     private let cellID = "boardCellID"
@@ -37,7 +37,7 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
     
     private (set) var boardIsBusyAdding: Bool = false
     
-    var dices: [Dice] = [Dice](){
+    private (set) var dices: [Dice] = [Dice](){
         didSet{
             self.boardIsBusyAdding = true
             var newIndexpaths = [IndexPath]()
@@ -59,6 +59,10 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
                 }
             }
         }
+    }
+    
+    func add(dice: Dice){
+        self.dices.append(dice)
     }
     
     private (set) var boardIsBusyDeleting: Bool = false
