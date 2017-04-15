@@ -36,7 +36,8 @@ class AllDicesViewController: BaseViewController, UICollectionViewDataSource, UI
         dices = AvailableDices().dices
     }
     
-    @available(iOS 6.0, *)
+    //MARK: CollectionView Delegate
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! StaticDiceCollectionViewCell
         cell.dice = dices[indexPath.row]
@@ -44,7 +45,6 @@ class AllDicesViewController: BaseViewController, UICollectionViewDataSource, UI
         return cell
     }
     
-    @available(iOS 6.0, *)
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.dices.count
     }

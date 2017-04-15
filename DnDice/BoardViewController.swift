@@ -16,9 +16,11 @@ protocol BoardViewDelegate {
 
 class BoardViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
-    @IBOutlet weak var liveBackground: LiveBackgroundView!
+    @IBOutlet weak private var liveBackground: LiveBackgroundView!
     
     private let refreshControl = UIRefreshControl()
+    
+    
     private let cellID = "boardCellID"
     @IBOutlet weak var collectionView: UICollectionView!{
         didSet{
@@ -30,14 +32,13 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
             refreshControl.tintColor = .white
             collectionView.addSubview(refreshControl)
             collectionView.alwaysBounceVertical = true
-            collectionView.heroModifiers = [.cascade]
             collectionView.contentInset = UIEdgeInsetsMake(60, sideInsets, 20, sideInsets)
         }
     }
     
     private (set) var boardIsBusyAdding: Bool = false
     
-    var dices: [Dice] = [Dice](){
+    private (set) var dices: [Dice] = [Dice](){
         didSet{
             self.boardIsBusyAdding = true
             var newIndexpaths = [IndexPath]()
@@ -59,6 +60,10 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
                 }
             }
         }
+    }
+    
+    func add(dice: Dice){
+        self.dices.append(dice)
     }
     
     private (set) var boardIsBusyDeleting: Bool = false
@@ -125,6 +130,8 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
         super.viewWillDisappear(animated)
         randomShakeTimer.invalidate()
     }
+    
+    //MARK: CollectionView Delegate
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! BoardDiceCollectionViewCell

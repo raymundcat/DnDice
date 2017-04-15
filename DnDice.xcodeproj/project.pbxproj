@@ -25,6 +25,7 @@
 		EC6A6BE11E99755200C0A7CB /* DiceTitleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A6BE01E99755200C0A7CB /* DiceTitleBuilder.swift */; };
 		EC6A6BE41E9A808600C0A7CB /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A6BE31E9A808600C0A7CB /* InfoViewController.swift */; };
 		EC6CBA4E1EA001D200E7520A /* MainBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6CBA4D1EA001D200E7520A /* MainBoardTests.swift */; };
+		EC6CBA511EA2082600E7520A /* AllDicesBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6CBA501EA2082600E7520A /* AllDicesBoardTests.swift */; };
 		EC8E02961E96AABE00A98E9F /* roulette.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EC8E02951E96AABE00A98E9F /* roulette.mp3 */; };
 		EC8E1CFB1E916BFB003F914A /* StaticDiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E1CF91E916BFB003F914A /* StaticDiceCollectionViewCell.swift */; };
 		EC8E1CFC1E916BFB003F914A /* StaticDiceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8E1CFA1E916BFB003F914A /* StaticDiceCollectionViewCell.xib */; };
@@ -94,6 +95,7 @@
 		EC6A6BE01E99755200C0A7CB /* DiceTitleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceTitleBuilder.swift; sourceTree = "<group>"; };
 		EC6A6BE31E9A808600C0A7CB /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		EC6CBA4D1EA001D200E7520A /* MainBoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBoardTests.swift; sourceTree = "<group>"; };
+		EC6CBA501EA2082600E7520A /* AllDicesBoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllDicesBoardTests.swift; sourceTree = "<group>"; };
 		EC8E02951E96AABE00A98E9F /* roulette.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = roulette.mp3; sourceTree = "<group>"; };
 		EC8E1CF91E916BFB003F914A /* StaticDiceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticDiceCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC8E1CFA1E916BFB003F914A /* StaticDiceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StaticDiceCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -234,6 +236,14 @@
 			name = "Main Dice Board Tests";
 			sourceTree = "<group>";
 		};
+		EC6CBA4F1EA207F900E7520A /* All Dices Board Tests */ = {
+			isa = PBXGroup;
+			children = (
+				EC6CBA501EA2082600E7520A /* AllDicesBoardTests.swift */,
+			);
+			name = "All Dices Board Tests";
+			sourceTree = "<group>";
+		};
 		EC8E02941E96AAAA00A98E9F /* Sound Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +321,7 @@
 		EC9C46181E86B1A7003723A7 /* DnDiceTests */ = {
 			isa = PBXGroup;
 			children = (
+				EC6CBA4F1EA207F900E7520A /* All Dices Board Tests */,
 				EC6CBA4C1E9FF09F00E7520A /* Main Dice Board Tests */,
 				ECFA139E1E9F8DCB00DBF69E /* Main Screen Tests */,
 				ECFA139D1E9F882A00DBF69E /* Entities */,
@@ -749,6 +760,7 @@
 			files = (
 				ECFA13A01E9F8DF300DBF69E /* MainScreenTests.swift in Sources */,
 				EC3245091E88207C00665411 /* DiceTests.swift in Sources */,
+				EC6CBA511EA2082600E7520A /* AllDicesBoardTests.swift in Sources */,
 				EC9C461A1E86B1A7003723A7 /* DnDiceTests.swift in Sources */,
 				EC6CBA4E1EA001D200E7520A /* MainBoardTests.swift in Sources */,
 			);

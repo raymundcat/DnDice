@@ -48,7 +48,7 @@ class MainScreenTests: XCTestCase {
         var shownTexts = [String]()
         
         let resultExpectation = expectation(description: "")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
         
             let label: UILabel = self.gameViewController.titleView.titleLabel!
             label.rx.observe(String.self, "text").subscribe { (event) in
@@ -61,6 +61,7 @@ class MainScreenTests: XCTestCase {
                 self.gameViewController.throwInBoard(newDice: Dice.getRandomDice())
             }
             
+            //some animations are supposed to happen so let's wait
             DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
                 resultExpectation.fulfill()
             }
