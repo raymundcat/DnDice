@@ -12,12 +12,10 @@ import RxSwift
 
 class MainBoardTests: XCTestCase {
     
-    var disposeBag: DisposeBag!
     var boardViewController: BoardViewController!
     
     override func setUp() {
         super.setUp()
-        disposeBag = DisposeBag()
         
         let storyboard = UIStoryboard(name: "Main",
                                       bundle: Bundle.main)
@@ -42,27 +40,13 @@ class MainBoardTests: XCTestCase {
     //let's test if it really is adding dices
     func testRolledDicesExist(){
         
-        let storyboard = UIStoryboard(name: "Main",
-                                      bundle: Bundle.main)
-        let rootNav = storyboard.instantiateInitialViewController() as! UINavigationController
-        let gameViewController = rootNav.topViewController as! GameViewController
-        let boardViewController = gameViewController.boardViewController
-        
-        UIApplication.shared.keyWindow!.rootViewController = rootNav
-        
-        //weird thing you have to do to
-        //to force apple to prepare your views
-        XCTAssertNotNil(rootNav.view)
-        XCTAssertNotNil(gameViewController.view)
-        XCTAssertNotNil(boardViewController.view)
-        
         var rolledDices = [Dice]()
         let resultExpectation = expectation(description: "")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        
             for _ in 0...20{
                 let dice = Dice.getRandomDice()
-                boardViewController.add(dice: dice)
+                self.boardViewController.add(dice: dice)
                 rolledDices.append(dice)
             }
             
@@ -75,7 +59,8 @@ class MainBoardTests: XCTestCase {
             guard error == nil else { return }
             
             for rolledDice in rolledDices{
-                XCTAssertTrue(boardViewController.dices.contains(rolledDice))
+                XCTAssertTrue(self.boardViewController.dices.contains(rolledDice))
+                XCTAssertEqual(rolledDices.count, self.boardViewController.collectionView.numberOfItems(inSection: 0))
             }
         }
     }

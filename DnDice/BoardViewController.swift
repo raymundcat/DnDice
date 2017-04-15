@@ -19,6 +19,8 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
     @IBOutlet weak private var liveBackground: LiveBackgroundView!
     
     private let refreshControl = UIRefreshControl()
+    
+    
     private let cellID = "boardCellID"
     @IBOutlet weak var collectionView: UICollectionView!{
         didSet{
@@ -129,6 +131,8 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
         super.viewWillDisappear(animated)
         randomShakeTimer.invalidate()
     }
+    
+    //MARK: CollectionView Delegate
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! BoardDiceCollectionViewCell
