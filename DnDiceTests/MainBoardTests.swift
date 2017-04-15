@@ -30,6 +30,7 @@ class MainBoardTests: XCTestCase {
         XCTAssertNotNil(rootNav.view)
         XCTAssertNotNil(gameViewController.view)
         XCTAssertNotNil(boardViewController.view)
+        XCTAssertNotNil(boardViewController.collectionView)
     }
     
     override func tearDown() {
@@ -38,12 +39,11 @@ class MainBoardTests: XCTestCase {
     }
     
     //let's test if it really is adding dices
-    func testRolledDicesExist(){
+    func testRolledDicesExist(completion: @escaping () -> Void){
         
         var rolledDices = [Dice]()
         let resultExpectation = expectation(description: "")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-        
             for _ in 0...20{
                 let dice = Dice.getRandomDice()
                 self.boardViewController.add(dice: dice)
@@ -55,6 +55,7 @@ class MainBoardTests: XCTestCase {
                 resultExpectation.fulfill()
             }
         }
+        
         self.waitForExpectations(timeout: 10) { (error) in
             guard error == nil else { return }
             
@@ -62,6 +63,24 @@ class MainBoardTests: XCTestCase {
                 XCTAssertTrue(self.boardViewController.dices.contains(rolledDice))
                 XCTAssertEqual(rolledDices.count, self.boardViewController.collectionView.numberOfItems(inSection: 0))
             }
+            completion()
+        }
+    }
+    
+    //test if the delete call actually deletes cells
+    func testDicesWereRolledAndDeletedFunction(){
+        testRolledDicesExist {
+            
+            let deleteExpectations = self.expectation(description: "")
+            self.boardViewController.removeDices()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                deleteExpectations.fulfill()
+            }
+            
+            self.waitForExpectations(timeout: 13, handler: { (error) in
+                guard error != nil else { return }
+                XCTAssertLessThanOrEqual(self.boardViewController.collectionView.numberOfItems(inSection: 0), 0)
+            })
         }
     }
 }

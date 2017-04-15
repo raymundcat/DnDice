@@ -32,7 +32,6 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
             refreshControl.tintColor = .white
             collectionView.addSubview(refreshControl)
             collectionView.alwaysBounceVertical = true
-            collectionView.heroModifiers = [.cascade]
             collectionView.contentInset = UIEdgeInsetsMake(60, sideInsets, 20, sideInsets)
         }
     }
