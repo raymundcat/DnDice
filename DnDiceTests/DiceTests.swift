@@ -21,6 +21,7 @@ class DiceTests: XCTestCase {
         super.tearDown()
     }
     
+    //run test on all sides
     func testDiceSides(){
         let dice4 = Dice(sides: .Four)
         self.test(dice: dice4, withSide: 4)
@@ -41,6 +42,7 @@ class DiceTests: XCTestCase {
         self.test(dice: dice20, withSide: 20)
     }
     
+    //test max results of dices depending on side
     func test(dice: Dice, withSide sideMax: Int){
         for _ in 0..<sideMax*10 {
             let diceExpectation = expectation(description: "fulfilled")

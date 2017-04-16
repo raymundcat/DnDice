@@ -14,9 +14,10 @@ protocol AllDicesViewDelegate {
     func allDicesDidSelect(dice: Dice)
 }
 
-class AllDicesViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+class AllDicesViewController: BaseViewController{
     
-    let cellID = "staticCellD"
+    fileprivate let sideInsets: CGFloat = 20
+    fileprivate let cellID = "staticCellD"
     @IBOutlet weak var collectionView: UICollectionView!{
         didSet{
             collectionView.register(UINib(nibName: "StaticDiceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellID)
@@ -28,15 +29,21 @@ class AllDicesViewController: BaseViewController, UICollectionViewDataSource, UI
         }
     }
     
-    var dices: [Dice]!
     var delegate: AllDicesViewDelegate?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        dices = AvailableDices().dices
-    }
+    private (set) lazy var dices: [Dice]! = {
+        return AvailableDices().dices
+    }()
     
-    //MARK: CollectionView Delegate
+    func didSelect(dice: Dice){
+        guard let delegate = self.delegate else { return }
+        delegate.allDicesDidSelect(dice: Dice(sides: dice.sides))
+    }
+}
+
+// MARK: - CollectionView DataSource
+
+extension AllDicesViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! StaticDiceCollectionViewCell
@@ -48,18 +55,18 @@ class AllDicesViewController: BaseViewController, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.dices.count
     }
-    
-    let sideInsets: CGFloat = 20
+}
+
+// MARK: - CollectionView Delegate Flow Layout
+
+extension AllDicesViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.frame.size.height / 2) - (sideInsets)
         return CGSize(width: width, height: width)
     }
-    
-    func didSelect(dice: Dice){
-        guard let delegate = self.delegate else { return }
-        delegate.allDicesDidSelect(dice: Dice(sides: dice.sides))
-    }
 }
+
+// MARK: - Static Dices Delegate
 
 extension AllDicesViewController: StaticDiceCellDelegate{
     func staticDiceDidSelect(withDice dice: Dice) {

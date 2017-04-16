@@ -14,16 +14,20 @@ protocol BoardViewDelegate {
     func boardDidSet(newTotal total: Int)
 }
 
-class BoardViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+class BoardViewController: BaseViewController{
     
     @IBOutlet weak private var liveBackground: LiveBackgroundView!
     
     private let refreshControl = UIRefreshControl()
     
+    fileprivate let sideInsets: CGFloat = 10
+    fileprivate let cellID = "boardCellID"
     
-    private let cellID = "boardCellID"
     @IBOutlet weak var collectionView: UICollectionView!{
         didSet{
+            collectionView.backgroundColor = .clear
+            collectionView.backgroundView?.backgroundColor = .clear
+            
             collectionView.register(UINib(nibName: "BoardDiceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellID)
             collectionView.delegate = self
             collectionView.dataSource = self
@@ -40,7 +44,7 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
     
     private (set) var dices: [Dice] = [Dice](){
         didSet{
-            self.boardIsBusyAdding = true
+            boardIsBusyAdding = true
             var newIndexpaths = [IndexPath]()
             for (index, dice) in self.dices.enumerated(){
                 if !oldValue.contains(dice){
@@ -67,11 +71,10 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
     }
     
     private (set) var boardIsBusyDeleting: Bool = false
-    
     func removeDices(){
-        guard !self.boardIsBusyAdding else { return }
-        self.liveBackground.restartAnimations()
-        self.boardIsBusyDeleting = true
+        guard !boardIsBusyAdding else { return }
+        liveBackground.restartAnimations()
+        boardIsBusyDeleting = true
         let group = DispatchGroup()
         for (index, cell) in self.collectionView.visibleCells.enumerated(){
             group.enter()
@@ -100,7 +103,6 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
     }
     
     private var randomShakeTimer = Timer()
-    
     func randomlyShakeDices(){
         for cell in self.collectionView.visibleCells{
             DispatchQueue.main.asyncAfter(deadline: .now() + Double(randomise(min: 1, max: 10)) * 0.1, execute: {
@@ -117,8 +119,6 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
             self.randomlyShakeDices()
         })
         randomShakeTimer.fire()
-        self.collectionView.backgroundColor = .clear
-        self.collectionView.backgroundView?.backgroundColor = .clear
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -130,8 +130,11 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
         super.viewWillDisappear(animated)
         randomShakeTimer.invalidate()
     }
-    
-    //MARK: CollectionView Delegate
+}
+
+// MARK: - CollectionView DataSource
+
+extension BoardViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! BoardDiceCollectionViewCell
@@ -142,13 +145,21 @@ class BoardViewController: BaseViewController, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.dices.count
     }
+}
+
+// MARK: - CollectionView Delegate
+
+extension BoardViewController: UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? BoardDiceCollectionViewCell else { return }
         cell.pulse()
     }
-    
-    let sideInsets: CGFloat = 10
+}
+
+// MARK: - CollectionView Delegate Flow Layout
+
+extension BoardViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = ((collectionView.frame.size.width - (sideInsets * 2)) / 3) - 8
         return CGSize(width: width, height: width)

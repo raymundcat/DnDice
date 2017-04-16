@@ -18,7 +18,7 @@ class Dice: NSObject{
         self.sides = sides
     }
     
-    var value: Int = 1
+    private (set) var value: Int = 1
     private (set) var state: Variable<DiceState> = Variable(.Stable)
     
     func roll(onComplete: ((_ newValue: Int) -> Void)?){
@@ -57,18 +57,6 @@ class AvailableDices{
     }
 }
 
-func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
-    var i = 0
-    return AnyIterator {
-        let next = withUnsafePointer(to: &i) {
-            $0.withMemoryRebound(to: T.self, capacity: 1) { $0.pointee }
-        }
-        if next.hashValue != i { return nil }
-        i += 1
-        return next
-    }
-}
-
 enum DiceSide: Int{
     case Four = 4
     case Six = 6
@@ -81,10 +69,6 @@ enum DiceSide: Int{
 enum DiceState{
     case Rolling
     case Stable
-}
-
-func randomise(min: Int, max: Int) -> Int{
-    return min + Int(arc4random_uniform(UInt32(max - min + 1)))
 }
 
 extension Array where Element: Dice{

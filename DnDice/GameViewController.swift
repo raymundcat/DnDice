@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import NSObject_Rx
 
-class GameViewController: BaseViewController, AllDicesViewDelegate{
+class GameViewController: BaseViewController{
     
     @IBOutlet weak var boardViewContrainer: UIView!
     
@@ -46,17 +46,17 @@ class GameViewController: BaseViewController, AllDicesViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.addChildViewController(boardViewController)
-        self.boardViewContrainer.addSubview(boardViewController.view)
-        self.boardViewController.view.frame = boardViewContrainer.bounds
+        addChildViewController(boardViewController)
+        boardViewContrainer.addSubview(boardViewController.view)
+        boardViewController.view.frame = boardViewContrainer.bounds
         
-        self.addChildViewController(allDicesViewController)
-        self.allDicesViewContainer.addSubview(allDicesViewController.view)
-        self.allDicesViewController.view.frame = allDicesViewContainer.bounds
-        self.allDicesViewController.delegate = self
+        addChildViewController(allDicesViewController)
+        allDicesViewContainer.addSubview(allDicesViewController.view)
+        allDicesViewController.view.frame = allDicesViewContainer.bounds
+        allDicesViewController.delegate = self
         
-        self.titleView = BoardTitleView(frame: (self.navigationController?.navigationBar.bounds)!)
-        self.navigationItem.titleView = self.titleView
+        titleView = BoardTitleView(frame: (self.navigationController?.navigationBar.bounds)!)
+        navigationItem.titleView = self.titleView
         
         let infoButton = UIButton(type: .custom)
         infoButton.setImage(DiceImages.getImage(forDiceSide: .Twenty).withRenderingMode(.alwaysTemplate), for: .normal)
@@ -65,11 +65,11 @@ class GameViewController: BaseViewController, AllDicesViewDelegate{
         infoButton.tintColor = UIColor.white
         infoButton.adjustsImageWhenHighlighted = false
         infoButton.addTarget(self, action: #selector(didPressInfoButton), for: .touchUpInside)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: infoButton)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: infoButton)
         
         let dummyButton = UIButton(type: .custom)
         dummyButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: dummyButton)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: dummyButton)
     }
     
     internal func didPressInfoButton(){
@@ -84,8 +84,11 @@ class GameViewController: BaseViewController, AllDicesViewDelegate{
             self.titleView.greetings = DiceTitleBuilder.createMessages(fromDices: self.boardViewController.dices)
         })
     }
-    
-    //MARK: All Dices Delegate
+}
+
+//MARK: - All Dices Delegate
+
+extension GameViewController: AllDicesViewDelegate{
     func allDicesDidSelect(dice: Dice) {
         throwInBoard(newDice: dice)
     }
