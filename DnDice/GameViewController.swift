@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import NSObject_Rx
 
-class GameViewController: BaseViewController, AllDicesViewDelegate{
+class GameViewController: BaseViewController{
     
     @IBOutlet weak var boardViewContrainer: UIView!
     
@@ -84,8 +84,11 @@ class GameViewController: BaseViewController, AllDicesViewDelegate{
             self.titleView.greetings = DiceTitleBuilder.createMessages(fromDices: self.boardViewController.dices)
         })
     }
-    
-    //MARK: All Dices Delegate
+}
+
+//MARK: - All Dices Delegate
+
+extension GameViewController: AllDicesViewDelegate{
     func allDicesDidSelect(dice: Dice) {
         throwInBoard(newDice: dice)
     }
