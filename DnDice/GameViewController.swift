@@ -37,10 +37,6 @@ class GameViewController: BaseViewController{
         return viewController
     }()
     
-    var availableDices: AvailableDices = {
-       return AvailableDices()
-    }()
-    
     var titleView: BoardTitleView!
     
     override func viewDidLoad() {
