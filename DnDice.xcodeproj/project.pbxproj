@@ -39,8 +39,6 @@
 		EC9C461A1E86B1A7003723A7 /* DnDiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46191E86B1A7003723A7 /* DnDiceTests.swift */; };
 		EC9C46251E86B1A7003723A7 /* DnDiceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46241E86B1A7003723A7 /* DnDiceUITests.swift */; };
 		EC9C463B1E86BCED003723A7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46371E86BCED003723A7 /* BaseViewController.swift */; };
-		EC9C463C1E86BCED003723A7 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46381E86BCED003723A7 /* BaseTableViewCell.swift */; };
-		EC9C463D1E86BCED003723A7 /* BasePresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46391E86BCED003723A7 /* BasePresenterDelegate.swift */; };
 		EC9C463E1E86BCED003723A7 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C463A1E86BCED003723A7 /* BaseView.swift */; };
 		ECB4208B1E8FA59900E01771 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB4208A1E8FA59900E01771 /* BoardViewController.swift */; };
 		ECF6F7E91EA389BE00110E1B /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF6F7E81EA389BE00110E1B /* Functions.swift */; };
@@ -116,8 +114,6 @@
 		EC9C46241E86B1A7003723A7 /* DnDiceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDiceUITests.swift; sourceTree = "<group>"; };
 		EC9C46261E86B1A7003723A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC9C46371E86BCED003723A7 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		EC9C46381E86BCED003723A7 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
-		EC9C46391E86BCED003723A7 /* BasePresenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenterDelegate.swift; sourceTree = "<group>"; };
 		EC9C463A1E86BCED003723A7 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		ECB4208A1E8FA59900E01771 /* BoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		ECF6F7E81EA389BE00110E1B /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
@@ -388,9 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				EC9C46371E86BCED003723A7 /* BaseViewController.swift */,
-				EC9C46381E86BCED003723A7 /* BaseTableViewCell.swift */,
 				EC3245061E87091D00665411 /* BaseCollectionViewCell.swift */,
-				EC9C46391E86BCED003723A7 /* BasePresenterDelegate.swift */,
 				EC9C463A1E86BCED003723A7 /* BaseView.swift */,
 				EC93E7801E942A0A007A642F /* BorderedSpringLabel.swift */,
 			);
@@ -740,7 +734,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC9C463D1E86BCED003723A7 /* BasePresenterDelegate.swift in Sources */,
 				ECFA13A21E9F90BB00DBF69E /* Constants.swift in Sources */,
 				EC9C460A1E86B1A7003723A7 /* DnDice.xcdatamodeld in Sources */,
 				EC6A6BE11E99755200C0A7CB /* DiceTitleBuilder.swift in Sources */,
@@ -759,7 +752,6 @@
 				EC1487B81E96AF4A001B3050 /* Springable+CustomAnimations.swift in Sources */,
 				EC6A6BE41E9A808600C0A7CB /* InfoViewController.swift in Sources */,
 				EC9C463E1E86BCED003723A7 /* BaseView.swift in Sources */,
-				EC9C463C1E86BCED003723A7 /* BaseTableViewCell.swift in Sources */,
 				EC0D5B431E96BFF3002472CD /* DiceSounds.swift in Sources */,
 				EC6A6BDC1E996D6B00C0A7CB /* BoardTitleView.swift in Sources */,
 				EC9C46021E86B1A7003723A7 /* AppDelegate.swift in Sources */,
