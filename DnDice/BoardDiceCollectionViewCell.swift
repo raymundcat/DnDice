@@ -101,6 +101,8 @@ class BoardDiceCollectionViewCell: BaseCollectionViewCell {
     }
 }
 
+// MARK: Soundables
+
 extension BoardDiceCollectionViewCell: BoardSoundable, StaticSoundable{
     
     func play(url: URL) {

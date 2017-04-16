@@ -14,7 +14,13 @@ class BoardTitleView: BaseView {
     @IBOutlet weak private(set) var imageView: UIImageView!
     @IBOutlet weak private(set) var titleLabel: SpringLabel!
     
-    private var timer = Timer()
+    var total: Int = 0 {
+        didSet{
+            resetTimer()
+        }
+    }
+    
+    var greetings = [""]
     
     override func initialize() {
         super.initialize()
@@ -22,6 +28,7 @@ class BoardTitleView: BaseView {
         self.resetTimer()
     }
     
+    private var timer = Timer()
     private func resetTimer(){
         timer.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(timerFired(timer:)), userInfo: nil, repeats: true)
@@ -66,20 +73,6 @@ class BoardTitleView: BaseView {
                 break
             }
         }
-    }
-    
-    var total: Int = 0 {
-        didSet{
-            resetTimer()
-        }
-    }
-    
-    var greetings = [""]
-}
-
-extension Array{
-    func getRandom() -> Element{
-        return self[randomise(min: 0, max: self.count - 1)]
     }
 }
 

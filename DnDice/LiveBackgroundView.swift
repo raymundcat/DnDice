@@ -17,6 +17,12 @@ class LiveBackgroundView: BaseView {
         xibSetup(nibName: "LiveBackgroundView")
     }
     
+    @IBOutlet weak var bgView: UIView!{
+        didSet{
+            bgView.backgroundColor = colors.getRandom()
+        }
+    }
+    
     private var timer = Timer()
     func restartAnimations(){
         timer.invalidate()
@@ -40,12 +46,6 @@ class LiveBackgroundView: BaseView {
             }){ (completed) in
                 self.isAnimating = false
             }
-        }
-    }
-    
-    @IBOutlet weak var bgView: UIView!{
-        didSet{
-            bgView.backgroundColor = colors.getRandom()
         }
     }
     
