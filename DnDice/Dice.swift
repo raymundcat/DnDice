@@ -18,7 +18,7 @@ class Dice: NSObject{
         self.sides = sides
     }
     
-    var value: Int = 1
+    private (set) var value: Int = 1
     private (set) var state: Variable<DiceState> = Variable(.Stable)
     
     func roll(onComplete: ((_ newValue: Int) -> Void)?){

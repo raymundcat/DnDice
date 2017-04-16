@@ -14,11 +14,9 @@ extension Array{
     }
 }
 
-
 func randomise(min: Int, max: Int) -> Int{
     return min + Int(arc4random_uniform(UInt32(max - min + 1)))
 }
-
 
 func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
     var i = 0
