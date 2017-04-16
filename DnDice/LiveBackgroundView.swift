@@ -49,7 +49,6 @@ class LiveBackgroundView: BaseView {
         }
     }
     
-    let colors = [UIColor.flatOrange, UIColor.flatMagenta]
-    
-    let gradients = [[UIColor.flatOrange, UIColor.flatMagenta],[UIColor.flatOrange, UIColor.flatOrange, UIColor.flatMagenta],[UIColor.flatOrange, UIColor.flatMagenta, UIColor.flatMagenta]]
+    private let colors = [UIColor.flatOrange, UIColor.flatMagenta]
+    private let gradients = [[UIColor.flatOrange, UIColor.flatMagenta],[UIColor.flatOrange, UIColor.flatOrange, UIColor.flatMagenta],[UIColor.flatOrange, UIColor.flatMagenta, UIColor.flatMagenta]]
 }

@@ -25,6 +25,9 @@ class BoardViewController: BaseViewController{
     
     @IBOutlet weak var collectionView: UICollectionView!{
         didSet{
+            collectionView.backgroundColor = .clear
+            collectionView.backgroundView?.backgroundColor = .clear
+            
             collectionView.register(UINib(nibName: "BoardDiceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellID)
             collectionView.delegate = self
             collectionView.dataSource = self
@@ -41,7 +44,7 @@ class BoardViewController: BaseViewController{
     
     private (set) var dices: [Dice] = [Dice](){
         didSet{
-            self.boardIsBusyAdding = true
+            boardIsBusyAdding = true
             var newIndexpaths = [IndexPath]()
             for (index, dice) in self.dices.enumerated(){
                 if !oldValue.contains(dice){
@@ -68,11 +71,10 @@ class BoardViewController: BaseViewController{
     }
     
     private (set) var boardIsBusyDeleting: Bool = false
-    
     func removeDices(){
-        guard !self.boardIsBusyAdding else { return }
-        self.liveBackground.restartAnimations()
-        self.boardIsBusyDeleting = true
+        guard !boardIsBusyAdding else { return }
+        liveBackground.restartAnimations()
+        boardIsBusyDeleting = true
         let group = DispatchGroup()
         for (index, cell) in self.collectionView.visibleCells.enumerated(){
             group.enter()
@@ -101,7 +103,6 @@ class BoardViewController: BaseViewController{
     }
     
     private var randomShakeTimer = Timer()
-    
     func randomlyShakeDices(){
         for cell in self.collectionView.visibleCells{
             DispatchQueue.main.asyncAfter(deadline: .now() + Double(randomise(min: 1, max: 10)) * 0.1, execute: {
@@ -118,8 +119,6 @@ class BoardViewController: BaseViewController{
             self.randomlyShakeDices()
         })
         randomShakeTimer.fire()
-        self.collectionView.backgroundColor = .clear
-        self.collectionView.backgroundView?.backgroundColor = .clear
     }
     
     override func viewDidAppear(_ animated: Bool) {
