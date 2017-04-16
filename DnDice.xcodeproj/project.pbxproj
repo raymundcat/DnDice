@@ -39,11 +39,10 @@
 		EC9C461A1E86B1A7003723A7 /* DnDiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46191E86B1A7003723A7 /* DnDiceTests.swift */; };
 		EC9C46251E86B1A7003723A7 /* DnDiceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46241E86B1A7003723A7 /* DnDiceUITests.swift */; };
 		EC9C463B1E86BCED003723A7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46371E86BCED003723A7 /* BaseViewController.swift */; };
-		EC9C463C1E86BCED003723A7 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46381E86BCED003723A7 /* BaseTableViewCell.swift */; };
-		EC9C463D1E86BCED003723A7 /* BasePresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46391E86BCED003723A7 /* BasePresenterDelegate.swift */; };
 		EC9C463E1E86BCED003723A7 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C463A1E86BCED003723A7 /* BaseView.swift */; };
 		ECB4208B1E8FA59900E01771 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB4208A1E8FA59900E01771 /* BoardViewController.swift */; };
-		ECF6F7E91EA389BE00110E1B /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF6F7E81EA389BE00110E1B /* GlobalFunctions.swift */; };
+		ECF6F7E91EA389BE00110E1B /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF6F7E81EA389BE00110E1B /* Functions.swift */; };
+		ECF6F7EB1EA3EEE900110E1B /* DiceMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF6F7EA1EA3EEE900110E1B /* DiceMessage.swift */; };
 		ECFA13981E9BFE2D00DBF69E /* LiveBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFA13971E9BFE2D00DBF69E /* LiveBackgroundView.swift */; };
 		ECFA139C1E9C017900DBF69E /* LiveBackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECFA139B1E9C017900DBF69E /* LiveBackgroundView.xib */; };
 		ECFA13A01E9F8DF300DBF69E /* MainScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFA139F1E9F8DF300DBF69E /* MainScreenTests.swift */; };
@@ -116,11 +115,10 @@
 		EC9C46241E86B1A7003723A7 /* DnDiceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDiceUITests.swift; sourceTree = "<group>"; };
 		EC9C46261E86B1A7003723A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC9C46371E86BCED003723A7 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		EC9C46381E86BCED003723A7 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
-		EC9C46391E86BCED003723A7 /* BasePresenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenterDelegate.swift; sourceTree = "<group>"; };
 		EC9C463A1E86BCED003723A7 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		ECB4208A1E8FA59900E01771 /* BoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
-		ECF6F7E81EA389BE00110E1B /* GlobalFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
+		ECF6F7E81EA389BE00110E1B /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		ECF6F7EA1EA3EEE900110E1B /* DiceMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceMessage.swift; sourceTree = "<group>"; };
 		ECFA13971E9BFE2D00DBF69E /* LiveBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveBackgroundView.swift; sourceTree = "<group>"; };
 		ECFA139B1E9C017900DBF69E /* LiveBackgroundView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveBackgroundView.xib; sourceTree = "<group>"; };
 		ECFA139F1E9F8DF300DBF69E /* MainScreenTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenTests.swift; sourceTree = "<group>"; };
@@ -218,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				EC6A6BE01E99755200C0A7CB /* DiceTitleBuilder.swift */,
+				ECF6F7EA1EA3EEE900110E1B /* DiceMessage.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -388,9 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				EC9C46371E86BCED003723A7 /* BaseViewController.swift */,
-				EC9C46381E86BCED003723A7 /* BaseTableViewCell.swift */,
 				EC3245061E87091D00665411 /* BaseCollectionViewCell.swift */,
-				EC9C46391E86BCED003723A7 /* BasePresenterDelegate.swift */,
 				EC9C463A1E86BCED003723A7 /* BaseView.swift */,
 				EC93E7801E942A0A007A642F /* BorderedSpringLabel.swift */,
 			);
@@ -427,7 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				ECFA13A11E9F90BB00DBF69E /* Constants.swift */,
-				ECF6F7E81EA389BE00110E1B /* GlobalFunctions.swift */,
+				ECF6F7E81EA389BE00110E1B /* Functions.swift */,
 			);
 			name = Globals;
 			sourceTree = "<group>";
@@ -740,7 +737,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC9C463D1E86BCED003723A7 /* BasePresenterDelegate.swift in Sources */,
 				ECFA13A21E9F90BB00DBF69E /* Constants.swift in Sources */,
 				EC9C460A1E86B1A7003723A7 /* DnDice.xcdatamodeld in Sources */,
 				EC6A6BE11E99755200C0A7CB /* DiceTitleBuilder.swift in Sources */,
@@ -751,15 +747,15 @@
 				EC1487BC1E96B9B9001B3050 /* DiceImages.swift in Sources */,
 				EC8E1CFB1E916BFB003F914A /* StaticDiceCollectionViewCell.swift in Sources */,
 				ECB4208B1E8FA59900E01771 /* BoardViewController.swift in Sources */,
+				ECF6F7EB1EA3EEE900110E1B /* DiceMessage.swift in Sources */,
 				ECFA13981E9BFE2D00DBF69E /* LiveBackgroundView.swift in Sources */,
 				EC93E7811E942A0A007A642F /* BorderedSpringLabel.swift in Sources */,
 				EC41D9261E913C39007211EF /* AllDicesViewController.swift in Sources */,
 				EC9C46041E86B1A7003723A7 /* GameViewController.swift in Sources */,
-				ECF6F7E91EA389BE00110E1B /* GlobalFunctions.swift in Sources */,
+				ECF6F7E91EA389BE00110E1B /* Functions.swift in Sources */,
 				EC1487B81E96AF4A001B3050 /* Springable+CustomAnimations.swift in Sources */,
 				EC6A6BE41E9A808600C0A7CB /* InfoViewController.swift in Sources */,
 				EC9C463E1E86BCED003723A7 /* BaseView.swift in Sources */,
-				EC9C463C1E86BCED003723A7 /* BaseTableViewCell.swift in Sources */,
 				EC0D5B431E96BFF3002472CD /* DiceSounds.swift in Sources */,
 				EC6A6BDC1E996D6B00C0A7CB /* BoardTitleView.swift in Sources */,
 				EC9C46021E86B1A7003723A7 /* AppDelegate.swift in Sources */,

@@ -59,4 +59,21 @@ class DiceTests: XCTestCase {
             }
         }
     }
+    
+    //test AvailableDices if it
+    //really contains all available dices
+    func testAllDices(){
+        var allDices = AvailableDices().dices
+        
+        //all dices must have one dice per dice side
+        for side in iterateEnum(DiceSide.self){
+            if let diceMatchedIndex = allDices.index(where: { (dice) -> Bool in
+                return dice.sides == side
+            }){
+                allDices.remove(at: diceMatchedIndex)
+            }
+        }
+        
+        XCTAssertEqual(0, allDices.count)
+    }
 }

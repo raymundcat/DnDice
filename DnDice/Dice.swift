@@ -47,13 +47,11 @@ class Dice: NSObject{
 }
 
 class AvailableDices{
-    let dices: [Dice]
+    private (set) var dices = [Dice]()
     init() {
-        var dummyDices  = [Dice]()
         for side in iterateEnum(DiceSide.self){
-            dummyDices.append(Dice(sides: side))
+            dices.append(Dice(sides: side))
         }
-        dices = dummyDices
     }
 }
 

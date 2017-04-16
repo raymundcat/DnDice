@@ -75,19 +75,3 @@ class BoardTitleView: BaseView {
         }
     }
 }
-
-enum DiceMessage: Equatable{
-    case TotalMessage(prefix: String, total: Int)
-    case Greetings(message: String)
-}
-
-func ==(lhs: DiceMessage, rhs: DiceMessage) -> Bool{
-    switch (lhs, rhs){
-    case ( .Greetings, .Greetings):
-        return true
-    case ( .TotalMessage, .TotalMessage):
-        return true
-    default:
-        return false
-    }
-}

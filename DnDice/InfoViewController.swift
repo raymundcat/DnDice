@@ -29,11 +29,7 @@ class InfoViewController: BaseViewController {
     }
     
     @IBAction func didPressReview(_ sender: Any) {
-        rateApp(appId: appID) { (completed) in
-            if completed {
-                self.showAlert(title: "Thanks for the feedback!", message: "")
-            }
-        }
+        rateApp(appId: appID, completion: nil)
     }
     
     @IBAction func didPressX(_ sender: Any) {
@@ -42,13 +38,13 @@ class InfoViewController: BaseViewController {
     
 }
 
-func rateApp(appId: String, completion: @escaping ((_ success: Bool)->())) {
+func rateApp(appId: String, completion: ((_ success: Bool)->())?) {
     guard let url = URL(string : "itms-apps://itunes.apple.com/app/" + appId) else {
-        completion(false)
+        completion?(false)
         return
     }
     guard #available(iOS 10, *) else {
-        completion(UIApplication.shared.openURL(url))
+        completion?(UIApplication.shared.openURL(url))
         return
     }
     UIApplication.shared.open(url, options: [:], completionHandler: completion)
