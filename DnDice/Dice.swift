@@ -44,6 +44,15 @@ class Dice: NSObject{
         }
         return dummyDices.getRandom()
     }
+    
+    static func generateRandomSet(ofMaxCount count: Int) -> [Dice] {
+        let finalCount = randomise(min: 1, max: count)
+        var dices = [Dice]()
+        for _ in 1...finalCount{
+            dices.append(Dice.getRandomDice())
+        }
+        return dices
+    }
 }
 
 class AvailableDices{
