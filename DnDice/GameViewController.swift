@@ -10,6 +10,13 @@ import UIKit
 import RxSwift
 import NSObject_Rx
 
+class Storyboard{
+    static func getViewController<VCClass: UIViewController>(withID id: String, asVCClass vcClass: VCClass.Type, fromStoryBoardName name: String = "Main") -> VCClass? {
+        let storyboard = UIStoryboard(name: name, bundle: Bundle.main)
+        return storyboard.instantiateViewController(withIdentifier: id) as? VCClass
+    }
+}
+
 class GameViewController: BaseViewController{
     
     @IBOutlet weak var boardViewContrainer: UIView!
@@ -24,17 +31,11 @@ class GameViewController: BaseViewController{
     }
     
     lazy var allDicesViewController: AllDicesViewController = {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "AllDicesViewController") as! AllDicesViewController
-        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        return viewController
+        return Storyboard.getViewController(withID: "AllDicesViewController", asVCClass: AllDicesViewController.self) ?? AllDicesViewController()
     }()
     
     lazy var boardViewController: BoardViewController = {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "BoardViewController") as! BoardViewController
-        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        return viewController
+        return Storyboard.getViewController(withID: "BoardViewController", asVCClass: BoardViewController.self) ?? BoardViewController()
     }()
     
     var titleView: BoardTitleView!
