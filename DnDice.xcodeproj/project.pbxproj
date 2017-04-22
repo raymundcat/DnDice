@@ -41,6 +41,7 @@
 		EC9C463B1E86BCED003723A7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46371E86BCED003723A7 /* BaseViewController.swift */; };
 		EC9C463E1E86BCED003723A7 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C463A1E86BCED003723A7 /* BaseView.swift */; };
 		ECB4208B1E8FA59900E01771 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB4208A1E8FA59900E01771 /* BoardViewController.swift */; };
+		ECD7A5421EA90DAC00B6BB04 /* TitleBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD7A5411EA90DAC00B6BB04 /* TitleBuilderTests.swift */; };
 		ECF6F7E91EA389BE00110E1B /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF6F7E81EA389BE00110E1B /* Functions.swift */; };
 		ECF6F7EB1EA3EEE900110E1B /* DiceMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF6F7EA1EA3EEE900110E1B /* DiceMessage.swift */; };
 		ECFA13981E9BFE2D00DBF69E /* LiveBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFA13971E9BFE2D00DBF69E /* LiveBackgroundView.swift */; };
@@ -117,6 +118,7 @@
 		EC9C46371E86BCED003723A7 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EC9C463A1E86BCED003723A7 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		ECB4208A1E8FA59900E01771 /* BoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
+		ECD7A5411EA90DAC00B6BB04 /* TitleBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleBuilderTests.swift; sourceTree = "<group>"; };
 		ECF6F7E81EA389BE00110E1B /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		ECF6F7EA1EA3EEE900110E1B /* DiceMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceMessage.swift; sourceTree = "<group>"; };
 		ECFA13971E9BFE2D00DBF69E /* LiveBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveBackgroundView.swift; sourceTree = "<group>"; };
@@ -441,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				ECFA139F1E9F8DF300DBF69E /* MainScreenTests.swift */,
+				ECD7A5411EA90DAC00B6BB04 /* TitleBuilderTests.swift */,
 			);
 			name = "Main Screen Tests";
 			sourceTree = "<group>";
@@ -768,6 +771,7 @@
 			files = (
 				ECFA13A01E9F8DF300DBF69E /* MainScreenTests.swift in Sources */,
 				EC3245091E88207C00665411 /* DiceTests.swift in Sources */,
+				ECD7A5421EA90DAC00B6BB04 /* TitleBuilderTests.swift in Sources */,
 				EC6CBA511EA2082600E7520A /* AllDicesBoardTests.swift in Sources */,
 				EC9C461A1E86B1A7003723A7 /* DnDiceTests.swift in Sources */,
 				EC6CBA4E1EA001D200E7520A /* MainBoardTests.swift in Sources */,

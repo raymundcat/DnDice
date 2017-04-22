@@ -37,12 +37,25 @@ class Dice: NSObject{
         }
     }
     
+    func isValueTheSame(withDice dice: Dice) -> Bool{
+        return self.sides == dice.sides && self.value == dice.value
+    }
+    
     static func getRandomDice() -> Dice{
         var dummyDices  = [Dice]()
         for side in iterateEnum(DiceSide.self){
             dummyDices.append(Dice(sides: side))
         }
         return dummyDices.getRandom()
+    }
+    
+    static func generateRandomSet(ofMaxCount count: Int) -> [Dice] {
+        let finalCount = randomise(min: 1, max: count)
+        var dices = [Dice]()
+        for _ in 1...finalCount{
+            dices.append(Dice.getRandomDice())
+        }
+        return dices
     }
 }
 
