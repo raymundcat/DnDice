@@ -37,6 +37,10 @@ class Dice: NSObject{
         }
     }
     
+    func isValueTheSame(withDice dice: Dice) -> Bool{
+        return self.sides == dice.sides && self.value == dice.value
+    }
+    
     static func getRandomDice() -> Dice{
         var dummyDices  = [Dice]()
         for side in iterateEnum(DiceSide.self){

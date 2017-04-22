@@ -76,4 +76,21 @@ class DiceTests: XCTestCase {
         
         XCTAssertEqual(0, allDices.count)
     }
+    
+    //test randomness of a dice
+    func testDiceRandomness(){
+        
+        //make sure dices added aren't all the same
+        //make a guard to make sure the next dice becomes different
+        var prevDice: Dice?
+        var hasProducedDifferent: Bool = false
+        for _ in 0...20{
+            let newDice = Dice.getRandomDice()
+            if let prevDice = prevDice{
+                hasProducedDifferent = !prevDice.isValueTheSame(withDice: newDice)
+            }
+            prevDice = newDice
+        }
+        XCTAssertTrue(hasProducedDifferent)
+    }
 }
