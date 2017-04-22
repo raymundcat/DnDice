@@ -30,11 +30,6 @@ class AllDicesBoardTests: XCTestCase {
         XCTAssertNotNil(gameViewController.view)
         XCTAssertNotNil(allDicesViewController.view)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
     
     //test if all the dices in the enum exists
     func testAllDicesExists(){

@@ -12,6 +12,8 @@ import XCTest
 
 class TitleBuilderTests: XCTestCase {
     
+    //Test to see that the title builder
+    //will always produce a message
     func testTitleBuilderHasValues(){
         for _ in 0...20{
             XCTAssertGreaterThan(DiceTitleBuilder.createMessages(fromDices: Dice.generateRandomSet(ofMaxCount: 20)).count, 0)

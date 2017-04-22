@@ -36,11 +36,6 @@ class MainScreenTests: XCTestCase {
         XCTAssertNotNil(gameViewController.view)
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
     //let's test if the screen is
     //actually showing the total results
     //of rolls

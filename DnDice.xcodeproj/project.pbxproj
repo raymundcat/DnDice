@@ -36,7 +36,6 @@
 		EC9C460A1E86B1A7003723A7 /* DnDice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46081E86B1A7003723A7 /* DnDice.xcdatamodeld */; };
 		EC9C460C1E86B1A7003723A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC9C460B1E86B1A7003723A7 /* Assets.xcassets */; };
 		EC9C460F1E86B1A7003723A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9C460D1E86B1A7003723A7 /* LaunchScreen.storyboard */; };
-		EC9C461A1E86B1A7003723A7 /* DnDiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46191E86B1A7003723A7 /* DnDiceTests.swift */; };
 		EC9C46251E86B1A7003723A7 /* DnDiceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46241E86B1A7003723A7 /* DnDiceUITests.swift */; };
 		EC9C463B1E86BCED003723A7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C46371E86BCED003723A7 /* BaseViewController.swift */; };
 		EC9C463E1E86BCED003723A7 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C463A1E86BCED003723A7 /* BaseView.swift */; };
@@ -110,7 +109,6 @@
 		EC9C460E1E86B1A7003723A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC9C46101E86B1A7003723A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC9C46151E86B1A7003723A7 /* DnDiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DnDiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC9C46191E86B1A7003723A7 /* DnDiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDiceTests.swift; sourceTree = "<group>"; };
 		EC9C461B1E86B1A7003723A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC9C46201E86B1A7003723A7 /* DnDiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DnDiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9C46241E86B1A7003723A7 /* DnDiceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDiceUITests.swift; sourceTree = "<group>"; };
@@ -328,7 +326,6 @@
 				EC6CBA4C1E9FF09F00E7520A /* Main Dice Board Tests */,
 				ECFA139E1E9F8DCB00DBF69E /* Main Screen Tests */,
 				ECFA139D1E9F882A00DBF69E /* Entities */,
-				EC9C46191E86B1A7003723A7 /* DnDiceTests.swift */,
 				EC9C461B1E86B1A7003723A7 /* Info.plist */,
 			);
 			path = DnDiceTests;
@@ -773,7 +770,6 @@
 				EC3245091E88207C00665411 /* DiceTests.swift in Sources */,
 				ECD7A5421EA90DAC00B6BB04 /* TitleBuilderTests.swift in Sources */,
 				EC6CBA511EA2082600E7520A /* AllDicesBoardTests.swift in Sources */,
-				EC9C461A1E86B1A7003723A7 /* DnDiceTests.swift in Sources */,
 				EC6CBA4E1EA001D200E7520A /* MainBoardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
