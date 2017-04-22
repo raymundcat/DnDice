@@ -11,7 +11,8 @@ target 'DnDice' do
     pod 'Hero'
     pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
     pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
-
+#    pod 'Onboard'
+    
   # Pods for DnDice
 
   target 'DnDiceTests' do

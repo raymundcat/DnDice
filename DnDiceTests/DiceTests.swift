@@ -88,6 +88,9 @@ class DiceTests: XCTestCase {
             let newDice = Dice.getRandomDice()
             if let prevDice = prevDice{
                 hasProducedDifferent = !prevDice.isValueTheSame(withDice: newDice)
+                if hasProducedDifferent {
+                    break
+                }
             }
             prevDice = newDice
         }
