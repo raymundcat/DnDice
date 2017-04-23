@@ -13,6 +13,7 @@ PODS:
   - RxTest (3.2.0):
     - RxSwift (~> 3.0)
   - Spring (1.0.3)
+  - SwiftHamcrest (1.0.0)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - RxSwift (~> 3.0)
   - RxTest (~> 3.0)
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
+  - SwiftHamcrest (~> 1.0.0)
 
 EXTERNAL SOURCES:
   ChameleonFramework:
@@ -48,7 +50,8 @@ SPEC CHECKSUMS:
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
   RxTest: 85fdd6f753e8e62635a58d37bbdd3ce7d5abbef3
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
+  SwiftHamcrest: c08689aaa05168b346dbb6791a717183cdd66a25
 
-PODFILE CHECKSUM: 1782d2fc2bc61a737afc9475d6285a0c50430708
+PODFILE CHECKSUM: 51352149a13bc5795d080192ce60f31c943efb4d
 
 COCOAPODS: 1.2.0

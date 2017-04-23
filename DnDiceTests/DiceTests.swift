@@ -7,19 +7,10 @@
 //
 
 import XCTest
+import Hamcrest
 @testable import DnDice
 
 class DiceTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
     
     //run test on all sides
     func testDiceSides(){
@@ -47,7 +38,7 @@ class DiceTests: XCTestCase {
         for _ in 0..<sideMax*10 {
             let diceExpectation = expectation(description: "fulfilled")
             dice.roll(onComplete: { (newValue) in
-                XCTAssert(newValue <= sideMax)
+                assertThat(newValue <= sideMax)
                 diceExpectation.fulfill()
             })
         }
@@ -74,7 +65,11 @@ class DiceTests: XCTestCase {
             }
         }
         
-        XCTAssertEqual(0, allDices.count)
+        assertThat(allDices.count == 0)
+    }
+    
+    func isSideSame() -> Matcher<Dice> {
+        return Matcher("dice sides the same") {$0.sides == .Twenty}
     }
     
     //test randomness of a dice

@@ -21,6 +21,7 @@ target 'DnDice' do
     
     pod 'RxBlocking', '~> 3.0'
     pod 'RxTest',     '~> 3.0'
+    pod 'SwiftHamcrest', '~> 1.0.0'
   end
 
   target 'DnDiceUITests' do
