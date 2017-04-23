@@ -20,6 +20,7 @@
 		EC3245071E87091D00665411 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3245061E87091D00665411 /* BaseCollectionViewCell.swift */; };
 		EC3245091E88207C00665411 /* DiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3245081E88207C00665411 /* DiceTests.swift */; };
 		EC41D9261E913C39007211EF /* AllDicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC41D9251E913C39007211EF /* AllDicesViewController.swift */; };
+		EC485E701EACA2BF00756E9E /* RollingDicesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC485E6F1EACA2BF00756E9E /* RollingDicesUITests.swift */; };
 		EC6A6BDC1E996D6B00C0A7CB /* BoardTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A6BDB1E996D6B00C0A7CB /* BoardTitleView.swift */; };
 		EC6A6BDE1E996D9600C0A7CB /* BoardTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6A6BDD1E996D9600C0A7CB /* BoardTitleView.xib */; };
 		EC6A6BE11E99755200C0A7CB /* DiceTitleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A6BE01E99755200C0A7CB /* DiceTitleBuilder.swift */; };
@@ -90,6 +91,7 @@
 		EC3245061E87091D00665411 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC3245081E88207C00665411 /* DiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceTests.swift; sourceTree = "<group>"; };
 		EC41D9251E913C39007211EF /* AllDicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllDicesViewController.swift; sourceTree = "<group>"; };
+		EC485E6F1EACA2BF00756E9E /* RollingDicesUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollingDicesUITests.swift; sourceTree = "<group>"; };
 		EC6A6BDB1E996D6B00C0A7CB /* BoardTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardTitleView.swift; sourceTree = "<group>"; };
 		EC6A6BDD1E996D9600C0A7CB /* BoardTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoardTitleView.xib; sourceTree = "<group>"; };
 		EC6A6BE01E99755200C0A7CB /* DiceTitleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceTitleBuilder.swift; sourceTree = "<group>"; };
@@ -210,6 +212,14 @@
 				EC8E1CF71E916BC9003F914A /* Cells */,
 			);
 			name = "All Dices";
+			sourceTree = "<group>";
+		};
+		EC485E6E1EACA28C00756E9E /* Rolling Dices Test */ = {
+			isa = PBXGroup;
+			children = (
+				EC485E6F1EACA2BF00756E9E /* RollingDicesUITests.swift */,
+			);
+			name = "Rolling Dices Test";
 			sourceTree = "<group>";
 		};
 		EC6A6BDF1E99752C00C0A7CB /* Models */ = {
@@ -334,6 +344,7 @@
 		EC9C46231E86B1A7003723A7 /* DnDiceUITests */ = {
 			isa = PBXGroup;
 			children = (
+				EC485E6E1EACA28C00756E9E /* Rolling Dices Test */,
 				EC9C46241E86B1A7003723A7 /* DnDiceUITests.swift */,
 				EC9C46261E86B1A7003723A7 /* Info.plist */,
 			);
@@ -778,6 +789,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC485E701EACA2BF00756E9E /* RollingDicesUITests.swift in Sources */,
 				EC9C46251E86B1A7003723A7 /* DnDiceUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
