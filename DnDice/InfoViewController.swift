@@ -19,7 +19,7 @@ class InfoViewController: BaseViewController {
     
     @IBOutlet weak var logoImageView: UIImageView!{
         didSet{
-            logoImageView.tintColor = .sunset()
+            logoImageView.tintColor = .sunset
             logoImageView.image = #imageLiteral(resourceName: "d20").withRenderingMode(.alwaysTemplate)
         }
     }

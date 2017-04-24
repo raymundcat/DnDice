@@ -41,6 +41,7 @@
 		EC9C463E1E86BCED003723A7 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C463A1E86BCED003723A7 /* BaseView.swift */; };
 		ECB4208B1E8FA59900E01771 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB4208A1E8FA59900E01771 /* BoardViewController.swift */; };
 		ECD7A5421EA90DAC00B6BB04 /* TitleBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD7A5411EA90DAC00B6BB04 /* TitleBuilderTests.swift */; };
+		ECF653A01EAE825600A43E9A /* UIColor+DnDices.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF6539F1EAE825600A43E9A /* UIColor+DnDices.swift */; };
 		ECF6F7E91EA389BE00110E1B /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF6F7E81EA389BE00110E1B /* Functions.swift */; };
 		ECF6F7EB1EA3EEE900110E1B /* DiceMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF6F7EA1EA3EEE900110E1B /* DiceMessage.swift */; };
 		ECFA13981E9BFE2D00DBF69E /* LiveBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFA13971E9BFE2D00DBF69E /* LiveBackgroundView.swift */; };
@@ -117,6 +118,7 @@
 		EC9C463A1E86BCED003723A7 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		ECB4208A1E8FA59900E01771 /* BoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		ECD7A5411EA90DAC00B6BB04 /* TitleBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleBuilderTests.swift; sourceTree = "<group>"; };
+		ECF6539F1EAE825600A43E9A /* UIColor+DnDices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+DnDices.swift"; sourceTree = "<group>"; };
 		ECF6F7E81EA389BE00110E1B /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		ECF6F7EA1EA3EEE900110E1B /* DiceMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceMessage.swift; sourceTree = "<group>"; };
 		ECFA13971E9BFE2D00DBF69E /* LiveBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveBackgroundView.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				EC1487B71E96AF4A001B3050 /* Springable+CustomAnimations.swift */,
+				ECF6539F1EAE825600A43E9A /* UIColor+DnDices.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -757,6 +760,7 @@
 				EC6A6BE41E9A808600C0A7CB /* InfoViewController.swift in Sources */,
 				EC9C463E1E86BCED003723A7 /* BaseView.swift in Sources */,
 				EC0D5B431E96BFF3002472CD /* DiceSounds.swift in Sources */,
+				ECF653A01EAE825600A43E9A /* UIColor+DnDices.swift in Sources */,
 				EC6A6BDC1E996D6B00C0A7CB /* BoardTitleView.swift in Sources */,
 				EC9C46021E86B1A7003723A7 /* AppDelegate.swift in Sources */,
 			);
