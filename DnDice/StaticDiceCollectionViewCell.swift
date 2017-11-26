@@ -37,10 +37,9 @@ class StaticDiceCollectionViewCell: BaseCollectionViewCell {
     }
     
     @objc private func didTapCell(geture: UITapGestureRecognizer){
-        self.wobble {
-            guard let dice = self.dice else { return }
-            self.delegate?.staticDiceDidSelect(withDice: dice)
-        }
+        guard let dice = self.dice else { return }
+        self.delegate?.staticDiceDidSelect(withDice: dice)
+        self.wobble { }
     }
     
     var dice: Dice?{
