@@ -16,9 +16,9 @@ class BorderedSpringLabel: SpringLabel {
     
     override func drawText(in rect: CGRect) {
         let strokeTextAttributes = [
-            NSStrokeColorAttributeName : outlineColor,
-            NSStrokeWidthAttributeName : -1 * outlineWidth,
-            ] as [String : Any]
+            NSAttributedStringKey.strokeColor.rawValue : outlineColor,
+            NSAttributedStringKey.strokeWidth : -1 * outlineWidth,
+            ] as! [String : Any]
         
         self.attributedText = NSAttributedString(string: self.text ?? "", attributes: strokeTextAttributes)
         super.drawText(in: rect)

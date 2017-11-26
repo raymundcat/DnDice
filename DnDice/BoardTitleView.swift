@@ -35,7 +35,7 @@ class BoardTitleView: BaseView {
         timer.fire()
     }
     
-    internal func timerFired(timer: Timer){
+    @objc internal func timerFired(timer: Timer){
         guard let message = self.message else {
             self.message = DiceMessage.TotalMessage(prefix: "total:", total: total)
             return

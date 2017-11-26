@@ -5,13 +5,12 @@ target 'DnDice' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   
-    pod 'RxSwift',    '~> 3.0'
-    pod 'RxCocoa',    '~> 3.0'
+    pod 'RxSwift'
+    pod 'RxCocoa'
     pod 'NSObject+Rx'
     pod 'Hero'
     pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
-    pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
-#    pod 'Onboard'
+    pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
     
   # Pods for DnDice
 
@@ -19,8 +18,8 @@ target 'DnDice' do
     inherit! :search_paths
     # Pods for testing
     
-    pod 'RxBlocking', '~> 3.0'
-    pod 'RxTest',     '~> 3.0'
+    pod 'RxBlocking'
+    pod 'RxTest'
   end
 
   target 'DnDiceUITests' do

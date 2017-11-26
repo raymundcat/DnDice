@@ -22,7 +22,7 @@
 
 import UIKit
 
-public class HeroModifier {
+public final class HeroModifier {
   internal let apply:(inout HeroTargetState) -> Void
   public init(applyFunction:@escaping (inout HeroTargetState) -> Void) {
     apply = applyFunction
@@ -36,6 +36,13 @@ extension HeroModifier {
    */
   public static var fade = HeroModifier { targetState in
     targetState.opacity = 0
+  }
+
+  /**
+   Force don't fade view during transition
+   */
+  public static var forceNonFade = HeroModifier { targetState in
+    targetState.nonFade = true
   }
 
   /**
@@ -371,7 +378,7 @@ extension HeroModifier {
    (iOS 9+) Use spring animation with custom stiffness & damping. The duration will be automatically calculated. Will be ignored if arc, timingFunction, or duration is set.
    - Parameters:
      - stiffness: stiffness of the spring
-     - damping: stiffness of the spring
+     - damping: damping of the spring
    */
   @available(iOS 9, *)
   public static func spring(stiffness: CGFloat, damping: CGFloat) -> HeroModifier {
@@ -452,36 +459,68 @@ extension HeroModifier {
   }
 }
 
+// conditional modifiers
+extension HeroModifier {
+  /**
+   Apply modifiers only if the condition return true.
+   */
+  public static func when(_ condition: @escaping (HeroConditionalContext) -> Bool, _ modifiers: [HeroModifier]) -> HeroModifier {
+    return HeroModifier { targetState in
+      if targetState.conditionalModifiers == nil {
+        targetState.conditionalModifiers = []
+      }
+      targetState.conditionalModifiers!.append((condition, modifiers))
+    }
+  }
+
+  public static func when(_ condition: @escaping (HeroConditionalContext) -> Bool, _ modifiers: HeroModifier...) -> HeroModifier {
+    return .when(condition, modifiers)
+  }
+
+  public static func whenMatched(_ modifiers: HeroModifier...) -> HeroModifier {
+    return .when({ $0.isMatched }, modifiers)
+  }
+
+  public static func whenPresenting(_ modifiers: HeroModifier...) -> HeroModifier {
+    return .when({ $0.isPresenting }, modifiers)
+  }
+
+  public static func whenDismissing(_ modifiers: HeroModifier...) -> HeroModifier {
+    return .when({ !$0.isPresenting }, modifiers)
+  }
+
+  public static func whenAppearing(_ modifiers: HeroModifier...) -> HeroModifier {
+    return .when({ $0.isAppearing }, modifiers)
+  }
+
+  public static func whenDisappearing(_ modifiers: HeroModifier...) -> HeroModifier {
+    return .when({ !$0.isAppearing }, modifiers)
+  }
+}
+
 // advance modifiers
 extension HeroModifier {
   /**
    Apply modifiers directly to the view at the start of the transition.
    The modifiers supplied here won't be animated.
-   For source views, modifiers are set directly at the begining of the animation.
+   For source views, modifiers are set directly at the beginning of the animation.
    For destination views, they replace the target state (final appearance).
    */
-  public static func beginWith(modifiers: [HeroModifier]) -> HeroModifier {
+  public static func beginWith(_ modifiers: [HeroModifier]) -> HeroModifier {
     return HeroModifier { targetState in
       if targetState.beginState == nil {
-        targetState.beginState = HeroTargetState.HeroTargetStateWrapper(state: [])
+        targetState.beginState = []
       }
-      targetState.beginState!.state.append(contentsOf: modifiers)
+      targetState.beginState!.append(contentsOf: modifiers)
     }
   }
 
-  /**
-   Apply modifiers directly to the view at the start of the transition if the view is matched with another view.
-   The modifiers supplied here won't be animated.
-   For source views, modifiers are set directly at the begining of the animation.
-   For destination views, they replace the target state (final appearance).
-   */
-  public static func beginWithIfMatched(modifiers: [HeroModifier]) -> HeroModifier {
-    return HeroModifier { targetState in
-      if targetState.beginStateIfMatched == nil {
-        targetState.beginStateIfMatched = []
-      }
-      targetState.beginStateIfMatched!.append(contentsOf: modifiers)
-    }
+  public static func beginWith(modifiers: [HeroModifier]) -> HeroModifier {
+    return .beginWith(modifiers)
+  }
+
+  public static func beginWith(_ modifiers: HeroModifier...) -> HeroModifier {
+    return .beginWith(modifiers)
   }
 
   /**
@@ -549,6 +588,15 @@ extension HeroModifier {
    */
   public static var useNoSnapshot: HeroModifier = HeroModifier { targetState in
     targetState.snapshotType = .noSnapshot
+  }
+
+  /**
+   Force the view to animate.
+   
+   By default, Hero will not animate if the view is outside the screen bounds or if there is no animatable hero modifier, unless this modifier is used.
+   */
+  public static var forceAnimate = HeroModifier { targetState in
+    targetState.forceAnimate = true
   }
 
   /**

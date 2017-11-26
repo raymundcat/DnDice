@@ -69,7 +69,7 @@ class GameViewController: BaseViewController{
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: dummyButton)
     }
     
-    internal func didPressInfoButton(){
+    @objc internal func didPressInfoButton(){
         self.performSegue(withIdentifier: "SegueToInfo", sender: self)
     }
     
