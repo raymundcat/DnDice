@@ -36,7 +36,7 @@ class BoardViewController: BaseViewController{
             refreshControl.tintColor = .white
             collectionView.addSubview(refreshControl)
             collectionView.alwaysBounceVertical = true
-            collectionView.contentInset = UIEdgeInsetsMake(60, sideInsets, 20, sideInsets)
+            collectionView.contentInset = UIEdgeInsetsMake(20, sideInsets, 20, sideInsets)
         }
     }
     
