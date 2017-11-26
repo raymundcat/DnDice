@@ -36,7 +36,7 @@ class BoardViewController: BaseViewController{
             refreshControl.tintColor = .white
             collectionView.addSubview(refreshControl)
             collectionView.alwaysBounceVertical = true
-            collectionView.contentInset = UIEdgeInsetsMake(60, sideInsets, 20, sideInsets)
+            collectionView.contentInset = UIEdgeInsetsMake(20, sideInsets, 20, sideInsets)
         }
     }
     
@@ -71,7 +71,14 @@ class BoardViewController: BaseViewController{
     }
     
     private (set) var boardIsBusyDeleting: Bool = false
-    func removeDices(){
+    @objc func removeDices(){
+        
+        if dices.count == 0 {
+            liveBackground.restartAnimations()
+            refreshControl.endRefreshing()
+            return
+        }
+        
         guard !boardIsBusyAdding else { return }
         liveBackground.restartAnimations()
         boardIsBusyDeleting = true

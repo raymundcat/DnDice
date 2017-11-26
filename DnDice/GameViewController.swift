@@ -54,22 +54,9 @@ class GameViewController: BaseViewController{
         
         titleView = BoardTitleView(frame: (self.navigationController?.navigationBar.bounds)!)
         navigationItem.titleView = self.titleView
-        
-        let infoButton = UIButton(type: .custom)
-        infoButton.setImage(DiceImages.getImage(forDiceSide: .Twenty).withRenderingMode(.alwaysTemplate), for: .normal)
-        infoButton.frame = CGRect(x: 0, y: 0, width: 30, height: 25)
-        infoButton.imageView?.contentMode = .scaleAspectFit
-        infoButton.tintColor = UIColor.white
-        infoButton.adjustsImageWhenHighlighted = false
-        infoButton.addTarget(self, action: #selector(didPressInfoButton), for: .touchUpInside)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: infoButton)
-        
-        let dummyButton = UIButton(type: .custom)
-        dummyButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: dummyButton)
     }
     
-    internal func didPressInfoButton(){
+    @objc internal func didPressInfoButton(){
         self.performSegue(withIdentifier: "SegueToInfo", sender: self)
     }
     

@@ -10,6 +10,6 @@ import UIKit
 
 extension UIColor{
     static var sunset: UIColor{
-        return UIColor.init(colorLiteralRed: 1, green: 150/255, blue: 90/255, alpha: 1.0)
+        return UIColor.init(red: 1, green: 150/255, blue: 90/255, alpha: 1.0)
     }
 }

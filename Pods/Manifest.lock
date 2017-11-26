@@ -2,53 +2,52 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
-  - Hero (0.3.3)
-  - NSObject+Rx (2.0.0):
-    - RxSwift
-  - RxBlocking (3.2.0):
-    - RxSwift (~> 3.1)
-  - RxCocoa (3.2.0):
-    - RxSwift (~> 3.1)
-  - RxSwift (3.2.0)
-  - RxTest (3.2.0):
-    - RxSwift (~> 3.0)
+  - Hero (1.0.1)
+  - NSObject+Rx (4.2.0):
+    - RxSwift (~> 4.0)
+  - RxBlocking (4.0.0):
+    - RxSwift (~> 4.0)
+  - RxCocoa (4.0.0):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.0.0)
+  - RxTest (4.0.0):
+    - RxSwift (~> 4.0)
   - Spring (1.0.3)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - Hero
   - NSObject+Rx
-  - RxBlocking (~> 3.0)
-  - RxCocoa (~> 3.0)
-  - RxSwift (~> 3.0)
-  - RxTest (~> 3.0)
-  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
+  - RxBlocking
+  - RxCocoa
+  - RxSwift
+  - RxTest
+  - Spring (from `https://github.com/MengTo/Spring.git`)
 
 EXTERNAL SOURCES:
   ChameleonFramework:
     :git: https://github.com/ViccAlexander/Chameleon.git
   Spring:
-    :branch: swift3
     :git: https://github.com/MengTo/Spring.git
 
 CHECKOUT OPTIONS:
   ChameleonFramework:
-    :commit: acc480fbe023c6e5fe40f68593f4a70a8c4c7ad5
+    :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
     :git: https://github.com/ViccAlexander/Chameleon.git
   Spring:
-    :commit: 3a9227c6e9157e7b47f5ac1ee5abab2a56b50002
+    :commit: e0b125b847de4a348dc6cb4fb5efc33e75af6587
     :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
-  Hero: bee4e762e84185b16a902dd11335c119515bb912
-  NSObject+Rx: 2a9cd801d9c847e6d2486cbad8d7701b67834e70
-  RxBlocking: ec8ed471ba77b4fb98a2d60f1f8419b0b46eaa23
-  RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
-  RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
-  RxTest: 85fdd6f753e8e62635a58d37bbdd3ce7d5abbef3
+  Hero: cee286821578e170d8c0c9c9cda7897357401112
+  NSObject+Rx: cbbc05e3cb3ad446cdbced3e00e39c9efaf02925
+  RxBlocking: 923c2c8106d80d7c2d6b276afd66ce3b10824836
+  RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
+  RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
+  RxTest: 0041e792cede35e53e4749f378d21482af0e9d12
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
 
-PODFILE CHECKSUM: 1782d2fc2bc61a737afc9475d6285a0c50430708
+PODFILE CHECKSUM: 9c2a908c0b9f8dc33b931aca537802fd822d7bf2
 
 COCOAPODS: 1.2.0

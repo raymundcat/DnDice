@@ -38,7 +38,7 @@ class BoardDiceCollectionViewCell: BaseCollectionViewCell {
                 guard let `self` = self else { return }
                 guard let state = event.element else { return }
                 self.diceState = state
-            }.addDisposableTo(self.rx_disposeBag)
+            }.disposed(by: self.rx.disposeBag)
         }
     }
     
