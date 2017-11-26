@@ -16,7 +16,6 @@ class BoardDiceCollectionViewCell: BaseCollectionViewCell {
         didSet{
             valueLabel.outlineColor = UIColor.white
             valueLabel.outlineWidth = 2
-            
             valueLabel.textColor = UIColor.flatMagenta
         }
     }
@@ -33,7 +32,7 @@ class BoardDiceCollectionViewCell: BaseCollectionViewCell {
     var dice: Dice?{
         didSet{
             guard let dice = self.dice else{ return }
-            self.diceSide = dice.sides
+            diceSide = dice.sides
             dice.state.asObservable().subscribe { [weak self](event) in
                 guard let `self` = self else { return }
                 guard let state = event.element else { return }
@@ -45,15 +44,15 @@ class BoardDiceCollectionViewCell: BaseCollectionViewCell {
     var diceSide: DiceSide?{
         didSet{
             guard let diceSide = diceSide else { return }
-            self.imageView.image = DiceImages.getImage(forDiceSide: diceSide).withRenderingMode(.alwaysTemplate)
+            imageView.image = DiceImages.getImage(forDiceSide: diceSide).withRenderingMode(.alwaysTemplate)
         }
     }
     
     var diceState: DiceState = .Stable{
         didSet{
             guard let dice = self.dice else{ return }
-            self.valueLabel.text = "\(dice.value)"
-            
+            valueLabel.text = "\(dice.value)"
+            valueLabel.textColor = dice.value == dice.sides.rawValue ? UIColor.flatOrange : UIColor.flatMagenta
             switch diceState {
             case .Rolling:
                 if oldValue != .Rolling{
