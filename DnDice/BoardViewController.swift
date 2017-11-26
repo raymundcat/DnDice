@@ -72,6 +72,13 @@ class BoardViewController: BaseViewController{
     
     private (set) var boardIsBusyDeleting: Bool = false
     @objc func removeDices(){
+        
+        if dices.count == 0 {
+            liveBackground.restartAnimations()
+            refreshControl.endRefreshing()
+            return
+        }
+        
         guard !boardIsBusyAdding else { return }
         liveBackground.restartAnimations()
         boardIsBusyDeleting = true
