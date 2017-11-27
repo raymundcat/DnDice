@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import RxCocoa
 import RxSwift
 import RxTest
 import UIKit
@@ -46,11 +47,12 @@ class MainScreenTests: XCTestCase {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
         
             let label: UILabel = self.gameViewController.titleView.titleLabel!
+            
             label.rx.observe(String.self, "text").subscribe { (event) in
                 guard let element = event.element else { return }
                 guard let text = element else { return }
                 shownTexts.append(text)
-                }.addDisposableTo(self.disposeBag)
+            }.disposed(by: self.disposeBag)
             
             for _ in 0...20{
                 self.gameViewController.throwInBoard(newDice: Dice.getRandomDice())
