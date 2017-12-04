@@ -11,4 +11,4 @@ script:
 # - set -o pipefail && xcodebuild test -workspace Example/DnDice.xcworkspace -scheme DnDice -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
 # - pod lib lint
 - set -o pipefail
-- xcodebuild clean build -sdk iphonesimulator -workspace DnDice.xcworkspace -scheme DnDice CODE_SIGNING_REQUIRED=NO -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.0' test | xcpretty
+- xcodebuild clean build -sdk iphonesimulator -workspace DnDice.xcworkspace -scheme DnDice CODE_SIGNING_REQUIRED=NO -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.0' test | xcpretty
